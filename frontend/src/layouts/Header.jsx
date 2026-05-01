@@ -1,8 +1,13 @@
 import React from 'react'
+import TopNavbar from '../components/TopNavbar'
+import BottomNavbar from '../components/BottomNavbar'
 
 function Header() {
   return (
-    <div>Header</div>
+    <>
+      <TopNavbar/>
+      <BottomNavbar/>
+    </>
   )
 }
 

@@ -1,15 +1,22 @@
 import React from "react";
-
-function SingleCarousel({title, img, subtitle1, subtitle2}) {
+import { Link } from 'react-router-dom';
+function SingleCarousel({ title, img, subtitle }) {
   return (
-    <div>
-      <img src={img}/>
-      <h4>{subtitle1}</h4>
-      <h1>{title}</h1>
-      <p>
-        {subtitle2}
-      </p>
-      <button>Shop Now</button>
+    <div className="singleCarousel carousel-slide animated fadeIn active slide-visible">
+      <div className="imgContainer">
+        <img src={img} className="carouselImg" alt="product" />
+      </div>
+      <div className="textContainer">
+        <h6>{subtitle}</h6>
+        <h1 className="carouselTitle">{title}</h1>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It{" "}
+          <br /> has roots in a piece of classical Latin literature.
+        </p>
+        <Link to="/shop">
+        <button className="carouselShopBtn">Shop Now</button>
+        </Link>
+      </div>
     </div>
   );
 }

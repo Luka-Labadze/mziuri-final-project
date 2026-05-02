@@ -1,0 +1,93 @@
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.singleCarousel {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 80px;
+
+    .imgContainer, 
+    .textContainer h6, 
+    .textContainer .carouselTitle, 
+    .textContainer p, 
+    .textContainer .carouselShopBtn {
+        opacity: 0;
+    }
+
+    &.carousel-slide.animated.active.slide-visible {
+        
+        .imgContainer {
+            animation: fadeInSlide 0.8s ease forwards;
+        }
+
+        .textContainer {
+            h6 {
+                animation: fadeInSlide 0.8s ease forwards 0.2s;
+            }
+            .carouselTitle {
+                animation: fadeInSlide 0.8s ease forwards 0.4s;
+            }
+            p {
+                animation: fadeInSlide 0.8s ease forwards 0.6s;
+            }
+            .carouselShopBtn {
+                animation: fadeInSlide 0.8s ease forwards 0.8s;
+            }
+        }
+    }
+
+    .imgContainer {
+        .carouselImg {
+            width: 470px;
+            height: auto;
+        }
+    }
+
+    .textContainer {
+        height: auto;
+
+        h6 {
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 600; 
+            font-size: 18px;
+            line-height: 34px;
+        }
+
+        .carouselTitle {
+            font-size: 38px;
+            font-family: "Source Sans Pro", sans-serif;
+            margin: 15px 0 20px 0;
+        }
+
+        p {
+            font-family: "Source Sans Pro", sans-serif;
+            line-height: 23px;
+            margin-bottom: 20px;
+        }
+
+        .carouselShopBtn {
+            width: 149px;
+            height: 44px;
+            border-radius: 5px;
+            color: white;
+            background-color: #0438A1;
+            border: 1px solid #0438A1;
+            cursor: pointer;
+            transition: 0.3s; 
+
+            &:hover {
+                background-color: #0279D1;
+                border: 1px solid transparent;
+            }
+        }
+    }
+}

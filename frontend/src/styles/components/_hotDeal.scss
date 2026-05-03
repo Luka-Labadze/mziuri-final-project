@@ -1,160 +1,98 @@
-// .hotDeal {
-//   width: 100%;
-//   height: 600px;
-//   display: flex;         
-//   align-items: center;   
-//   justify-content: space-evenly;
-//   position: relative;
-//     .hotdealWrapper{
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-        
-//         .hDLeftSide {
-//           width: 870px;
-//           height: 440px;
-//           position: relative;  
-//           overflow: hidden;
-      
-//           .hdBgImg {
-//             position: absolute; 
-//             top: 0;
-//             left: 0;
-//             width: 100%;
-//             height: 100%;
-//             object-fit: cover;
-//             z-index: 1;        
-//           }
-      
-//           .textContainer {
-//             position: relative; 
-//             z-index: 10;        
-//             padding: 40px;
-//             .hot-deal {
-//               font-size: 18px;
-//               font-family: "Source Sans Pro", sans-serif;
-//               color: black;
-//               font-weight: 600;
-//             }
-//             .hdLeftSideTitle{
-//               font-size: 36px;
-//               font-family: "Source Sans Pro", sans-serif;
-//               color: black;
-//               font-weight: 400;
-//               margin: 10px 0 20px 0;
-//             }
-//             p{
-//               font-family: "Source Sans Pro", sans-serif;
-//               font-size: 15px;
-//               font-weight:500;
-//               line-height: 23px;
-      
-//             }
-            
-//             .hotDealExpireDate{
-//               float: left;
-//               margin: 35px 0 0 0;
-//               .expiration{
-//                   display: flex;
-//                   justify-content: center;
-//                   gap: 30px;
-//                   font-size: 20px;
-//                   font-weight: 600;
-//                   font-family: "Source Sans Pro", sans-serif;
-      
-//               }
-//               .timespan{
-//                   display: flex;
-//                   justify-content: center;
-//                   gap: 20px;
-//                   font-size: 16px;
-//                   font-weight: 400;
-//                   line-height: 14px;
-//                   font-family: "Source Sans Pro", sans-serif;
-//               }
-//             }
-//           }
-      
-//           .imgContainer {
-//             position: absolute;
-//             right: 20px;
-//             bottom: 20px;
-//             z-index: 11;       
-            
-//             .hotDealHeadset {
-//               width: 300px;    
-//             }
-//           }
-//         }
-//     }
-
-//   .hdCarousel {
-//     width: 300px;       
-//     z-index: 20;
-
-//     .hdCarouselWrapper {
-//       display: flex;
-//       align-items: center;
-//       gap: 10px;
-//     }
-//   }
-// }
-
-.hDLeftSide {
-  width: 870px;
-  height: 440px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-
-  .hdBgImg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1; // Lowest layer
-  }
-
-  /* This wrapper aligns the text and the headphone image */
-  .hDContent {
+.hotDeal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 80px 0 80px 0;
+  // gap: 20px;
+  .hDLeftSide {
+    width: 870px;
+    height: 460px;
     position: relative;
-    z-index: 5; // Sits above background
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    padding: 0 60px; // Gives breathing room on the edges
+    overflow: hidden;
+    border-radius: 8px;
 
-    .textContainer {
-      flex: 1;
-      max-width: 50%; // Prevents text from running into the headphone
-
-      .hot-deal {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .hdLeftSideTitle {
-        font-size: 38px;
-        margin-bottom: 15px;
-      }
-      
-      // ... timer styles ...
+    .hdBgImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
     }
 
-    .imgContainer {
-      flex: 1;
+    .hDContent {
+      position: relative;
+      z-index: 5;
       display: flex;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 60px;
 
-      .hotDealHeadset {
-        width: 350px; // Adjust size to match your image
-        height: auto;
-        transform: rotate(-10deg); // Optional: add a slight tilt like the demo
+      .textContainer {
+        flex: 1;
+        max-width: 50%;
+        font-family: "Source Sans Pro", sans-serif;
+        .hotDealExpireDate {
+          float: left;
+          margin: 35px 0 0 0;
+          .expiration {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Source Sans Pro", sans-serif;
+          }
+          .timespan {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 14px;
+            font-family: "Source Sans Pro", sans-serif;
+          }
+        }
+        .hot-deal {
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+
+        .hdLeftSideTitle {
+          font-size: 38px;
+          margin-bottom: 15px;
+          font-weight: 500;
+        }
       }
+
+      .imgContainer {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        .hotDealHeadset {
+          width: 350px;
+          height: auto;
+          transform: rotate(-10deg);
+          scale: 0.9;
+        }
+      }
+    }
+  }
+
+ .hdCarousel {
+    width: 348px;
+    height: 438px;
+
+    .hdCarouselWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
     }
   }
 }

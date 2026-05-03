@@ -1,0 +1,159 @@
+.hotDealCarousel {
+  width: 308px;
+  height: 458px;
+  border: 1px solid transparent;
+  background-color: #f7f8fa;
+  position: relative;
+  .carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-90%);
+    background: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px 12px;
+    z-index: 10;
+    &.next {
+      font-size: 28px;
+      right: 8px;
+      opacity: 0;
+      position: absolute;
+      z-index: 10;
+      scale: 0.7;
+      color: #0638a1;
+      background: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      padding: 35px;
+      &:hover {
+        transition: 1s;
+        background-color: #0638a1;
+        color: white;
+      }
+    }
+    &.prev {
+      font-size: 28px;
+      left: 8px;
+      opacity: 0;
+      position: absolute;
+      z-index: 10;
+      scale: 0.7;
+      color: #0638a1;
+      background: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      padding: 35px;
+      &:hover {
+        transition: 1s;
+        background-color: #0638a1;
+        color: white;
+      }
+    }
+  }
+
+  .wishlist {
+    padding: 10px;
+    width: 14px;
+    height: auto;
+    font-size: 34px;
+    font-weight: 400;
+    cursor: pointer;
+    &:hover {
+      color: #0438a1;
+      transform: 0.3s ease-in;
+    }
+  }
+  .titleAndPriceContainer{
+    font-family: "Source Sans Pro", sans-serif;
+text-align: center;
+line-height: 25px;
+    h3{
+        font-size: 18px;
+        font-weight: 530;
+
+    }
+    p{
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+  }
+  .imgContainer {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    user-select: none;
+    .hdCarouselImg {
+      width: 270px;
+      height: 270px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.8s ease-in-out;
+    }
+
+    
+  }
+
+  .shopNow{
+    display: block;
+    top: 35px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 130px;
+    height: 35px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    color: rgb(69, 69, 69);
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+}
+&:hover .prev{
+opacity: 1;
+        transition: 1s;
+}
+&:hover .next{
+opacity: 1;
+        transition: 1s;
+}
+#image1 {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    #image2 {
+      opacity: 0;
+      z-index: 2;
+    }
+
+    &:hover #image1 {
+      opacity: 0;
+    }
+
+    &:hover #image2 {
+      opacity: 1;
+    }
+&:hover .shopNow{
+    opacity: 1;
+    transform: translateY(-30px);
+    transition: 0.9s;
+}
+}

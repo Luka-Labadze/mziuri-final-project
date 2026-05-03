@@ -65,48 +65,51 @@ function HotDeal() {
   return (
     <div className="hotDeal">
       <div className="hDLeftSide">
-  {/* The Background stays absolute so it covers the whole area */}
-  <img src={hotDealBG} className="hdBgImg" alt="Background" />
+        <img src={hotDealBG} className="hdBgImg" alt="Background" />
 
-  {/* NEW WRAPPER: This holds your text and product image side-by-side */}
-  <div className="hDContent">
-    
-    <div className="textContainer">
-      <h6 className="hot-deal">Hot Deal</h6>
-      <h1 className="hdLeftSideTitle">Kemioo DX24 Headphone</h1>
-      <p>
-        Contrary to popular belief, Lorem Ipsum is not simply <br /> random
-        text. It has roots in a piece of classical Latin <br /> literature
-      </p>
-      
-      <div className="hotDealExpireDate">
-        <ul className="expiration">
-          <li>00</li><li>00</li><li>00</li><li>00</li>
-        </ul>
-        <ul className="timespan">
-          <li>Days</li><li>Hrs</li><li>Min</li><li>Secs</li>
-        </ul>
+        <div className="hDContent">
+          <div className="textContainer">
+            <h6 className="hot-deal">Hot Deal</h6>
+            <h1 className="hdLeftSideTitle">Kemioo DX24 Headphone</h1>
+            <p>
+              Contrary to popular belief, Lorem Ipsum is not simply <br />{" "}
+              random text. It has roots in a piece of classical Latin <br />{" "}
+              literature
+            </p>
+
+            <div className="hotDealExpireDate">
+              <ul className="expiration">
+                <ol>00</ol>
+                <ol>00</ol>
+                <ol>00</ol>
+                <ol>00</ol>
+              </ul>
+              <ul className="timespan">
+                <ol>Days</ol>
+                <ol>Hrs</ol>
+                <ol>Min</ol>
+                <ol>Secs</ol>
+              </ul>
+            </div>
+          </div>
+
+          <div className="imgContainer">
+            <img
+              src={hotDealHeadset}
+              className="hotDealHeadset"
+              alt="Headset"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div className="imgContainer">
-      <img src={hotDealHeadset} className="hotDealHeadset" alt="Headset" />
-    </div>
-
-  </div> 
-</div>
 
       <div className="hdCarousel">
         <div className="hdCarouselWrapper">
-          <button onClick={handlePrevClick} className="carouselPrevClick">
-            <span className="carouselBtns">&lt;</span>
-          </button>
-          <div className="hotDealCarousel">
-            <HotDealCarousel data={currentSlide} />
-          </div>
-          <button onClick={handlePrevClick} className="carouselPrevClick">
-            <span className="carouselBtns">&gt;</span>
-          </button>
+          <HotDealCarousel
+            data={currentSlide}
+            onPrev={handlePrevClick}
+            onNext={handleNextClick}
+          />
         </div>
       </div>
     </div>

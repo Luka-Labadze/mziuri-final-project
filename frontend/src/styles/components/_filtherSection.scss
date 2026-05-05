@@ -1,0 +1,92 @@
+.filther {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 300px;
+  user-select: none;
+  line-height: 20px;
+  margin-left: 5%;
+  margin-top: 3.5%;
+  border: 1px dashed rgb(226, 224, 224);
+  padding: 25px;
+  ol {
+    display: flex;
+    gap: 15px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .selected {
+    display: inline-block; 
+    border: 1px dashed rgb(196, 196, 196);
+    padding: 2px 10px;
+    margin: 0 0 25px 0;
+  }
+  .availability {
+    margin: 0 0 30px 0;
+    .availabilityTitle {
+      margin: 0 0 25px 0;
+    }
+  }
+  .price {
+    margin: 0 0 30px 0;
+    .priceTitle {
+      margin: 0 0 25px 0;
+    }
+    .bottomPrice {
+      display: flex;
+      justify-content: space-between;
+      .rightSide,
+      .leftSide {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 30px 0;
+      }
+      .priceUnits {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .priceInput {
+        width: 70px;
+        height: 42px;
+      }
+    }
+  }
+  .productType {
+    margin: 0 0 30px 0;
+    .productTypeTitle {
+      margin: 0 0 25px 0;
+    }
+  }
+  .brand{
+    margin:  0 0 30px 0;
+      .brandTitle{
+        margin:  0 0 25px 0;
+      }
+      .brandList{
+        margin:  0 0 15px 0;
+      }
+  }
+  .color{
+    margin: 0 0 30px 0;
+     .colorTitle{
+        margin:  0 0 25px 0;
+     }
+  }
+  .material{
+    margin: 0 0 30px 0;
+    .materialTitle{
+        margin:  0 0 25px 0;
+    }
+  }
+  .size{
+    margin:  0 0 30px 0;
+    .sizeTitle{
+        margin:  0 0 25px 0;
+    }
+  }
+}

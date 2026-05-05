@@ -1,8 +1,14 @@
 import React from 'react'
+import ProductList from '../components/ProductList'
+import FiltherSection from '../components/FiltherSection'
+
 
 function Products() {
   return (
-    <div>Products</div>
+    <div className='productsWrapper'>
+      <FiltherSection/>
+      <ProductList />
+    </div>
   )
 }
 

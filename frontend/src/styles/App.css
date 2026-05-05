@@ -492,4 +492,212 @@
   opacity: 1;
   transform: translateY(-30px);
   transition: 0.9s;
+}
+
+.productSingle {
+  width: 308px;
+  height: 458px;
+  border: 1px solid transparent;
+  background-color: #f7f8fa;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.productSingle:hover {
+  border-color: #e0e0e0;
+}
+.productSingle .wishlist {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.productSingle .wishlist:hover {
+  color: #0438a1;
+  transform: scale(1.1);
+}
+.productSingle .imgContainer {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: 40px auto 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.productSingle .imgContainer .productImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+.productSingle .imgContainer #image1 {
+  opacity: 1;
+  z-index: 1;
+}
+.productSingle .imgContainer #image2 {
+  opacity: 0;
+  z-index: 2;
+}
+.productSingle:hover #image1 {
+  opacity: 0;
+}
+.productSingle:hover #image2 {
+  opacity: 1;
+}
+.productSingle .titleAndPriceContainer {
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  line-height: 25px;
+  padding: 0 10px;
+}
+.productSingle .titleAndPriceContainer h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+.productSingle .titleAndPriceContainer p {
+  font-weight: 600;
+  font-size: 15px;
+  margin: 5px 0;
+}
+.productSingle .addToCart {
+  display: block;
+  margin: 20px auto 0;
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  font-weight: 700;
+  color: black;
+  font-size: 10px;
+  background-color: #F7F8F9;
+  border: 1px solid black;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+.productSingle:hover .addToCart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.productList {
+  width: 1250px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px;
+}
+
+.filther {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 300px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  line-height: 20px;
+  margin-left: 5%;
+  margin-top: 3.5%;
+  border: 1px dashed rgb(226, 224, 224);
+  padding: 25px;
+}
+.filther ol {
+  display: flex;
+  gap: 15px;
+}
+.filther h2 {
+  font-size: 20px;
+}
+.filther label {
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.filther .selected {
+  display: inline-block;
+  border: 1px dashed rgb(196, 196, 196);
+  padding: 2px 10px;
+  margin: 0 0 25px 0;
+}
+.filther .availability {
+  margin: 0 0 30px 0;
+}
+.filther .availability .availabilityTitle {
+  margin: 0 0 25px 0;
+}
+.filther .price {
+  margin: 0 0 30px 0;
+}
+.filther .price .priceTitle {
+  margin: 0 0 25px 0;
+}
+.filther .price .bottomPrice {
+  display: flex;
+  justify-content: space-between;
+}
+.filther .price .bottomPrice .rightSide,
+.filther .price .bottomPrice .leftSide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 30px 0;
+}
+.filther .price .bottomPrice .priceUnits {
+  font-size: 16px;
+  font-weight: 400;
+}
+.filther .price .bottomPrice .priceInput {
+  width: 70px;
+  height: 42px;
+}
+.filther .productType {
+  margin: 0 0 30px 0;
+}
+.filther .productType .productTypeTitle {
+  margin: 0 0 25px 0;
+}
+.filther .brand {
+  margin: 0 0 30px 0;
+}
+.filther .brand .brandTitle {
+  margin: 0 0 25px 0;
+}
+.filther .brand .brandList {
+  margin: 0 0 15px 0;
+}
+.filther .color {
+  margin: 0 0 30px 0;
+}
+.filther .color .colorTitle {
+  margin: 0 0 25px 0;
+}
+.filther .material {
+  margin: 0 0 30px 0;
+}
+.filther .material .materialTitle {
+  margin: 0 0 25px 0;
+}
+.filther .size {
+  margin: 0 0 30px 0;
+}
+.filther .size .sizeTitle {
+  margin: 0 0 25px 0;
+}
+
+.productsWrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 1500px;
+  margin: 4% auto;
+  padding: 20px 16px;
 }/*# sourceMappingURL=App.css.map */

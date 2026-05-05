@@ -6,3 +6,9 @@
 @use './components/singleCarousel';
 @use './components/hotDeal';
 @use './components/hotDealCarousel';
+@use './components/productSingle';
+@use './components/productList';
+@use './components/filtherSection';
+
+
+@use './routes/products';

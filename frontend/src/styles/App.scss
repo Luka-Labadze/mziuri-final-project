@@ -1,5 +1,6 @@
 @use './reset/reset';
 
+//! components
 @use './components/topNavbar';
 @use './components/bottomNavbar';
 @use './components/carousel';
@@ -9,6 +10,7 @@
 @use './components/productSingle';
 @use './components/productList';
 @use './components/filtherSection';
+@use './components/sortBy';
 
 
 @use './routes/products';

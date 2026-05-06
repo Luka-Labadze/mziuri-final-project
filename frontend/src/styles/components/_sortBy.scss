@@ -1,0 +1,36 @@
+.sortBy {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  user-select: none;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  margin-top: 45px;
+  .gridView {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    .gridImg {
+      width: 25px;
+    }
+    .gridImg2 {
+      font-weight: 580;
+    }
+  }
+  .sorting {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    #sorting {
+      width: 288px;
+      height: 38px;
+    }
+  }
+}

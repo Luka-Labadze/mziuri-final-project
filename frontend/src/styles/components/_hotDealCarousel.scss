@@ -78,20 +78,18 @@
       transform: 0.3s ease-in;
     }
   }
-  .titleAndPriceContainer{
+  .titleAndPriceContainer {
     font-family: "Source Sans Pro", sans-serif;
-text-align: center;
-line-height: 25px;
-    h3{
-        font-size: 18px;
-        font-weight: 530;
-
+    text-align: center;
+    line-height: 25px;
+    h3 {
+      font-size: 18px;
+      font-weight: 530;
     }
-    p{
-        font-weight: 600;
-        font-size: 15px;
+    p {
+      font-weight: 600;
+      font-size: 15px;
     }
-
   }
   .imgContainer {
     position: relative;
@@ -107,11 +105,9 @@ line-height: 25px;
       left: 0;
       transition: 0.8s ease-in-out;
     }
-
-    
   }
 
-  .shopNow{
+  .shopNow {
     display: block;
     top: 35px;
     margin: auto;
@@ -125,35 +121,35 @@ line-height: 25px;
     color: rgb(69, 69, 69);
     background-color: rgba(0, 0, 0, 0);
     opacity: 0;
-}
-&:hover .prev{
-opacity: 1;
-        transition: 1s;
-}
-&:hover .next{
-opacity: 1;
-        transition: 1s;
-}
-#image1 {
-      opacity: 1;
-      z-index: 1;
-    }
+  }
+  &:hover .prev {
+    opacity: 1;
+    transition: 1s;
+  }
+  &:hover .next {
+    opacity: 1;
+    transition: 1s;
+  }
+  #image1 {
+    opacity: 1;
+    z-index: 1;
+  }
 
-    #image2 {
-      opacity: 0;
-      z-index: 2;
-    }
+  #image2 {
+    opacity: 0;
+    z-index: 2;
+  }
 
-    &:hover #image1 {
-      opacity: 0;
-    }
+  &:hover #image1 {
+    opacity: 0;
+  }
 
-    &:hover #image2 {
-      opacity: 1;
-    }
-&:hover .shopNow{
+  &:hover #image2 {
+    opacity: 1;
+  }
+  &:hover .shopNow {
     opacity: 1;
     transform: translateY(-30px);
     transition: 0.9s;
-}
+  }
 }

@@ -20,7 +20,7 @@
     cursor: pointer;
   }
   .selected {
-    display: inline-block; 
+    display: inline-block;
     border: 1px dashed rgb(196, 196, 196);
     padding: 2px 10px;
     margin: 0 0 25px 0;
@@ -62,31 +62,31 @@
       margin: 0 0 25px 0;
     }
   }
-  .brand{
-    margin:  0 0 30px 0;
-      .brandTitle{
-        margin:  0 0 25px 0;
-      }
-      .brandList{
-        margin:  0 0 15px 0;
-      }
-  }
-  .color{
+  .brand {
     margin: 0 0 30px 0;
-     .colorTitle{
-        margin:  0 0 25px 0;
-     }
-  }
-  .material{
-    margin: 0 0 30px 0;
-    .materialTitle{
-        margin:  0 0 25px 0;
+    .brandTitle {
+      margin: 0 0 25px 0;
+    }
+    .brandList {
+      margin: 0 0 15px 0;
     }
   }
-  .size{
-    margin:  0 0 30px 0;
-    .sizeTitle{
-        margin:  0 0 25px 0;
+  .color {
+    margin: 0 0 30px 0;
+    .colorTitle {
+      margin: 0 0 25px 0;
+    }
+  }
+  .material {
+    margin: 0 0 30px 0;
+    .materialTitle {
+      margin: 0 0 25px 0;
+    }
+  }
+  .size {
+    margin: 0 0 30px 0;
+    .sizeTitle {
+      margin: 0 0 25px 0;
     }
   }
 }

@@ -172,6 +172,17 @@
   transition: 1s;
 }
 
+@-webkit-keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -196,19 +207,24 @@
   opacity: 0;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .imgContainer {
-  animation: fadeInSlide 0.8s ease forwards;
+  -webkit-animation: fadeInSlide 0.8s ease forwards;
+          animation: fadeInSlide 0.8s ease forwards;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer h6 {
-  animation: fadeInSlide 0.8s ease forwards 0.2s;
+  -webkit-animation: fadeInSlide 0.8s ease forwards 0.2s;
+          animation: fadeInSlide 0.8s ease forwards 0.2s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer .carouselTitle {
-  animation: fadeInSlide 0.8s ease forwards 0.4s;
+  -webkit-animation: fadeInSlide 0.8s ease forwards 0.4s;
+          animation: fadeInSlide 0.8s ease forwards 0.4s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer p {
-  animation: fadeInSlide 0.8s ease forwards 0.6s;
+  -webkit-animation: fadeInSlide 0.8s ease forwards 0.6s;
+          animation: fadeInSlide 0.8s ease forwards 0.6s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer .carouselShopBtn {
-  animation: fadeInSlide 0.8s ease forwards 0.8s;
+  -webkit-animation: fadeInSlide 0.8s ease forwards 0.8s;
+          animation: fadeInSlide 0.8s ease forwards 0.8s;
 }
 .singleCarousel .imgContainer .carouselImg {
   width: 470px;
@@ -743,4 +759,5 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-}/*# sourceMappingURL=App.css.map */
+}
+/*# sourceMappingURL=App.css.map */

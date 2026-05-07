@@ -1,4 +1,4 @@
-@use './reset/reset';
+@use './abstracts/reset';
 
 //! components
 @use './components/topNavbar';
@@ -11,6 +11,8 @@
 @use './components/productList';
 @use './components/filtherSection';
 @use './components/sortBy';
+@use './components/singleProductPage';
 
 
+//! routes
 @use './routes/products';

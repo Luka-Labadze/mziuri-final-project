@@ -1,8 +1,11 @@
 import React from 'react'
+import SingleProductPage from '../components/SingleProductPage'
 
 function SingleProduct() {
   return (
-    <div>SingleProduct</div>
+    <>  
+      <SingleProductPage />
+    </>
   )
 }
 

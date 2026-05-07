@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import hotDealHeadset from "../assets/images/10003.png";
 import hotDealBG from "../assets/images/10032.jpg";
 import Headset from "../assets/images/10004.png";
@@ -12,8 +12,8 @@ import Speakers from "../assets/images/10030.png";
 import HotDealCarousel from "./HotDealCarousel";
 
 function HotDeal() {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
+  
   const slides = [
     {
       id: 1,
@@ -44,24 +44,10 @@ function HotDeal() {
       price: 89.95,
     },
   ];
-  const handleNextClick = () => {
-    if (currentSlideIndex < slides.length - 1) {
-      setCurrentSlideIndex(currentSlideIndex + 1);
-    } else {
-      setCurrentSlideIndex(0);
-    }
-  };
 
-  const handlePrevClick = () => {
-    if (currentSlideIndex > 0) {
-      setCurrentSlideIndex(currentSlideIndex - 1);
-    } else {
-      setCurrentSlideIndex(slides.length - 1);
-    }
-  };
 
-  const currentSlide = slides[currentSlideIndex];
-
+  
+  
   return (
     <div className="hotDeal">
       <div className="hDLeftSide">
@@ -72,8 +58,8 @@ function HotDeal() {
             <h6 className="hot-deal">Hot Deal</h6>
             <h1 className="hdLeftSideTitle">Kemioo DX24 Headphone</h1>
             <p>
-              Contrary to popular belief, Lorem Ipsum is not simply <br />{" "}
-              random text. It has roots in a piece of classical Latin <br />{" "}
+              Contrary to popular belief, Lorem Ipsum is not simply <br />
+              random text. It has roots in a piece of classical Latin <br />
               literature
             </p>
 
@@ -106,9 +92,7 @@ function HotDeal() {
       <div className="hdCarousel">
         <div className="hdCarouselWrapper">
           <HotDealCarousel
-            data={currentSlide}
-            onPrev={handlePrevClick}
-            onNext={handleNextClick}
+            slides={slides}
           />
         </div>
       </div>

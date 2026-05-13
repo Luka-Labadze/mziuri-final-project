@@ -1,0 +1,28 @@
+.singleProductPhotoCarousel {
+  width: 160px; 
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+
+  .thumbnailBox {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border: 2px solid #3355b1;
+    }
+  }
+
+  .photoCarouselImg {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+  }
+}

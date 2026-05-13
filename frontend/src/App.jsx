@@ -4,10 +4,13 @@ import Header from './layouts/Header'
 import Main from './layouts/Main'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {Contact, Products, SingleProduct, AboutUs, Home} from './routes/index.js'
+import LoaderScreen from './components/LoaderScreen.jsx'
+import { useEffect } from 'react'
+import { useLoader } from './context/LoaderContext.jsx'
 function App() {
-
+  
   return (
-    <>
+    <>  
     <BrowserRouter>
       <Header />
       <Main>
@@ -20,6 +23,7 @@ function App() {
         </Routes>
       </Main>
       <Footer />
+    <LoaderScreen />
     </BrowserRouter>
     </>
   )

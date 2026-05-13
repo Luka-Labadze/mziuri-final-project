@@ -12,7 +12,9 @@
 @use './components/filtherSection';
 @use './components/sortBy';
 @use './components/singleProductPage';
-
+@use './components/singleProductCarousel';
+@use './components/singleProductPhotoCarousel';
+@use './components/loaderScreen';
 
 //! routes
 @use './routes/products';

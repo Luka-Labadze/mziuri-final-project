@@ -172,17 +172,6 @@
   transition: 1s;
 }
 
-@-webkit-keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -207,24 +196,19 @@
   opacity: 0;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .imgContainer {
-  -webkit-animation: fadeInSlide 0.8s ease forwards;
-          animation: fadeInSlide 0.8s ease forwards;
+  animation: fadeInSlide 0.8s ease forwards;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer h6 {
-  -webkit-animation: fadeInSlide 0.8s ease forwards 0.2s;
-          animation: fadeInSlide 0.8s ease forwards 0.2s;
+  animation: fadeInSlide 0.8s ease forwards 0.2s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer .carouselTitle {
-  -webkit-animation: fadeInSlide 0.8s ease forwards 0.4s;
-          animation: fadeInSlide 0.8s ease forwards 0.4s;
+  animation: fadeInSlide 0.8s ease forwards 0.4s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer p {
-  -webkit-animation: fadeInSlide 0.8s ease forwards 0.6s;
-          animation: fadeInSlide 0.8s ease forwards 0.6s;
+  animation: fadeInSlide 0.8s ease forwards 0.6s;
 }
 .singleCarousel.carousel-slide.animated.active.slide-visible .textContainer .carouselShopBtn {
-  -webkit-animation: fadeInSlide 0.8s ease forwards 0.8s;
-          animation: fadeInSlide 0.8s ease forwards 0.8s;
+  animation: fadeInSlide 0.8s ease forwards 0.8s;
 }
 .singleCarousel .imgContainer .carouselImg {
   width: 470px;
@@ -747,6 +731,385 @@
   height: 38px;
 }
 
+.singleProductPage .thumbnail {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleProductPage .thumbnail .thumbnailMainImg {
+  width: 467px;
+  height: auto;
+  max-width: 460px;
+  display: block;
+}
+.singleProductPage .thumbnail .thumbnailCarousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  scale: 0.8;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .thumbnailCarouselWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .carouselContainer {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .singleProductPhotoCarousel {
+  min-width: 33.333%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .singleProductPhotoCarousel .thumbnailBox {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .singleProductPhotoCarousel .thumbnailBox:hover {
+  border: 2px solid #0638a1;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn.prev {
+  left: 0;
+  opacity: 0;
+  border: transparent;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn.prev:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  border: transparent;
+  color: white;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn.next {
+  right: 0;
+  opacity: 0;
+  border: transparent;
+}
+.singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn.next:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  border: transparent;
+  color: white;
+}
+.singleProductPage .thumbnail .thumbnailCarousel:hover .prev {
+  opacity: 1;
+  transition: 1s;
+}
+.singleProductPage .thumbnail .thumbnailCarousel:hover .next {
+  opacity: 1;
+  transition: 1s;
+}
+.singleProductPage .productDescription {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.singleProductPage .productDescription .type {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+.singleProductPage .productDescription .productTitle {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 10px 0 30px 0;
+  text-align: left;
+}
+.singleProductPage .productDescription .priceContainer .newPrice {
+  font-size: 28px;
+}
+.singleProductPage .productDescription .singleProductPageCarousel {
+  scale: 0.8;
+  position: relative;
+  width: 920px;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-90%);
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px 12px;
+  z-index: 10;
+  scale: 0.8;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.next {
+  font-size: 28px;
+  right: 8px;
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  transform: translateY(-90%) scale(0.7);
+  color: #0638a1;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  padding: 35px;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.next:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  color: white;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.prev {
+  font-size: 28px;
+  left: 8px;
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  transform: translateY(-90%) scale(0.7);
+  color: #0638a1;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  padding: 35px;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.prev:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  color: white;
+}
+.singleProductPage .productDescription .singleProductPageCarousel:hover .prev {
+  opacity: 1;
+  transition: 1s;
+}
+.singleProductPage .productDescription .singleProductPageCarousel:hover .next {
+  opacity: 1;
+  transition: 1s;
+}
+.singleProductPage .productDescription .singleProductPageCarousel .carouselContainer {
+  gap: 30px;
+  display: flex;
+}
+
+.singleProductCarousel {
+  width: 280px;
+  height: 458px;
+  border: 1px solid transparent;
+  background-color: #f7f8fa;
+  position: relative;
+}
+.singleProductCarousel .wishlist {
+  padding: 10px;
+  width: 14px;
+  height: auto;
+  font-size: 34px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.singleProductCarousel .wishlist:hover {
+  color: #0438a1;
+  transform: 0.3s ease-in;
+}
+.singleProductCarousel .titleAndPriceContainer {
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  line-height: 25px;
+}
+.singleProductCarousel .titleAndPriceContainer h3 {
+  font-size: 18px;
+  font-weight: 530;
+}
+.singleProductCarousel .titleAndPriceContainer p {
+  font-weight: 600;
+  font-size: 15px;
+}
+.singleProductCarousel .imgContainer {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.singleProductCarousel .imgContainer .hdCarouselImg {
+  width: 270px;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.8s ease-in-out;
+}
+.singleProductCarousel .shopNow {
+  display: block;
+  top: 35px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  width: 130px;
+  height: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 600;
+  color: rgb(69, 69, 69);
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+.singleProductCarousel:hover .shopNow {
+  opacity: 1;
+  transform: translateY(-30px);
+  transition: 0.9s;
+}
+.singleProductCarousel #image1 {
+  opacity: 1;
+  z-index: 1;
+}
+.singleProductCarousel #image2 {
+  opacity: 0;
+  z-index: 2;
+}
+.singleProductCarousel:hover #image1 {
+  opacity: 0;
+}
+.singleProductCarousel:hover #image2 {
+  opacity: 1;
+}
+
+.singleProductPageCarousel {
+  position: relative;
+}
+.singleProductPageCarousel .carouselWrapper {
+  width: 924px;
+  overflow: hidden;
+}
+.singleProductPageCarousel .carouselContainer {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.singleProductPhotoCarousel {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.singleProductPhotoCarousel .thumbnailBox {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.singleProductPhotoCarousel .thumbnailBox:hover {
+  border: 2px solid #3355b1;
+}
+.singleProductPhotoCarousel .photoCarouselImg {
+  max-width: 80%;
+  max-height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.loaderScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loaderScreen.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+.loaderScreen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+.loaderScreen .loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loaderScreen .loader::before, .loaderScreen .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 5px solid #5485e6;
+  animation: prixClipFix 2s linear infinite;
+}
+.loaderScreen .loader::after {
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #0438a1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
 .productsWrapper {
   display: flex;
   align-items: flex-start;
@@ -759,5 +1122,4 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-}
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,13 @@
+.singleProductPageCarousel {
+  position: relative;
+
+  .carouselWrapper {
+    width: 924px;         
+    overflow: hidden;    
+  }
+
+  .carouselContainer {
+    display: flex;
+    width: max-content;   
+  }
+}

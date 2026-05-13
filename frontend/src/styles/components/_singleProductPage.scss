@@ -1,4 +1,7 @@
 .singleProductPage {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
   .thumbnail {
     width: 33%;
     display: flex;
@@ -6,9 +9,9 @@
     align-items: center;
 
     .thumbnailMainImg {
-      width: 467px;
+      width: 597px;
       height: auto;
-      max-width: 460px;
+      max-width: 530px;
       display: block;
     }
 
@@ -100,34 +103,281 @@
   }
   .productDescription {
     font-family: "Source Sans Pro", sans-serif;
-    .type{
+    .type {
       text-align: left;
       font-size: 16px;
       font-weight: 400;
       color: rgb(34, 34, 34);
-
     }
-    .productTitle{
+    .productTitle {
       font-size: 24px;
       font-weight: 100;
       margin: 10px 0 30px 0;
       text-align: left;
     }
 
-    .priceContainer{
-        .newPrice{
-            font-size: 28px;
-        }
+    .priceContainer {
+      display: flex;
+      align-items: center;
+      .newPrice {
+        font-size: 28px;
+        font-weight: 550;
+        line-height: 20px;
+      }
+      .oldPrice {
+        margin-left: 8px;
+        color: rgb(85, 85, 85);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-decoration: line-through;
+      }
+      .discount {
+        padding: 2px 10px 2px 10px;
+        width: 91px;
+        margin-left: 10px;
+        border-radius: 20px;
+        border: 1px solid rgb(4, 56, 161);
+        background-color: rgb(4, 56, 161);
+        color: white;
+        height: auto;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+    .priceRatio {
+      margin: 1px 0 8px 3px;
+      font-size: 14px;
+      font-weight: 500;
+      height: 20px;
+      line-height: 20px;
+    }
+    .productCaption {
+      width: auto;
+      height: 75px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      color: rgb(34, 34, 34);
     }
 
+    .size {
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      width: 670px;
+      margin-bottom: 20px;
+      .sizeTitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+        margin-right: 20px;
+        padding-bottom: 5px;
+        line-height: 13px;
+      }
+      .sizeList {
+        width: 150px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
 
+    .color {
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      width: 670px;
+      margin-bottom: 20px;
+      .colorTitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+        margin-right: 20px;
+        padding-bottom: 5px;
+        line-height: 13px;
+      }
+      .colorList {
+        width: 150px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
 
+    .material {
+      margin-bottom: 10px;
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      width: 670px;
+      .materialTitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+        margin-right: 20px;
+        padding-bottom: 5px;
+        line-height: 13px;
+      }
+      .materialList {
+        width: 150px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
 
+    .quantityAndAddToCart {
+      margin-bottom: 20px;
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      .quantityList {
+        width: 340px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+
+        .quantityTitle {
+          font-size: 16px;
+          font-weight: 400;
+          color: rgb(34, 34, 34);
+          margin-right: 20px;
+          padding-bottom: 5px;
+          line-height: 13px;
+        }
+
+        .quantityInput {
+          padding: 11px;
+          width: 70px;
+          height: 44px;
+          border: 1px solid rgb(235, 235, 235);
+          color: rgb(122, 122, 122);
+        }
+
+        .addToCart {
+          width: 140px;
+          height: 40px;
+          border-radius: 25px;
+          background-color: #343434;
+          color: white;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          margin-left: 25px;
+
+          &:hover {
+            background-color: #0438a1;
+            transition: 0.8s;
+          }
+        }
+        .wishlist {
+          padding: 10px;
+          margin-left: 10px;
+          width: 14px;
+          height: auto;
+          font-size: 30px;
+          font-weight: 100;
+          cursor: pointer;
+          &:hover {
+            color: #0438a1;
+            transform: 0.3s ease-in;
+          }
+        }
+      }
+    }
+    .buyNow{
+      .buyNowBtn{
+        width: 321px;
+        padding: 14px 20px 14px 20px;
+        margin-right: 10px;
+        margin: 0 10px 20px 0;
+        border-radius: 25px;
+          background-color: #343434;
+          color: white;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #0438a1;
+            transition: 0.8s;
+          }
+      }
+    }
+    .tag {
+      margin-bottom: 5px;
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      width: 670px;
+      .tagTitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+        margin-right: 20px;
+        padding-bottom: 5px;
+        line-height: 13px;
+      }
+      .tagList {
+        width: 150px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
+
+    .share {
+      margin-bottom: 5px;
+      display: flex;
+      height: auto;
+      align-items: center;
+      text-align: left;
+      width: 100%;
+      .shareTitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+        margin-right: 20px;
+        padding-bottom: 5px;
+        line-height: 13px;
+      }
+      .shareList {
+        width: 350px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+      }
+    }
 
     .singleProductPageCarousel {
       scale: 0.8;
       position: relative;
       width: 920px;
+      transform: translateX(-12vh);
       .carouselBtn {
         position: absolute;
         top: 50%;

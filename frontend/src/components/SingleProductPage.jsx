@@ -16,22 +16,37 @@ function SingleProductPage() {
 
   const ITEMS_VISIBLE = 3;
 
- 
-   const handleNextClick = () => {
-  if (currentSlideIndex < slides.length - ITEMS_VISIBLE) {
-    setCurrentSlideIndex(currentSlideIndex + 1);
-  } else {
-    setCurrentSlideIndex(0);
-  }
-};
+  const handleNextClick = () => {
+    if (currentSlideIndex < slides.length - ITEMS_VISIBLE) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+    } else {
+      setCurrentSlideIndex(0);
+    }
+  };
 
-const handlePrevClick = () => {
-  if (currentSlideIndex > 0) {
-    setCurrentSlideIndex(currentSlideIndex - 1);
-  } else {
-    setCurrentSlideIndex(slides.length - ITEMS_VISIBLE);
-  }
-};
+  const handlePrevClick = () => {
+    if (currentSlideIndex > 0) {
+      setCurrentSlideIndex(currentSlideIndex - 1);
+    } else {
+      setCurrentSlideIndex(slides.length - ITEMS_VISIBLE);
+    }
+  };
+
+   const handlePhotoNextClick = () => {
+    if (currentSlideIndex < slides.length - ITEMS_VISIBLE) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+    } else {
+      setCurrentSlideIndex(0);
+    }
+  };
+
+  const handlePhotoPrevClick = () => {
+    if (currentSlideIndex > 0) {
+      setCurrentSlideIndex(currentSlideIndex - 1);
+    } else {
+      setCurrentSlideIndex(slides.length - ITEMS_VISIBLE);
+    }
+  };
 
   const slides = [
     {
@@ -124,13 +139,13 @@ const handlePrevClick = () => {
     <div className="singleProductPage">
       <div className="thumbnail">
         <div className="mainImg">
-          <img src={Camera} alt="mainImg" className="thumbnailMainImg"/>
+          <img src={Camera} alt="mainImg" className="thumbnailMainImg" />
         </div>
         <div className="thumbnailCarousel">
-          <button className="photoCarouselBtn prev" onClick={handlePrevClick}>
+          <button className="photoCarouselBtn prev" onClick={handlePhotoPrevClick}>
             &lt;
           </button>
-          <button className="photoCarouselBtn next" onClick={handleNextClick}>
+          <button className="photoCarouselBtn next" onClick={handlePhotoNextClick}>
             &gt;
           </button>
           <div className="thumbnailCarouselWrapper">
@@ -154,11 +169,11 @@ const handlePrevClick = () => {
         <h3 className="productTitle">{"Accusantium doloremque"}</h3>
         <div className="priceContainer">
           <span className="newPrice">{"$130.00"}</span>
-          <span className="oldPrice">{"oldPrice"}</span>
+          <span className="oldPrice">{"$150.00"}</span>
           <p className="discount">Save -13%</p>
         </div>
-        <p className="priceCaption">{"$130 / 2g"}</p>
-        <p>
+        <p className="priceRatio">{"$130 / 2g"}</p>
+        <p className="productCaption">
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered <br />
           alteration in some form, by injected humour, or randomised words which
@@ -166,18 +181,18 @@ const handlePrevClick = () => {
           believable.
         </p>
         <div className="size">
-          <p>Size :</p>
-          <ol className="sizeList">
+          <h4 className="sizeTitle">Size :</h4>
+          <ul className="sizeList">
             <li>Xl</li>
             <li>Ml</li>
             <li>Xs</li>
             <li>X</li>
             <li>L</li>
             <li>M</li>
-          </ol>
+          </ul>
         </div>
         <div className="color">
-          <p>Color :</p>
+          <p className="colorTitle">Color :</p>
           <ol className="colorList">
             <li>🟨</li>
             <li>⬛</li>
@@ -187,7 +202,7 @@ const handlePrevClick = () => {
           </ol>
         </div>
         <div className="material">
-          <p>Material :</p>
+          <p className="materialTitle">Material :</p>
           <ol className="materialList">
             <li>Partex</li>
             <li>Wood</li>
@@ -197,21 +212,24 @@ const handlePrevClick = () => {
         <div className="quantityAndAddToCart">
           <ol className="quantityList">
             <li>
-              <p>Quantity:</p>
+              <p className="quantityTitle">Quantity:</p>
             </li>
             <li>
-              <input type="number" defaultValue={1} />
+              <input type="number" defaultValue={1} className="quantityInput" />
             </li>
             <li>
-              <button>ADD TO CART</button>
+              <button className="addToCart">ADD TO CART</button>
             </li>
             <li>
               <p className="wishlist">♡</p>
             </li>
           </ol>
         </div>
+        <div className="buyNow">
+          <button className="buyNowBtn">BUY IT NOW</button>
+        </div>
         <div className="tag">
-          <p>Tag :</p>
+          <p className="tagTitle">Tag :</p>
           <ol className="tagList">
             <li>black,</li>
             <li>brown,</li>
@@ -219,7 +237,7 @@ const handlePrevClick = () => {
           </ol>
         </div>
         <div className="share">
-          <p>Share :</p>
+          <p className="shareTitle">Share :</p>
           <ol className="shareList">
             <li>Facebook</li>
             <li>Twitter</li>
@@ -230,6 +248,7 @@ const handlePrevClick = () => {
         <div className="checkout">
           <p>Guaranteed safe checkout</p>
         </div>
+
         <div className="singleProductPageCarousel">
           <button className="carouselBtn prev" onClick={handlePrevClick}>
             &lt;

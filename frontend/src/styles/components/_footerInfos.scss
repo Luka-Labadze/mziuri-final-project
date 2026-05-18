@@ -2,35 +2,35 @@
   height: auto;
   background-color: #0b0c0e;
   color: rgb(241, 241, 241);
-  padding-top: 60px;
+  padding-top: calc(60px * var(--app-scale));
   .footerInfosWrapper {
-    width: 1500px;
-  margin: auto;
+    width: calc(1500px * var(--app-scale));
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     .recentPostsContainer {
-      line-height: 20px;
-      width: 370px;
+      line-height: calc(20px * var(--app-scale));
+      width: calc(370px * var(--app-scale));
       .recentPostsTitle {
-        margin-bottom: 40px;
+        margin-bottom: calc(40px * var(--app-scale));
       }
       .recentPostsWrapper {
         display: flex;
         flex-wrap: wrap;
-        row-gap: 25px;
+        row-gap: calc(25px * var(--app-scale));
         .rpFirst {
           display: flex;
-          gap: 20px;
+          gap: calc(20px * var(--app-scale));
           .rpFirstTextWrapper {
             .rpFirstTitle {
               font-weight: 400;
-              font-size: 18px;
-              line-height: 30px;
+              font-size: calc(18px * var(--app-scale));
+              line-height: calc(30px * var(--app-scale));
             }
             .rpFirstDate {
-              line-height: 40px;
-              font-size: 14px;
+              line-height: calc(40px * var(--app-scale));
+              font-size: calc(14px * var(--app-scale));
               font-weight: 400;
             }
           }
@@ -38,16 +38,16 @@
 
         .rpSecond {
           display: flex;
-          gap: 20px;
+          gap: calc(20px * var(--app-scale));
           .rpSecondTextWrapper {
             .rpSecondTitle {
               font-weight: 400;
-              font-size: 18px;
-              line-height: 30px;
+              font-size: calc(25px * var(--app-scale));
+              line-height: calc(30px * var(--app-scale));
             }
             .rpSecondDate {
-              line-height: 40px;
-              font-size: 14px;
+              line-height: calc(40px * var(--app-scale));
+              font-size: calc(14px * var(--app-scale));
               font-weight: 400;
             }
           }
@@ -57,70 +57,70 @@
 
     .quickLinks {
       .quickLinkTitle {
-        margin-bottom: 40px;
-        font-size: 19px;
+        margin-bottom: calc(40px * var(--app-scale));
+        font-size: calc(19px * var(--app-scale));
       }
       .quickLinksCont {
         list-style-type: none;
-        line-height: 20px;
+        line-height: calc(20px * var(--app-scale));
         li {
-          line-height: 40px;
+          line-height: calc(40px * var(--app-scale));
         }
       }
     }
 
     .contactInfo {
       .contactInfoTitle {
-        margin-bottom: 40px;
-        font-size: 19px;
+        margin-bottom: calc(40px * var(--app-scale));
+        font-size: calc(19px * var(--app-scale));
       }
       .contactInfoWrapper {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        row-gap: 25px;
+        row-gap: calc(25px * var(--app-scale));
         .location {
           display: flex;
-          gap: 10px;
+          gap: calc(10px * var(--app-scale));
           .locationImg {
             width: auto;
-            height: 28px;
-            margin-top: 5px;
+            height: calc(28px * var(--app-scale));
+            margin-top: calc(5px * var(--app-scale));
           }
           .locationParagraph {
-            font-size: 17px;
+            font-size: calc(17px * var(--app-scale));
             font-weight: 400;
-            line-height: 28px;
+            line-height: calc(28px * var(--app-scale));
           }
         }
 
         .mail {
           display: flex;
-          gap: 20px;
+          gap: calc(20px * var(--app-scale));
           .mailImg {
             width: auto;
-            height: 20px;
-            margin-top: 5px;
+            height: calc(20px * var(--app-scale));
+            margin-top: calc(5px * var(--app-scale));
           }
           .mailParagraph {
-            font-size: 17px;
+            font-size: calc(17px * var(--app-scale));
             font-weight: 400;
-            line-height: 28px;
+            line-height: calc(28px * var(--app-scale));
           }
         }
 
         .phone {
           display: flex;
-          gap: 20px;
+          gap: calc(20px * var(--app-scale));
           .phoneImg {
             width: auto;
-            height: 20px;
-            margin-top: 5px;
+            height: calc(20px * var(--app-scale));
+            margin-top: calc(5px * var(--app-scale));
           }
           .phoneParagraph {
-            font-size: 17px;
+            font-size: calc(17px * var(--app-scale));
             font-weight: 400;
-            line-height: 28px;
+            line-height: calc(28px * var(--app-scale));
           }
         }
       }
@@ -128,7 +128,7 @@
 
     .newsLetter {
       .newsLetterTitle {
-        margin-bottom: 40px;
+        margin-bottom: calc(40px * var(--app-scale));
       }
 
       .newsLetterWrapper {
@@ -136,19 +136,19 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        row-gap: 25px;
+        row-gap: calc(25px * var(--app-scale));
 
         .newsLetterParagraph {
-          font-size: 18px;
+          font-size: calc(18px * var(--app-scale));
           font-weight: 400;
-          line-height: 40px;
+          line-height: calc(40px * var(--app-scale));
         }
         .newsLetterInpCont {
-          margin-bottom: 30px;
+          margin-bottom: calc(30px * var(--app-scale));
           .newsLetterInp {
-            width: 270px;
-            height: 45px;
-            border-radius: 5px;
+            width: calc(270px * var(--app-scale));
+            height: calc(45px * var(--app-scale));
+            border-radius: calc(5px * var(--app-scale));
           }
         }
       }

@@ -9,9 +9,9 @@
     align-items: center;
 
     .thumbnailMainImg {
-      width: 597px;
+      width: calc(597px * var(--app-scale));
       height: auto;
-      max-width: 530px;
+      max-width: calc(530px * var(--app-scale));
       display: block;
     }
 
@@ -38,11 +38,11 @@
 
         display: flex;
         justify-content: center;
-        padding: 5px;
+        padding: calc(5px * var(--app-scale));
 
         .thumbnailBox {
           width: 100%;
-          border: 1px solid #e0e0e0;
+          border: calc(1px * var(--app-scale)) solid #e0e0e0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -51,7 +51,7 @@
           transition: border-color 0.3s ease;
 
           &:hover {
-            border: 2px solid #0638a1;
+            border: calc(2px * var(--app-scale)) solid #0638a1;
           }
         }
       }
@@ -62,8 +62,8 @@
         top: 50%;
         transform: translateY(-50%);
         background: white;
-        border: 1px solid #ddd;
-        padding: 10px;
+        border: calc(1px * var(--app-scale)) solid #ddd;
+        padding: calc(10px * var(--app-scale));
         cursor: pointer;
 
         &.prev {
@@ -104,61 +104,61 @@
   .productDescription {
     .type {
       text-align: left;
-      font-size: 16px;
+      font-size: calc(16px * var(--app-scale));
       font-weight: 400;
       color: rgb(34, 34, 34);
     }
     .productTitle {
-      font-size: 24px;
+      font-size: calc(24px * var(--app-scale));
       font-weight: 100;
-      margin: 10px 0 30px 0;
+      margin: calc(10px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
       text-align: left;
     }
 
     .priceContainer {
       display: flex;
       align-items: center;
-      margin-bottom:10px;
+      margin-bottom: calc(10px * var(--app-scale));
       .newPrice {
-        font-size: 28px;
+        font-size: calc(28px * var(--app-scale));
         font-weight: 550;
-        line-height: 20px;
+        line-height: calc(20px * var(--app-scale));
       }
       .oldPrice {
-        margin-left: 8px;
+        margin-left: calc(8px * var(--app-scale));
         color: rgb(85, 85, 85);
-        font-size: 18px;
+        font-size: calc(18px * var(--app-scale));
         font-weight: 400;
-        line-height: 20px;
+        line-height: calc(20px * var(--app-scale));
         text-decoration: line-through;
       }
       .discount {
-        padding: 2px 10px 2px 10px;
-        width: 91px;
-        margin-left: 10px;
-        border-radius: 20px;
-        border: 1px solid rgb(4, 56, 161);
+        padding: calc(2px * var(--app-scale)) calc(10px * var(--app-scale)) calc(2px * var(--app-scale)) calc(10px * var(--app-scale));
+        width: calc(91px * var(--app-scale));
+        margin-left: calc(10px * var(--app-scale));
+        border-radius: calc(20px * var(--app-scale));
+        border: calc(1px * var(--app-scale)) solid rgb(4, 56, 161);
         background-color: rgb(4, 56, 161);
         color: white;
         height: auto;
         font-weight: 400;
-        font-size: 14px;
+        font-size: calc(14px * var(--app-scale));
       }
     }
     .priceRatio {
-      margin: 1px 0 35px 3px;
-      font-size: 14px;
+      margin: calc(1px * var(--app-scale)) 0 calc(35px * var(--app-scale)) calc(3px * var(--app-scale));
+      font-size: calc(14px * var(--app-scale));
       font-weight: 500;
-      height: 20px;
-      line-height: 20px;
+      height: calc(20px * var(--app-scale));
+      line-height: calc(20px * var(--app-scale));
     }
     .productCaption {
-      margin-bottom:30px;
+      margin-bottom: calc(30px * var(--app-scale));
       width: auto;
-      height: 75px;
-      font-size: 16px;
+      height: calc(75px * var(--app-scale));
+      font-size: calc(16px * var(--app-scale));
       font-weight: 400;
-      line-height: 20px;
+      line-height: calc(20px * var(--app-scale));
       color: rgb(34, 34, 34);
     }
 
@@ -167,19 +167,19 @@
       height: auto;
       align-items: center;
       text-align: left;
-      width: 670px;
-      margin-bottom: 30px;
+      width: calc(670px * var(--app-scale));
+      margin-bottom: calc(30px * var(--app-scale));
       .sizeTitle {
-        font-size: 16px;
+        font-size: calc(16px * var(--app-scale));
         font-weight: 400;
         color: rgb(34, 34, 34);
-        margin-right: 20px;
-        padding-bottom: 5px;
-        line-height: 13px;
+        margin-right: calc(20px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
+        line-height: calc(13px * var(--app-scale));
       }
       .sizeList {
-        width: 150px;
-        padding-bottom: 5px;
+        width: calc(150px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -193,96 +193,96 @@
       height: auto;
       align-items: center;
       text-align: left;
-      width: 670px;
-      margin-bottom: 30px;
+      width: calc(670px * var(--app-scale));
+      margin-bottom: calc(30px * var(--app-scale));
       .colorTitle {
-        font-size: 16px;
+        font-size: calc(16px * var(--app-scale));
         font-weight: 400;
         color: rgb(34, 34, 34);
-        margin-right: 20px;
-        padding-bottom: 5px;
-        line-height: 13px;
+        margin-right: calc(20px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
+        line-height: calc(13px * var(--app-scale));
       }
       .colorList {
-        width: 150px;
-        padding-bottom: 5px;
+        width: calc(150px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-around;
         align-items: center;
         list-style-type: none;
         cursor: pointer;
         .yellowBox{
-          width: 23px;
-          height: 21px;
+          width: calc(23px * var(--app-scale));
+          height: calc(21px * var(--app-scale));
           background-color: #FFFF00;
-          border: 1px solid black;
+          border: calc(1px * var(--app-scale)) solid black;
           scale: 0.8;
           
           &:active{
-            border: 1px solid black;
+            border: calc(1px * var(--app-scale)) solid black;
           }
         }
         .blackBox{
-          width: 23px;
-          height: 21px;
+          width: calc(23px * var(--app-scale));
+          height: calc(21px * var(--app-scale));
           background-color: black;
           scale: 0.8;
           
           &:active{
-            border: 1px solid black;
+            border: calc(1px * var(--app-scale)) solid black;
           }
         }
         .brownBox{
-          width: 23px;
-          height: 21px;
+          width: calc(23px * var(--app-scale));
+          height: calc(21px * var(--app-scale));
           background-color: #A52A2A;
           scale: 0.8;
           
           &:active{
-            border: 1px solid black;
+            border: calc(1px * var(--app-scale)) solid black;
           }
         }
         .grayBox{
-          width: 23px;
-          height: 21px;
+          width: calc(23px * var(--app-scale));
+          height: calc(21px * var(--app-scale));
           background-color: #808080;
           scale: 0.8;
           
           &:active{
-            border: 1px solid black;
+            border: calc(1px * var(--app-scale)) solid black;
           }
         }
         .greenBox{
-          width: 23px;
-          height: 21px;
+          width: calc(23px * var(--app-scale));
+          height: calc(21px * var(--app-scale));
           background-color: green;
           scale: 0.8;
           
           &:active{
-            border:1px double black;
+            border: calc(1px * var(--app-scale)) double black;
           }
         }
       }
     }
 
     .material {
-      margin-bottom: 20px;
+      margin-bottom: calc(20px * var(--app-scale));
       display: flex;
       height: auto;
       align-items: center;
       text-align: left;
-      width: 670px;
+      width: calc(670px * var(--app-scale));
       .materialTitle {
-        font-size: 16px;
+        font-size: calc(16px * var(--app-scale));
         font-weight: 400;
         color: rgb(34, 34, 34);
-        margin-right: 20px;
-        padding-bottom: 5px;
-        line-height: 13px;
+        margin-right: calc(20px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
+        line-height: calc(13px * var(--app-scale));
       }
       .materialList {
-        width: 150px;
-        padding-bottom: 5px;
+        width: calc(150px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -292,14 +292,14 @@
     }
 
     .quantityAndAddToCart {
-      margin-bottom: 25px;
+      margin-bottom: calc(25px * var(--app-scale));
       display: flex;
       height: auto;
       align-items: center;
       text-align: left;
       .quantityList {
-        width: 340px;
-        padding-bottom: 5px;
+        width: calc(340px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -307,32 +307,32 @@
         cursor: pointer;
 
         .quantityTitle {
-          font-size: 16px;
+          font-size: calc(16px * var(--app-scale));
           font-weight: 400;
           color: rgb(34, 34, 34);
-          margin-right: 20px;
-          padding-bottom: 5px;
-          line-height: 13px;
+          margin-right: calc(20px * var(--app-scale));
+          padding-bottom: calc(5px * var(--app-scale));
+          line-height: calc(13px * var(--app-scale));
         }
 
         .quantityInput {
-          padding: 11px;
-          width: 70px;
-          height: 44px;
-          border: 1px solid rgb(235, 235, 235);
+          padding: calc(11px * var(--app-scale));
+          width: calc(70px * var(--app-scale));
+          height: calc(44px * var(--app-scale));
+          border: calc(1px * var(--app-scale)) solid rgb(235, 235, 235);
           color: rgb(122, 122, 122);
         }
 
         .addToCart {
-          width: 140px;
-          height: 40px;
-          border-radius: 25px;
+          width: calc(140px * var(--app-scale));
+          height: calc(40px * var(--app-scale));
+          border-radius: calc(25px * var(--app-scale));
           background-color: #343434;
           color: white;
-          font-size: 13px;
+          font-size: calc(13px * var(--app-scale));
           font-weight: 600;
           cursor: pointer;
-          margin-left: 25px;
+          margin-left: calc(25px * var(--app-scale));
 
           &:hover {
             background-color: #0438a1;
@@ -340,11 +340,11 @@
           }
         }
         .wishlist {
-          padding: 10px;
-          margin-left: 10px;
-          width: 14px;
+          padding: calc(10px * var(--app-scale));
+          margin-left: calc(10px * var(--app-scale));
+          width: calc(14px * var(--app-scale));
           height: auto;
-          font-size: 30px;
+          font-size: calc(30px * var(--app-scale));
           font-weight: 100;
           cursor: pointer;
           &:hover {
@@ -355,16 +355,16 @@
       }
     }
     .buyNow{
-      margin-bottom:25px;
+      margin-bottom: calc(25px * var(--app-scale));
       .buyNowBtn{
-        width: 321px;
-        padding: 14px 20px 14px 20px;
-        margin-right: 10px;
-        margin: 0 10px 20px 0;
-        border-radius: 25px;
+        width: calc(321px * var(--app-scale));
+        padding: calc(14px * var(--app-scale)) calc(20px * var(--app-scale)) calc(14px * var(--app-scale)) calc(20px * var(--app-scale));
+        margin-right: calc(10px * var(--app-scale));
+        margin: 0 calc(10px * var(--app-scale)) calc(20px * var(--app-scale)) 0;
+        border-radius: calc(25px * var(--app-scale));
           background-color: #343434;
           color: white;
-          font-size: 13px;
+          font-size: calc(13px * var(--app-scale));
           font-weight: 600;
           cursor: pointer;
 
@@ -375,23 +375,23 @@
       }
     }
     .tag {
-      margin-bottom: 20px;
+      margin-bottom: calc(20px * var(--app-scale));
       display: flex;
       height: auto;
       align-items: center;
       text-align: left;
-      width: 670px;
+      width: calc(670px * var(--app-scale));
       .tagTitle {
-        font-size: 16px;
+        font-size: calc(16px * var(--app-scale));
         font-weight: 400;
         color: rgb(34, 34, 34);
-        margin-right: 20px;
-        padding-bottom: 5px;
-        line-height: 13px;
+        margin-right: calc(20px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
+        line-height: calc(13px * var(--app-scale));
       }
       .tagList {
-        width: 150px;
-        padding-bottom: 5px;
+        width: calc(150px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -401,23 +401,23 @@
     }
 
     .share {
-      margin-bottom: 20px;
+      margin-bottom: calc(20px * var(--app-scale));
       display: flex;
       height: auto;
       align-items: center;
       text-align: left;
       width: 100%;
       .shareTitle {
-        font-size: 16px;
+        font-size: calc(16px * var(--app-scale));
         font-weight: 400;
         color: rgb(34, 34, 34);
-        margin-right: 20px;
-        padding-bottom: 5px;
-        line-height: 13px;
+        margin-right: calc(20px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
+        line-height: calc(13px * var(--app-scale));
       }
       .shareList {
-        width: 350px;
-        padding-bottom: 5px;
+        width: calc(350px * var(--app-scale));
+        padding-bottom: calc(5px * var(--app-scale));
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -429,38 +429,38 @@
     .singleProductPageCarousel {
       scale: 0.8;
       position: relative;
-      width: 920px;
+      width: calc(920px * var(--app-scale));
       transform: translateX(-12vh);
       .carouselBtn {
         position: absolute;
         top: 50%;
         transform: translateY(-90%);
         background: white;
-        border: 1px solid #ccc;
+        border: calc(1px * var(--app-scale)) solid #ccc;
         cursor: pointer;
-        font-size: 18px;
-        padding: 8px 12px;
+        font-size: calc(18px * var(--app-scale));
+        padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
         z-index: 10;
         scale: 0.8;
         &.next {
-          font-size: 28px;
-          right: 8px;
+          font-size: calc(28px * var(--app-scale));
+          right: calc(8px * var(--app-scale));
           opacity: 0;
           position: absolute;
           z-index: 10;
           transform: translateY(-90%) scale(0.7);
           color: #0638a1;
           background: white;
-          width: 50px;
-          height: 50px;
+          width: calc(50px * var(--app-scale));
+          height: calc(50px * var(--app-scale));
           border-radius: 50%;
-          border: 1px solid transparent;
+          border: calc(1px * var(--app-scale)) solid transparent;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           transition: 0.3s;
-          padding: 35px;
+          padding: calc(35px * var(--app-scale));
           &:hover {
             transition: 1s;
             background-color: #0638a1;
@@ -469,24 +469,24 @@
         }
 
         &.prev {
-          font-size: 28px;
-          left: 8px;
+          font-size: calc(28px * var(--app-scale));
+          left: calc(8px * var(--app-scale));
           opacity: 0;
           position: absolute;
           z-index: 10;
           transform: translateY(-90%) scale(0.7);
           color: #0638a1;
           background: white;
-          width: 50px;
-          height: 50px;
+          width: calc(50px * var(--app-scale));
+          height: calc(50px * var(--app-scale));
           border-radius: 50%;
-          border: 1px solid transparent;
+          border: calc(1px * var(--app-scale)) solid transparent;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           transition: 0.3s;
-          padding: 35px;
+          padding: calc(35px * var(--app-scale));
           &:hover {
             transition: 1s;
             background-color: #0638a1;
@@ -505,7 +505,7 @@
       }
 
       .carouselContainer {
-        gap: 30px;
+        gap: calc(30px * var(--app-scale));
         display: flex;
       }
     }
@@ -513,16 +513,16 @@
 }
 
 .singleProductCarousel {
-  width: 280px;
-  height: 458px;
-  border: 1px solid transparent;
+  width: calc(280px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
   .wishlist {
-    padding: 10px;
-    width: 14px;
+    padding: calc(10px * var(--app-scale));
+    width: calc(14px * var(--app-scale));
     height: auto;
-    font-size: 34px;
+    font-size: calc(34px * var(--app-scale));
     font-weight: 400;
     cursor: pointer;
     &:hover {
@@ -532,28 +532,27 @@
   }
 
   .titleAndPriceContainer {
-    
     text-align: center;
-    line-height: 25px;
+    line-height: calc(25px * var(--app-scale));
     h3 {
-      font-size: 18px;
+      font-size: calc(18px * var(--app-scale));
       font-weight: 530;
     }
     p {
       font-weight: 600;
-      font-size: 15px;
+      font-size: calc(15px * var(--app-scale));
     }
   }
 
   .imgContainer {
     position: relative;
-    width: 270px;
-    height: 270px;
+    width: calc(270px * var(--app-scale));
+    height: calc(270px * var(--app-scale));
     margin: auto;
     user-select: none;
     .hdCarouselImg {
-      width: 270px;
-      height: 270px;
+      width: calc(270px * var(--app-scale));
+      height: calc(270px * var(--app-scale));
       position: absolute;
       top: 0;
       left: 0;
@@ -563,12 +562,12 @@
 
   .shopNow {
     display: block;
-    top: 35px;
+    top: calc(35px * var(--app-scale));
     margin: auto;
     text-align: center;
     position: relative;
-    width: 130px;
-    height: 35px;
+    width: calc(130px * var(--app-scale));
+    height: calc(35px * var(--app-scale));
     cursor: pointer;
     user-select: none;
     font-weight: 600;
@@ -579,7 +578,7 @@
 
   &:hover .shopNow {
     opacity: 1;
-    transform: translateY(-30px);
+    transform: translateY(calc(-30px * var(--app-scale)));
     transition: 0.9s;
   }
 

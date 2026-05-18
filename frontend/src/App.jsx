@@ -2,16 +2,20 @@ import './styles/App.scss'
 import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import Main from './layouts/Main'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import {Contact, Products, SingleProduct, AboutUs, Home} from './routes/index.js'
 import LoaderScreen from './components/LoaderScreen.jsx'
 import { useEffect } from 'react'
 import { useLoader } from './context/LoaderContext.jsx'
+import useScrollTop from './hooks/useScrollTop.jsx'
+import useAppScale from './hooks/useAppScale.jsx'
 function App() {
+
   
+  useAppScale()
+  useScrollTop()
   return (
     <>  
-    <BrowserRouter>
       <Header />
       <Main>
         <Routes>
@@ -24,7 +28,6 @@ function App() {
       </Main>
       <Footer />
     <LoaderScreen />
-    </BrowserRouter>
     </>
   )
 }

@@ -2,7 +2,7 @@
   position: relative;
 
   .carouselWrapper {
-    width: 924px;         
+    width: calc(924px * var(--app-scale));         
     overflow: hidden;    
   }
 

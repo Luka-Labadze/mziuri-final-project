@@ -1,13 +1,13 @@
 .singleProductPhotoCarousel {
-  width: 160px; 
+  width: calc(160px * var(--app-scale)); 
   flex-shrink: 0;
   display: flex;
   justify-content: center;
 
   .thumbnailBox {
-    width: 150px;
-    height: 150px;
-    border: 1px solid #e0e0e0;
+    width: calc(150px * var(--app-scale));
+    height: calc(150px * var(--app-scale));
+    border: calc(1px * var(--app-scale)) solid #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     transition: border-color 0.3s ease;
 
     &:hover {
-      border: 2px solid #3355b1;
+      border: calc(2px * var(--app-scale)) solid #3355b1;
     }
   }
 

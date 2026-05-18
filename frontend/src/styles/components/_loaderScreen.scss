@@ -13,18 +13,18 @@
   transition: opacity 0.5s ease, visibility 0.5s ease;
 
   &.fade-in {
-        opacity: 1;
-        visibility: visible;
-    }
+    opacity: 1;
+    visibility: visible;
+  }
 
-    &.fade-out {
-        opacity: 0;
-        visibility: hidden;
-    }
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
     
   .loader {
-    width: 48px;
-    height: 48px;
+    width: calc(48px * var(--app-scale));
+    height: calc(48px * var(--app-scale));
     border-radius: 50%;
     position: relative;
     animation: rotate 1s linear infinite;
@@ -36,7 +36,7 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      border: 5px solid #5485e6;
+      border: calc(5px * var(--app-scale)) solid #5485e6;
       animation: prixClipFix 2s linear infinite;
     }
 

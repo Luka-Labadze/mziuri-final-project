@@ -1,7 +1,7 @@
 .productSingle {
-  width: 308px;
-  height: 458px;
-  border: 1px solid transparent;
+  width: calc(308px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
   overflow: hidden;
@@ -13,10 +13,10 @@
 
   .wishlist {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: calc(15px * var(--app-scale));
+    left: calc(15px * var(--app-scale));
     z-index: 10;
-    font-size: 24px;
+    font-size: calc(24px * var(--app-scale));
     cursor: pointer;
     transition:
       color 0.3s ease,
@@ -30,9 +30,9 @@
 
   .imgContainer {
     position: relative;
-    width: 270px;
-    height: 270px;
-    margin: 40px auto 20px;
+    width: calc(270px * var(--app-scale));
+    height: calc(270px * var(--app-scale));
+    margin: calc(40px * var(--app-scale)) auto calc(20px * var(--app-scale));
     user-select: none;
 
     .productImg {
@@ -66,13 +66,12 @@
   }
 
   .titleAndPriceContainer {
-    
     text-align: center;
-    line-height: 25px;
-    padding: 0 10px;
+    line-height: calc(25px * var(--app-scale));
+    padding: 0 calc(10px * var(--app-scale));
 
     h3 {
-      font-size: 16px;
+      font-size: calc(16px * var(--app-scale));
       font-weight: 500;
       margin: 0;
       color: #333;
@@ -80,24 +79,24 @@
 
     p {
       font-weight: 600;
-      font-size: 15px;
-      margin: 5px 0;
+      font-size: calc(15px * var(--app-scale));
+      margin: calc(5px * var(--app-scale)) 0;
     }
   }
 
   .addToCart {
     display: block;
-    margin: 20px auto 0;
-    width: 130px;
-    height: 40px;
+    margin: calc(20px * var(--app-scale)) auto 0;
+    width: calc(130px * var(--app-scale));
+    height: calc(40px * var(--app-scale));
     cursor: pointer;
     font-weight: 700;
     color: black;
-    font-size: 10px;
+    font-size: calc(10px * var(--app-scale));
     background-color: #f7f8f9;
-    border: 1px solid black;
+    border: calc(1px * var(--app-scale)) solid black;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(calc(20px * var(--app-scale)));
     transition: all 0.4s ease;
   }
 

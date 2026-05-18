@@ -14,56 +14,56 @@
 
 .topNavbar {
   width: 100%;
-  height: 155px;
+  height: calc(155px * var(--app-scale));
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 180px;
+  padding: 0 calc(180px * var(--app-scale));
 }
 .topNavbar .ponnoLogo {
-  width: 150px;
-  height: 30px;
+  width: calc(150px * var(--app-scale));
+  height: calc(30px * var(--app-scale));
 }
 .topNavbar .searchWrap {
   position: relative;
-  width: 570px;
-  height: 55px;
+  width: calc(570px * var(--app-scale));
+  height: calc(55px * var(--app-scale));
 }
 .topNavbar .searchWrap .searchBar {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
-  padding: 0 50px 0 30px;
-  border: 1px solid rgb(4, 56, 161);
-  font-size: 14px;
+  border-radius: calc(15px * var(--app-scale));
+  padding: 0 calc(50px * var(--app-scale)) 0 calc(30px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid rgb(4, 56, 161);
+  font-size: calc(14px * var(--app-scale));
   color: #999;
   outline: none;
   box-sizing: border-box;
 }
 .topNavbar .searchWrap .searchIcon {
   position: absolute;
-  right: 16px;
+  right: calc(16px * var(--app-scale));
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
+  width: calc(18px * var(--app-scale));
+  height: calc(18px * var(--app-scale));
   cursor: pointer;
 }
 .topNavbar .cart {
-  width: 125px;
-  height: 54px;
+  width: calc(125px * var(--app-scale));
+  height: calc(54px * var(--app-scale));
   background-color: rgb(4, 56, 161);
-  border-radius: 5px;
+  border-radius: calc(5px * var(--app-scale));
   font-weight: 400;
-  font-size: 14px;
-  padding: 5px;
+  font-size: calc(14px * var(--app-scale));
+  padding: calc(5px * var(--app-scale));
   cursor: pointer;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .topNavbar .cart .cartLogo {
-  width: 35px;
-  height: 30px;
+  width: calc(35px * var(--app-scale));
+  height: calc(30px * var(--app-scale));
 }
 .topNavbar .cart .cartFlexbox {
   display: flex;
@@ -73,7 +73,7 @@
 
 .bottomNavbar {
   width: 100%;
-  height: 70px;
+  height: calc(70px * var(--app-scale));
   background-color: rgb(4, 56, 161);
   display: flex;
   justify-content: space-around;
@@ -83,34 +83,34 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 55px;
+  gap: calc(55px * var(--app-scale));
 }
 .bottomNavbar .navWrapper .links {
   color: rgb(244, 246, 255);
-  padding: 20px 0 20px 0;
+  padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .bottomNavbar .authWrapper {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 30px;
+  gap: calc(30px * var(--app-scale));
 }
 .bottomNavbar .authWrapper .auth {
   color: rgb(244, 246, 255);
-  padding: 20px 0 20px 0;
+  padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .carousel {
   width: 100%;
-  height: 580px;
+  height: calc(580px * var(--app-scale));
   position: relative;
   overflow: hidden;
 }
@@ -132,7 +132,7 @@
   justify-content: center;
 }
 .carousel .singleCarouselContainer {
-  transform: translate(20px, 50px);
+  transform: translate(calc(20px * var(--app-scale)), calc(50px * var(--app-scale)));
   flex: 1;
   display: flex;
   justify-content: center;
@@ -145,20 +145,20 @@
   scale: 0.8;
   color: #0638a1;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  padding: 35px;
+  padding: calc(35px * var(--app-scale));
 }
 .carousel .carouselPrevClick .carouselBtns,
 .carousel .carouselNextClick .carouselBtns {
-  font-size: 30px;
+  font-size: calc(30px * var(--app-scale));
   font-weight: bold;
   line-height: 1;
 }
@@ -168,10 +168,10 @@
   color: white;
 }
 .carousel .carouselPrevClick {
-  left: 20px;
+  left: calc(20px * var(--app-scale));
 }
 .carousel .singleCarouselContainer + .carouselPrevClick {
-  right: 20px;
+  right: calc(20px * var(--app-scale));
   left: auto;
 }
 .carousel:hover .carouselPrevClick,
@@ -183,7 +183,7 @@
 @keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(calc(30px * var(--app-scale)));
   }
   to {
     opacity: 1;
@@ -194,7 +194,7 @@
   display: flex;
   align-items: center;
   margin: auto;
-  gap: 80px;
+  gap: calc(80px * var(--app-scale));
 }
 .singleCarousel .imgContainer,
 .singleCarousel .textContainer h6,
@@ -219,7 +219,7 @@
   animation: fadeInSlide 0.8s ease forwards 0.8s;
 }
 .singleCarousel .imgContainer .carouselImg {
-  width: 470px;
+  width: calc(470px * var(--app-scale));
   height: auto;
 }
 .singleCarousel .textContainer {
@@ -227,45 +227,45 @@
 }
 .singleCarousel .textContainer h6 {
   font-weight: 600;
-  font-size: 18px;
-  line-height: 34px;
+  font-size: calc(18px * var(--app-scale));
+  line-height: calc(34px * var(--app-scale));
 }
 .singleCarousel .textContainer .carouselTitle {
-  font-size: 38px;
-  margin: 15px 0 20px 0;
+  font-size: calc(38px * var(--app-scale));
+  margin: calc(15px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
 }
 .singleCarousel .textContainer p {
-  line-height: 23px;
-  margin-bottom: 20px;
+  line-height: calc(23px * var(--app-scale));
+  margin-bottom: calc(20px * var(--app-scale));
 }
 .singleCarousel .textContainer .carouselShopBtn {
-  width: 149px;
-  height: 44px;
-  border-radius: 5px;
+  width: calc(149px * var(--app-scale));
+  height: calc(44px * var(--app-scale));
+  border-radius: calc(5px * var(--app-scale));
   color: white;
   background-color: #0438a1;
-  border: 1px solid #0438a1;
+  border: calc(1px * var(--app-scale)) solid #0438a1;
   cursor: pointer;
   transition: 0.3s;
 }
 .singleCarousel .textContainer .carouselShopBtn:hover {
   background-color: #0279d1;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
 }
 
 .hotDeal {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  padding: 80px 0 80px 0;
+  gap: calc(30px * var(--app-scale));
+  padding: calc(80px * var(--app-scale)) 0 calc(80px * var(--app-scale)) 0;
 }
 .hotDeal .hDLeftSide {
-  width: 870px;
-  height: 460px;
+  width: calc(870px * var(--app-scale));
+  height: calc(460px * var(--app-scale));
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: calc(8px * var(--app-scale));
 }
 .hotDeal .hDLeftSide .hdBgImg {
   position: absolute;
@@ -284,7 +284,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 60px;
+  padding: 0 calc(60px * var(--app-scale));
 }
 .hotDeal .hDLeftSide .hDContent .textContainer {
   flex: 1;
@@ -292,31 +292,31 @@
 }
 .hotDeal .hDLeftSide .hDContent .textContainer .hotDealExpireDate {
   float: left;
-  margin: 35px 0 0 0;
+  margin: calc(35px * var(--app-scale)) 0 0 0;
 }
 .hotDeal .hDLeftSide .hDContent .textContainer .hotDealExpireDate .expiration {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  font-size: 20px;
+  gap: calc(30px * var(--app-scale));
+  font-size: calc(20px * var(--app-scale));
   font-weight: 600;
 }
 .hotDeal .hDLeftSide .hDContent .textContainer .hotDealExpireDate .timespan {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  font-size: 16px;
+  gap: calc(20px * var(--app-scale));
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
-  line-height: 14px;
+  line-height: calc(14px * var(--app-scale));
 }
 .hotDeal .hDLeftSide .hDContent .textContainer .hot-deal {
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: calc(10px * var(--app-scale));
 }
 .hotDeal .hDLeftSide .hDContent .textContainer .hdLeftSideTitle {
-  font-size: 38px;
-  margin-bottom: 15px;
+  font-size: calc(38px * var(--app-scale));
+  margin-bottom: calc(15px * var(--app-scale));
   font-weight: 500;
 }
 .hotDeal .hDLeftSide .hDContent .imgContainer {
@@ -325,14 +325,14 @@
   justify-content: flex-end;
 }
 .hotDeal .hDLeftSide .hDContent .imgContainer .hotDealHeadset {
-  width: 350px;
+  width: calc(350px * var(--app-scale));
   height: auto;
   transform: rotate(-10deg);
   scale: 0.9;
 }
 .hotDeal .hdCarousel {
-  width: 348px;
-  height: 438px;
+  width: calc(348px * var(--app-scale));
+  height: calc(438px * var(--app-scale));
 }
 .hotDeal .hdCarousel .hdCarouselWrapper {
   display: flex;
@@ -342,9 +342,9 @@
 }
 
 .hotDealCarousel {
-  width: 308px;
-  height: 458px;
-  border: 1px solid transparent;
+  width: calc(308px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
 }
@@ -353,31 +353,31 @@
   top: 50%;
   transform: translateY(-90%);
   background: white;
-  border: 1px solid #ccc;
+  border: calc(1px * var(--app-scale)) solid #ccc;
   cursor: pointer;
-  font-size: 18px;
-  padding: 8px 12px;
+  font-size: calc(18px * var(--app-scale));
+  padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
   z-index: 10;
 }
 .hotDealCarousel .carouselBtn.next {
-  font-size: 28px;
-  right: 8px;
+  font-size: calc(28px * var(--app-scale));
+  right: calc(8px * var(--app-scale));
   opacity: 0;
   position: absolute;
   z-index: 10;
   scale: 0.7;
   color: #0638a1;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  padding: 35px;
+  padding: calc(35px * var(--app-scale));
 }
 .hotDealCarousel .carouselBtn.next:hover {
   transition: 1s;
@@ -385,24 +385,24 @@
   color: white;
 }
 .hotDealCarousel .carouselBtn.prev {
-  font-size: 28px;
-  left: 8px;
+  font-size: calc(28px * var(--app-scale));
+  left: calc(8px * var(--app-scale));
   opacity: 0;
   position: absolute;
   z-index: 10;
   scale: 0.7;
   color: #0638a1;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  padding: 35px;
+  padding: calc(35px * var(--app-scale));
 }
 .hotDealCarousel .carouselBtn.prev:hover {
   transition: 1s;
@@ -410,10 +410,10 @@
   color: white;
 }
 .hotDealCarousel .wishlist {
-  padding: 10px;
-  width: 14px;
+  padding: calc(10px * var(--app-scale));
+  width: calc(14px * var(--app-scale));
   height: auto;
-  font-size: 34px;
+  font-size: calc(34px * var(--app-scale));
   font-weight: 400;
   cursor: pointer;
 }
@@ -423,28 +423,28 @@
 }
 .hotDealCarousel .titleAndPriceContainer {
   text-align: center;
-  line-height: 25px;
+  line-height: calc(25px * var(--app-scale));
 }
 .hotDealCarousel .titleAndPriceContainer h3 {
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   font-weight: 530;
 }
 .hotDealCarousel .titleAndPriceContainer p {
   font-weight: 600;
-  font-size: 15px;
+  font-size: calc(15px * var(--app-scale));
 }
 .hotDealCarousel .imgContainer {
   position: relative;
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   margin: auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 .hotDealCarousel .imgContainer .hdCarouselImg {
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   position: absolute;
   top: 0;
   left: 0;
@@ -452,12 +452,12 @@
 }
 .hotDealCarousel .shopNow {
   display: block;
-  top: 35px;
+  top: calc(35px * var(--app-scale));
   margin: auto;
   text-align: center;
   position: relative;
-  width: 130px;
-  height: 35px;
+  width: calc(130px * var(--app-scale));
+  height: calc(35px * var(--app-scale));
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -491,14 +491,14 @@
 }
 .hotDealCarousel:hover .shopNow {
   opacity: 1;
-  transform: translateY(-30px);
+  transform: translateY(calc(-30px * var(--app-scale)));
   transition: 0.9s;
 }
 
 .productSingle {
-  width: 308px;
-  height: 458px;
-  border: 1px solid transparent;
+  width: calc(308px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
   overflow: hidden;
@@ -509,10 +509,10 @@
 }
 .productSingle .wishlist {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: calc(15px * var(--app-scale));
+  left: calc(15px * var(--app-scale));
   z-index: 10;
-  font-size: 24px;
+  font-size: calc(24px * var(--app-scale));
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -522,9 +522,9 @@
 }
 .productSingle .imgContainer {
   position: relative;
-  width: 270px;
-  height: 270px;
-  margin: 40px auto 20px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
+  margin: calc(40px * var(--app-scale)) auto calc(20px * var(--app-scale));
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -555,33 +555,33 @@
 }
 .productSingle .titleAndPriceContainer {
   text-align: center;
-  line-height: 25px;
-  padding: 0 10px;
+  line-height: calc(25px * var(--app-scale));
+  padding: 0 calc(10px * var(--app-scale));
 }
 .productSingle .titleAndPriceContainer h3 {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 500;
   margin: 0;
   color: #333;
 }
 .productSingle .titleAndPriceContainer p {
   font-weight: 600;
-  font-size: 15px;
-  margin: 5px 0;
+  font-size: calc(15px * var(--app-scale));
+  margin: calc(5px * var(--app-scale)) 0;
 }
 .productSingle .addToCart {
   display: block;
-  margin: 20px auto 0;
-  width: 130px;
-  height: 40px;
+  margin: calc(20px * var(--app-scale)) auto 0;
+  width: calc(130px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
   cursor: pointer;
   font-weight: 700;
   color: black;
-  font-size: 10px;
+  font-size: calc(10px * var(--app-scale));
   background-color: #f7f8f9;
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(calc(20px * var(--app-scale)));
   transition: all 0.4s ease;
 }
 .productSingle:hover .addToCart {
@@ -592,51 +592,51 @@
 .productList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
   width: 100%;
-  margin-top: 25px;
+  margin-top: calc(25px * var(--app-scale));
 }
 
 .filther {
-  width: 300px;
+  width: calc(300px * var(--app-scale));
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
   margin-left: 5%;
   margin-top: 3.5%;
-  border: 1px dashed rgb(226, 224, 224);
-  padding: 25px;
+  border: calc(1px * var(--app-scale)) dashed rgb(226, 224, 224);
+  padding: calc(25px * var(--app-scale));
 }
 .filther ol {
   display: flex;
-  gap: 15px;
+  gap: calc(15px * var(--app-scale));
 }
 .filther h2 {
-  font-size: 20px;
+  font-size: calc(20px * var(--app-scale));
 }
 .filther label {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   cursor: pointer;
 }
 .filther .selected {
   display: inline-block;
-  border: 1px dashed rgb(196, 196, 196);
-  padding: 2px 10px;
-  margin: 0 0 25px 0;
+  border: calc(1px * var(--app-scale)) dashed rgb(196, 196, 196);
+  padding: calc(2px * var(--app-scale)) calc(10px * var(--app-scale));
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .availability {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .availability .availabilityTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .price {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .price .priceTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .price .bottomPrice {
   display: flex;
@@ -646,54 +646,54 @@
 .filther .price .bottomPrice .leftSide {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 0 0 30px 0;
+  gap: calc(10px * var(--app-scale));
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .price .bottomPrice .priceUnits {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
 }
 .filther .price .bottomPrice .priceInput {
-  width: 70px;
-  height: 42px;
+  width: calc(70px * var(--app-scale));
+  height: calc(42px * var(--app-scale));
 }
 .filther .productType {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .productType .productTypeTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .brand {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .brand .brandTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .brand .brandList {
-  margin: 0 0 15px 0;
+  margin: 0 0 calc(15px * var(--app-scale)) 0;
 }
 .filther .color {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .color .colorTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .material {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .material .materialTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 .filther .size {
-  margin: 0 0 30px 0;
+  margin: 0 0 calc(30px * var(--app-scale)) 0;
 }
 .filther .size .sizeTitle {
-  margin: 0 0 25px 0;
+  margin: 0 0 calc(25px * var(--app-scale)) 0;
 }
 
 .sortBy {
   width: 100%;
-  height: 70px;
+  height: calc(70px * var(--app-scale));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -701,20 +701,20 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  padding: 10px;
-  margin-top: 45px;
+  border-radius: calc(5px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid lightgrey;
+  padding: calc(10px * var(--app-scale));
+  margin-top: calc(45px * var(--app-scale));
 }
 .sortBy .gridView {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
   cursor: pointer;
 }
 .sortBy .gridView .gridImg {
-  width: 25px;
+  width: calc(25px * var(--app-scale));
 }
 .sortBy .gridView .gridImg2 {
   font-weight: 580;
@@ -722,11 +722,11 @@
 .sortBy .sorting {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .sortBy .sorting #sorting {
-  width: 288px;
-  height: 38px;
+  width: calc(288px * var(--app-scale));
+  height: calc(38px * var(--app-scale));
 }
 
 .singleProductPage {
@@ -741,9 +741,9 @@
   align-items: center;
 }
 .singleProductPage .thumbnail .thumbnailMainImg {
-  width: 597px;
+  width: calc(597px * var(--app-scale));
   height: auto;
-  max-width: 530px;
+  max-width: calc(530px * var(--app-scale));
   display: block;
 }
 .singleProductPage .thumbnail .thumbnailCarousel {
@@ -766,11 +766,11 @@
   flex-shrink: 0;
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: calc(5px * var(--app-scale));
 }
 .singleProductPage .thumbnail .thumbnailCarousel .singleProductPhotoCarousel .thumbnailBox {
   width: 100%;
-  border: 1px solid #e0e0e0;
+  border: calc(1px * var(--app-scale)) solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -779,7 +779,7 @@
   transition: border-color 0.3s ease;
 }
 .singleProductPage .thumbnail .thumbnailCarousel .singleProductPhotoCarousel .thumbnailBox:hover {
-  border: 2px solid #0638a1;
+  border: calc(2px * var(--app-scale)) solid #0638a1;
 }
 .singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn {
   position: absolute;
@@ -787,8 +787,8 @@
   top: 50%;
   transform: translateY(-50%);
   background: white;
-  border: 1px solid #ddd;
-  padding: 10px;
+  border: calc(1px * var(--app-scale)) solid #ddd;
+  padding: calc(10px * var(--app-scale));
   cursor: pointer;
 }
 .singleProductPage .thumbnail .thumbnailCarousel .photoCarouselBtn.prev {
@@ -823,60 +823,60 @@
 }
 .singleProductPage .productDescription .type {
   text-align: left;
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
 }
 .singleProductPage .productDescription .productTitle {
-  font-size: 24px;
+  font-size: calc(24px * var(--app-scale));
   font-weight: 100;
-  margin: 10px 0 30px 0;
+  margin: calc(10px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
   text-align: left;
 }
 .singleProductPage .productDescription .priceContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: calc(10px * var(--app-scale));
 }
 .singleProductPage .productDescription .priceContainer .newPrice {
-  font-size: 28px;
+  font-size: calc(28px * var(--app-scale));
   font-weight: 550;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
 }
 .singleProductPage .productDescription .priceContainer .oldPrice {
-  margin-left: 8px;
+  margin-left: calc(8px * var(--app-scale));
   color: rgb(85, 85, 85);
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   font-weight: 400;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
   text-decoration: line-through;
 }
 .singleProductPage .productDescription .priceContainer .discount {
-  padding: 2px 10px 2px 10px;
-  width: 91px;
-  margin-left: 10px;
-  border-radius: 20px;
-  border: 1px solid rgb(4, 56, 161);
+  padding: calc(2px * var(--app-scale)) calc(10px * var(--app-scale)) calc(2px * var(--app-scale)) calc(10px * var(--app-scale));
+  width: calc(91px * var(--app-scale));
+  margin-left: calc(10px * var(--app-scale));
+  border-radius: calc(20px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid rgb(4, 56, 161);
   background-color: rgb(4, 56, 161);
   color: white;
   height: auto;
   font-weight: 400;
-  font-size: 14px;
+  font-size: calc(14px * var(--app-scale));
 }
 .singleProductPage .productDescription .priceRatio {
-  margin: 1px 0 35px 3px;
-  font-size: 14px;
+  margin: calc(1px * var(--app-scale)) 0 calc(35px * var(--app-scale)) calc(3px * var(--app-scale));
+  font-size: calc(14px * var(--app-scale));
   font-weight: 500;
-  height: 20px;
-  line-height: 20px;
+  height: calc(20px * var(--app-scale));
+  line-height: calc(20px * var(--app-scale));
 }
 .singleProductPage .productDescription .productCaption {
-  margin-bottom: 30px;
+  margin-bottom: calc(30px * var(--app-scale));
   width: auto;
-  height: 75px;
-  font-size: 16px;
+  height: calc(75px * var(--app-scale));
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
   color: rgb(34, 34, 34);
 }
 .singleProductPage .productDescription .size {
@@ -884,20 +884,20 @@
   height: auto;
   align-items: center;
   text-align: left;
-  width: 670px;
-  margin-bottom: 30px;
+  width: calc(670px * var(--app-scale));
+  margin-bottom: calc(30px * var(--app-scale));
 }
 .singleProductPage .productDescription .size .sizeTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .size .sizeList {
-  width: 150px;
-  padding-bottom: 5px;
+  width: calc(150px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -909,20 +909,20 @@
   height: auto;
   align-items: center;
   text-align: left;
-  width: 670px;
-  margin-bottom: 30px;
+  width: calc(670px * var(--app-scale));
+  margin-bottom: calc(30px * var(--app-scale));
 }
 .singleProductPage .productDescription .color .colorTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .color .colorList {
-  width: 150px;
-  padding-bottom: 5px;
+  width: calc(150px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -930,70 +930,70 @@
   cursor: pointer;
 }
 .singleProductPage .productDescription .color .colorList .yellowBox {
-  width: 23px;
-  height: 21px;
+  width: calc(23px * var(--app-scale));
+  height: calc(21px * var(--app-scale));
   background-color: #FFFF00;
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
   scale: 0.8;
 }
 .singleProductPage .productDescription .color .colorList .yellowBox:active {
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
 }
 .singleProductPage .productDescription .color .colorList .blackBox {
-  width: 23px;
-  height: 21px;
+  width: calc(23px * var(--app-scale));
+  height: calc(21px * var(--app-scale));
   background-color: black;
   scale: 0.8;
 }
 .singleProductPage .productDescription .color .colorList .blackBox:active {
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
 }
 .singleProductPage .productDescription .color .colorList .brownBox {
-  width: 23px;
-  height: 21px;
+  width: calc(23px * var(--app-scale));
+  height: calc(21px * var(--app-scale));
   background-color: #A52A2A;
   scale: 0.8;
 }
 .singleProductPage .productDescription .color .colorList .brownBox:active {
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
 }
 .singleProductPage .productDescription .color .colorList .grayBox {
-  width: 23px;
-  height: 21px;
+  width: calc(23px * var(--app-scale));
+  height: calc(21px * var(--app-scale));
   background-color: #808080;
   scale: 0.8;
 }
 .singleProductPage .productDescription .color .colorList .grayBox:active {
-  border: 1px solid black;
+  border: calc(1px * var(--app-scale)) solid black;
 }
 .singleProductPage .productDescription .color .colorList .greenBox {
-  width: 23px;
-  height: 21px;
+  width: calc(23px * var(--app-scale));
+  height: calc(21px * var(--app-scale));
   background-color: green;
   scale: 0.8;
 }
 .singleProductPage .productDescription .color .colorList .greenBox:active {
-  border: 1px double black;
+  border: calc(1px * var(--app-scale)) double black;
 }
 .singleProductPage .productDescription .material {
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * var(--app-scale));
   display: flex;
   height: auto;
   align-items: center;
   text-align: left;
-  width: 670px;
+  width: calc(670px * var(--app-scale));
 }
 .singleProductPage .productDescription .material .materialTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .material .materialList {
-  width: 150px;
-  padding-bottom: 5px;
+  width: calc(150px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1001,15 +1001,15 @@
   cursor: pointer;
 }
 .singleProductPage .productDescription .quantityAndAddToCart {
-  margin-bottom: 25px;
+  margin-bottom: calc(25px * var(--app-scale));
   display: flex;
   height: auto;
   align-items: center;
   text-align: left;
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList {
-  width: 340px;
-  padding-bottom: 5px;
+  width: calc(340px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1017,41 +1017,41 @@
   cursor: pointer;
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList .quantityTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList .quantityInput {
-  padding: 11px;
-  width: 70px;
-  height: 44px;
-  border: 1px solid rgb(235, 235, 235);
+  padding: calc(11px * var(--app-scale));
+  width: calc(70px * var(--app-scale));
+  height: calc(44px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid rgb(235, 235, 235);
   color: rgb(122, 122, 122);
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList .addToCart {
-  width: 140px;
-  height: 40px;
-  border-radius: 25px;
+  width: calc(140px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
+  border-radius: calc(25px * var(--app-scale));
   background-color: #343434;
   color: white;
-  font-size: 13px;
+  font-size: calc(13px * var(--app-scale));
   font-weight: 600;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: calc(25px * var(--app-scale));
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList .addToCart:hover {
   background-color: #0438a1;
   transition: 0.8s;
 }
 .singleProductPage .productDescription .quantityAndAddToCart .quantityList .wishlist {
-  padding: 10px;
-  margin-left: 10px;
-  width: 14px;
+  padding: calc(10px * var(--app-scale));
+  margin-left: calc(10px * var(--app-scale));
+  width: calc(14px * var(--app-scale));
   height: auto;
-  font-size: 30px;
+  font-size: calc(30px * var(--app-scale));
   font-weight: 100;
   cursor: pointer;
 }
@@ -1060,17 +1060,17 @@
   transform: 0.3s ease-in;
 }
 .singleProductPage .productDescription .buyNow {
-  margin-bottom: 25px;
+  margin-bottom: calc(25px * var(--app-scale));
 }
 .singleProductPage .productDescription .buyNow .buyNowBtn {
-  width: 321px;
-  padding: 14px 20px 14px 20px;
-  margin-right: 10px;
-  margin: 0 10px 20px 0;
-  border-radius: 25px;
+  width: calc(321px * var(--app-scale));
+  padding: calc(14px * var(--app-scale)) calc(20px * var(--app-scale)) calc(14px * var(--app-scale)) calc(20px * var(--app-scale));
+  margin-right: calc(10px * var(--app-scale));
+  margin: 0 calc(10px * var(--app-scale)) calc(20px * var(--app-scale)) 0;
+  border-radius: calc(25px * var(--app-scale));
   background-color: #343434;
   color: white;
-  font-size: 13px;
+  font-size: calc(13px * var(--app-scale));
   font-weight: 600;
   cursor: pointer;
 }
@@ -1079,24 +1079,24 @@
   transition: 0.8s;
 }
 .singleProductPage .productDescription .tag {
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * var(--app-scale));
   display: flex;
   height: auto;
   align-items: center;
   text-align: left;
-  width: 670px;
+  width: calc(670px * var(--app-scale));
 }
 .singleProductPage .productDescription .tag .tagTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .tag .tagList {
-  width: 150px;
-  padding-bottom: 5px;
+  width: calc(150px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1104,7 +1104,7 @@
   cursor: pointer;
 }
 .singleProductPage .productDescription .share {
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * var(--app-scale));
   display: flex;
   height: auto;
   align-items: center;
@@ -1112,16 +1112,16 @@
   width: 100%;
 }
 .singleProductPage .productDescription .share .shareTitle {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
   color: rgb(34, 34, 34);
-  margin-right: 20px;
-  padding-bottom: 5px;
-  line-height: 13px;
+  margin-right: calc(20px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
+  line-height: calc(13px * var(--app-scale));
 }
 .singleProductPage .productDescription .share .shareList {
-  width: 350px;
-  padding-bottom: 5px;
+  width: calc(350px * var(--app-scale));
+  padding-bottom: calc(5px * var(--app-scale));
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1131,7 +1131,7 @@
 .singleProductPage .productDescription .singleProductPageCarousel {
   scale: 0.8;
   position: relative;
-  width: 920px;
+  width: calc(920px * var(--app-scale));
   transform: translateX(-12vh);
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselBtn {
@@ -1139,32 +1139,32 @@
   top: 50%;
   transform: translateY(-90%);
   background: white;
-  border: 1px solid #ccc;
+  border: calc(1px * var(--app-scale)) solid #ccc;
   cursor: pointer;
-  font-size: 18px;
-  padding: 8px 12px;
+  font-size: calc(18px * var(--app-scale));
+  padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
   z-index: 10;
   scale: 0.8;
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.next {
-  font-size: 28px;
-  right: 8px;
+  font-size: calc(28px * var(--app-scale));
+  right: calc(8px * var(--app-scale));
   opacity: 0;
   position: absolute;
   z-index: 10;
   transform: translateY(-90%) scale(0.7);
   color: #0638a1;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  padding: 35px;
+  padding: calc(35px * var(--app-scale));
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.next:hover {
   transition: 1s;
@@ -1172,24 +1172,24 @@
   color: white;
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.prev {
-  font-size: 28px;
-  left: 8px;
+  font-size: calc(28px * var(--app-scale));
+  left: calc(8px * var(--app-scale));
   opacity: 0;
   position: absolute;
   z-index: 10;
   transform: translateY(-90%) scale(0.7);
   color: #0638a1;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: calc(1px * var(--app-scale)) solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-  padding: 35px;
+  padding: calc(35px * var(--app-scale));
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselBtn.prev:hover {
   transition: 1s;
@@ -1205,22 +1205,22 @@
   transition: 1s;
 }
 .singleProductPage .productDescription .singleProductPageCarousel .carouselContainer {
-  gap: 30px;
+  gap: calc(30px * var(--app-scale));
   display: flex;
 }
 
 .singleProductCarousel {
-  width: 280px;
-  height: 458px;
-  border: 1px solid transparent;
+  width: calc(280px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
 }
 .singleProductCarousel .wishlist {
-  padding: 10px;
-  width: 14px;
+  padding: calc(10px * var(--app-scale));
+  width: calc(14px * var(--app-scale));
   height: auto;
-  font-size: 34px;
+  font-size: calc(34px * var(--app-scale));
   font-weight: 400;
   cursor: pointer;
 }
@@ -1230,28 +1230,28 @@
 }
 .singleProductCarousel .titleAndPriceContainer {
   text-align: center;
-  line-height: 25px;
+  line-height: calc(25px * var(--app-scale));
 }
 .singleProductCarousel .titleAndPriceContainer h3 {
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   font-weight: 530;
 }
 .singleProductCarousel .titleAndPriceContainer p {
   font-weight: 600;
-  font-size: 15px;
+  font-size: calc(15px * var(--app-scale));
 }
 .singleProductCarousel .imgContainer {
   position: relative;
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   margin: auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 .singleProductCarousel .imgContainer .hdCarouselImg {
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   position: absolute;
   top: 0;
   left: 0;
@@ -1259,12 +1259,12 @@
 }
 .singleProductCarousel .shopNow {
   display: block;
-  top: 35px;
+  top: calc(35px * var(--app-scale));
   margin: auto;
   text-align: center;
   position: relative;
-  width: 130px;
-  height: 35px;
+  width: calc(130px * var(--app-scale));
+  height: calc(35px * var(--app-scale));
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1276,7 +1276,7 @@
 }
 .singleProductCarousel:hover .shopNow {
   opacity: 1;
-  transform: translateY(-30px);
+  transform: translateY(calc(-30px * var(--app-scale)));
   transition: 0.9s;
 }
 .singleProductCarousel #image1 {
@@ -1298,7 +1298,7 @@
   position: relative;
 }
 .singleProductPageCarousel .carouselWrapper {
-  width: 924px;
+  width: calc(924px * var(--app-scale));
   overflow: hidden;
 }
 .singleProductPageCarousel .carouselContainer {
@@ -1308,15 +1308,15 @@
 }
 
 .singleProductPhotoCarousel {
-  width: 160px;
+  width: calc(160px * var(--app-scale));
   flex-shrink: 0;
   display: flex;
   justify-content: center;
 }
 .singleProductPhotoCarousel .thumbnailBox {
-  width: 150px;
-  height: 150px;
-  border: 1px solid #e0e0e0;
+  width: calc(150px * var(--app-scale));
+  height: calc(150px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1325,7 +1325,7 @@
   transition: border-color 0.3s ease;
 }
 .singleProductPhotoCarousel .thumbnailBox:hover {
-  border: 2px solid #3355b1;
+  border: calc(2px * var(--app-scale)) solid #3355b1;
 }
 .singleProductPhotoCarousel .photoCarouselImg {
   max-width: 80%;
@@ -1357,8 +1357,8 @@
   visibility: hidden;
 }
 .loaderScreen .loader {
-  width: 48px;
-  height: 48px;
+  width: calc(48px * var(--app-scale));
+  height: calc(48px * var(--app-scale));
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
@@ -1369,7 +1369,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 5px solid #5485e6;
+  border: calc(5px * var(--app-scale)) solid #5485e6;
   animation: prixClipFix 2s linear infinite;
 }
 .loaderScreen .loader::after {
@@ -1403,98 +1403,98 @@
   }
 }
 .description {
-  margin: 0 32px 0 32px;
-  padding: 105px 0 30px 0;
-  width: 1167px;
+  margin: 0 calc(32px * var(--app-scale)) 0 calc(32px * var(--app-scale));
+  padding: calc(105px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
+  width: calc(1167px * var(--app-scale));
   margin: auto;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
 }
 .description .upperSide .upperSideList {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: calc(80px * var(--app-scale));
   list-style-type: none;
-  padding: 15px 0 15px 0;
-  font-size: 16px;
-  border: 1px solid rgb(229, 229, 229);
+  padding: calc(15px * var(--app-scale)) 0 calc(15px * var(--app-scale)) 0;
+  font-size: calc(16px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid rgb(229, 229, 229);
   font-weight: 600;
 }
 .description .upperSide .upperSideList #descriptionTitle {
   color: #0438a1;
-  border-bottom: 2px solid #0438a1;
+  border-bottom: calc(2px * var(--app-scale)) solid #0438a1;
 }
 .description .bottomSide {
-  padding: 30px;
+  padding: calc(30px * var(--app-scale));
   text-align: left;
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
-  border: 1px solid rgb(229, 229, 229);
+  border: calc(1px * var(--app-scale)) solid rgb(229, 229, 229);
   border-top: 0;
 }
 
 .recentlyViewed {
-  width: 1200px;
-  height: 502px;
-  margin-top: 150px;
-  margin: 150px auto auto auto;
+  width: calc(1200px * var(--app-scale));
+  height: calc(502px * var(--app-scale));
+  margin-top: calc(150px * var(--app-scale));
+  margin: calc(150px * var(--app-scale)) auto auto auto;
 }
 .recentlyViewed .titleContainer {
-  padding: 0 15px 0 15px;
+  padding: 0 calc(15px * var(--app-scale)) 0 calc(15px * var(--app-scale));
 }
 .recentlyViewed .titleContainer .rvTitle {
   text-align: center;
   font-weight: 555;
-  font-size: 32px;
-  margin-bottom: 50px;
+  font-size: calc(32px * var(--app-scale));
+  margin-bottom: calc(50px * var(--app-scale));
 }
 .recentlyViewed .rvCardsWrapper {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: calc(40px * var(--app-scale));
 }
 .recentlyViewed .rvCardsWrapper .rvCard {
   cursor: pointer;
-  width: 300px;
-  height: 414px;
-  border: 1px solid transparent;
+  width: calc(300px * var(--app-scale));
+  height: calc(414px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
   position: relative;
 }
 .recentlyViewed .rvCardsWrapper .rvCard .titleAndPriceContainer {
   text-align: center;
-  line-height: 25px;
-  margin-top: 10px;
+  line-height: calc(25px * var(--app-scale));
+  margin-top: calc(10px * var(--app-scale));
 }
 .recentlyViewed .rvCardsWrapper .rvCard .titleAndPriceContainer h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: calc(10px * var(--app-scale));
+  font-size: calc(18px * var(--app-scale));
   font-weight: 500;
 }
 .recentlyViewed .rvCardsWrapper .rvCard .titleAndPriceContainer .priceContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: calc(5px * var(--app-scale));
 }
 .recentlyViewed .rvCardsWrapper .rvCard .titleAndPriceContainer .priceContainer .newPrice {
   font-weight: 600;
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
 }
 .recentlyViewed .rvCardsWrapper .rvCard .titleAndPriceContainer .priceContainer .oldPrice {
   text-decoration: line-through;
 }
 .recentlyViewed .rvCardsWrapper .rvCard .imgContainer {
   position: relative;
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   margin: auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 .recentlyViewed .rvCardsWrapper .rvCard .imgContainer .rvCardsImg {
-  width: 270px;
-  height: 270px;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
   position: absolute;
   top: 0;
   left: 0;
@@ -1502,12 +1502,12 @@
 }
 .recentlyViewed .rvCardsWrapper .rvCard .shopNow {
   display: block;
-  top: 35px;
+  top: calc(35px * var(--app-scale));
   margin: auto;
   text-align: center;
   position: relative;
-  width: 130px;
-  height: 35px;
+  width: calc(130px * var(--app-scale));
+  height: calc(35px * var(--app-scale));
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1523,6 +1523,7 @@
   height: auto;
   background-color: #0b0c0e;
   color: rgb(241, 241, 241);
+  padding-top: calc(60px * var(--app-scale));
 }
 .footerFeatures .logoSection {
   text-align: center;
@@ -1531,222 +1532,227 @@
   margin: auto;
 }
 .footerFeatures .logoSection .ffLogoParagraph {
-  margin: 35px 351px 0 351px;
-  font-size: 17px;
+  margin: calc(35px * var(--app-scale)) calc(351px * var(--app-scale)) 0 calc(351px * var(--app-scale));
+  font-size: calc(17px * var(--app-scale));
   font-weight: 400;
 }
 .footerFeatures .supportArea {
-  padding: 60px 0 60px 0;
+  padding: calc(60px * var(--app-scale)) 0 calc(60px * var(--app-scale)) 0;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  width: calc(1300px * var(--app-scale));
+  margin: auto;
+  justify-content: space-between;
+  border-bottom: 1px solid #444445;
 }
 .footerFeatures .supportArea .borderBottom {
   display: block;
-  width: 50px;
-  height: 1px;
+  width: calc(50px * var(--app-scale));
+  height: calc(1px * var(--app-scale));
   background-color: #0438a1;
-  margin-top: 6px;
-  margin-bottom: 8px;
+  margin-top: calc(6px * var(--app-scale));
+  margin-bottom: calc(8px * var(--app-scale));
 }
 .footerFeatures .supportArea .shippingSection {
-  width: 230px;
-  height: 81px;
+  width: calc(230px * var(--app-scale));
+  height: calc(81px * var(--app-scale));
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerFeatures .supportArea .shippingSection .shippingLogo {
-  width: 57px;
+  width: calc(57px * var(--app-scale));
   height: auto;
 }
 .footerFeatures .supportArea .shippingSection .shippingDesc .shippingTitle {
-  font-size: 15px;
+  font-size: calc(15px * var(--app-scale));
   font-weight: 550;
-  padding-bottom: 5px;
+  padding-bottom: calc(5px * var(--app-scale));
 }
 .footerFeatures .supportArea .shippingSection .shippingDesc .shippingParagraph {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
 }
 .footerFeatures .supportArea .supportSection {
-  width: 230px;
-  height: 81px;
+  width: calc(230px * var(--app-scale));
+  height: calc(81px * var(--app-scale));
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 6px;
+  gap: calc(20px * var(--app-scale));
+  padding-bottom: calc(6px * var(--app-scale));
 }
 .footerFeatures .supportArea .supportSection .supportLogo {
-  width: 57px;
+  width: calc(57px * var(--app-scale));
   height: auto;
 }
 .footerFeatures .supportArea .supportSection .supportDesc .supportTitle {
-  font-size: 15px;
+  font-size: calc(15px * var(--app-scale));
   font-weight: 550;
-  padding-bottom: 5px;
+  padding-bottom: calc(5px * var(--app-scale));
 }
 .footerFeatures .supportArea .supportSection .supportDesc .supportParagraph {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
 }
 .footerFeatures .supportArea .securitySection {
-  width: 230px;
-  height: 81px;
+  width: calc(230px * var(--app-scale));
+  height: calc(81px * var(--app-scale));
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerFeatures .supportArea .securitySection .securityLogo {
-  width: 57px;
+  width: calc(57px * var(--app-scale));
   height: auto;
 }
 .footerFeatures .supportArea .securitySection .securityDesc .securityTitle {
-  font-size: 15px;
+  font-size: calc(15px * var(--app-scale));
   font-weight: 550;
-  padding-bottom: 5px;
+  padding-bottom: calc(5px * var(--app-scale));
 }
 .footerFeatures .supportArea .securitySection .securityDesc .securityParagraph {
-  font-size: 16px;
+  font-size: calc(16px * var(--app-scale));
   font-weight: 400;
 }
 
 .footerInfos {
-  width: 100%;
   height: auto;
   background-color: #0b0c0e;
   color: rgb(241, 241, 241);
+  padding-top: calc(60px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper {
+  width: calc(1500px * var(--app-scale));
+  margin: auto;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer {
-  line-height: 20px;
-  width: 370px;
+  line-height: calc(20px * var(--app-scale));
+  width: calc(370px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsTitle {
-  margin-bottom: 40px;
+  margin-bottom: calc(40px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 25px;
+  row-gap: calc(25px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpFirst {
   display: flex;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpFirst .rpFirstTextWrapper .rpFirstTitle {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: calc(18px * var(--app-scale));
+  line-height: calc(30px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpFirst .rpFirstTextWrapper .rpFirstDate {
-  line-height: 40px;
-  font-size: 14px;
+  line-height: calc(40px * var(--app-scale));
+  font-size: calc(14px * var(--app-scale));
   font-weight: 400;
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpSecond {
   display: flex;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpSecond .rpSecondTextWrapper .rpSecondTitle {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: calc(25px * var(--app-scale));
+  line-height: calc(30px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .recentPostsContainer .recentPostsWrapper .rpSecond .rpSecondTextWrapper .rpSecondDate {
-  line-height: 40px;
-  font-size: 14px;
+  line-height: calc(40px * var(--app-scale));
+  font-size: calc(14px * var(--app-scale));
   font-weight: 400;
 }
 .footerInfos .footerInfosWrapper .quickLinks .quickLinkTitle {
-  margin-bottom: 40px;
-  font-size: 19px;
+  margin-bottom: calc(40px * var(--app-scale));
+  font-size: calc(19px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .quickLinks .quickLinksCont {
   list-style-type: none;
-  line-height: 20px;
+  line-height: calc(20px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .quickLinks .quickLinksCont li {
-  line-height: 40px;
+  line-height: calc(40px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoTitle {
-  margin-bottom: 40px;
-  font-size: 19px;
+  margin-bottom: calc(40px * var(--app-scale));
+  font-size: calc(19px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: calc(25px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .location {
   display: flex;
-  gap: 10px;
+  gap: calc(10px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .location .locationImg {
   width: auto;
-  height: 28px;
-  margin-top: 5px;
+  height: calc(28px * var(--app-scale));
+  margin-top: calc(5px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .location .locationParagraph {
-  font-size: 17px;
+  font-size: calc(17px * var(--app-scale));
   font-weight: 400;
-  line-height: 28px;
+  line-height: calc(28px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .mail {
   display: flex;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .mail .mailImg {
   width: auto;
-  height: 20px;
-  margin-top: 5px;
+  height: calc(20px * var(--app-scale));
+  margin-top: calc(5px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .mail .mailParagraph {
-  font-size: 17px;
+  font-size: calc(17px * var(--app-scale));
   font-weight: 400;
-  line-height: 28px;
+  line-height: calc(28px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .phone {
   display: flex;
-  gap: 20px;
+  gap: calc(20px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .phone .phoneImg {
   width: auto;
-  height: 20px;
-  margin-top: 5px;
+  height: calc(20px * var(--app-scale));
+  margin-top: calc(5px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .contactInfo .contactInfoWrapper .phone .phoneParagraph {
-  font-size: 17px;
+  font-size: calc(17px * var(--app-scale));
   font-weight: 400;
-  line-height: 28px;
+  line-height: calc(28px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .newsLetter .newsLetterTitle {
-  margin-bottom: 40px;
+  margin-bottom: calc(40px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .newsLetter .newsLetterWrapper {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  row-gap: 25px;
+  row-gap: calc(25px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .newsLetter .newsLetterWrapper .newsLetterParagraph {
-  font-size: 18px;
+  font-size: calc(18px * var(--app-scale));
   font-weight: 400;
-  line-height: 40px;
+  line-height: calc(40px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .newsLetter .newsLetterWrapper .newsLetterInpCont {
-  margin-bottom: 30px;
+  margin-bottom: calc(30px * var(--app-scale));
 }
 .footerInfos .footerInfosWrapper .newsLetter .newsLetterWrapper .newsLetterInpCont .newsLetterInp {
-  width: 270px;
-  height: 45px;
-  border-radius: 5px;
+  width: calc(270px * var(--app-scale));
+  height: calc(45px * var(--app-scale));
+  border-radius: calc(5px * var(--app-scale));
 }
 
 .productsWrapper {

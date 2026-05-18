@@ -1,7 +1,7 @@
 @keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(calc(30px * var(--app-scale)));
   }
   to {
     opacity: 1;
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   margin: auto;
-  gap: 80px;
+  gap: calc(80px * var(--app-scale));
 
   .imgContainer,
   .textContainer h6,
@@ -46,7 +46,7 @@
 
   .imgContainer {
     .carouselImg {
-      width: 470px;
+      width: calc(470px * var(--app-scale));
       height: auto;
     }
   }
@@ -55,37 +55,34 @@
     height: auto;
 
     h6 {
-      
       font-weight: 600;
-      font-size: 18px;
-      line-height: 34px;
+      font-size: calc(18px * var(--app-scale));
+      line-height: calc(34px * var(--app-scale));
     }
 
     .carouselTitle {
-      font-size: 38px;
-      
-      margin: 15px 0 20px 0;
+      font-size: calc(38px * var(--app-scale));
+      margin: calc(15px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
     }
 
     p {
-      
-      line-height: 23px;
-      margin-bottom: 20px;
+      line-height: calc(23px * var(--app-scale));
+      margin-bottom: calc(20px * var(--app-scale));
     }
 
     .carouselShopBtn {
-      width: 149px;
-      height: 44px;
-      border-radius: 5px;
+      width: calc(149px * var(--app-scale));
+      height: calc(44px * var(--app-scale));
+      border-radius: calc(5px * var(--app-scale));
       color: white;
       background-color: #0438a1;
-      border: 1px solid #0438a1;
+      border: calc(1px * var(--app-scale)) solid #0438a1;
       cursor: pointer;
       transition: 0.3s;
 
       &:hover {
         background-color: #0279d1;
-        border: 1px solid transparent;
+        border: calc(1px * var(--app-scale)) solid transparent;
       }
     }
   }

@@ -1,24 +1,24 @@
 .sortBy {
   width: 100%;
-  height: 70px;
+  height: calc(70px * var(--app-scale));
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   
   user-select: none;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  padding: 10px;
-  margin-top: 45px;
+  border-radius: calc(5px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid lightgrey;
+  padding: calc(10px * var(--app-scale));
+  margin-top: calc(45px * var(--app-scale));
   .gridView {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: calc(20px * var(--app-scale));
     cursor: pointer;
     .gridImg {
-      width: 25px;
+      width: calc(25px * var(--app-scale));
     }
     .gridImg2 {
       font-weight: 580;
@@ -27,10 +27,10 @@
   .sorting {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: calc(20px * var(--app-scale));
     #sorting {
-      width: 288px;
-      height: 38px;
+      width: calc(288px * var(--app-scale));
+      height: calc(38px * var(--app-scale));
     }
   }
 }

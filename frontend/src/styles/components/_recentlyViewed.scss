@@ -1,0 +1,85 @@
+.recentlyViewed {
+  width: 1200px;
+  height: 502px;
+  margin-top: 150px;
+  margin: 150px auto auto auto;
+  .titleContainer {
+    padding: 0 15px 0 15px;
+    .rvTitle {
+      text-align: center;
+      font-weight: 555;
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .rvCardsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    .rvCard {
+      cursor: pointer;
+      width: 300px;
+      height: 414px;
+      border: 1px solid transparent;
+      background-color: #f7f8fa;
+      position: relative;
+
+      .titleAndPriceContainer {
+        text-align: center;
+        line-height: 25px;
+        margin-top: 10px;
+        h3 {
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .priceContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          .newPrice {
+            font-weight: 600;
+            font-size: 18px;
+          }
+          .oldPrice {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .imgContainer {
+        position: relative;
+        width: 270px;
+        height: 270px;
+        margin: auto;
+        user-select: none;
+        .rvCardsImg {
+          width: 270px;
+          height: 270px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 0.8s ease-in-out;
+        }
+      }
+
+      .shopNow {
+        display: block;
+        top: 35px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        width: 130px;
+        height: 35px;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 600;
+        color: rgb(69, 69, 69);
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 0;
+      }
+    }
+  }
+}

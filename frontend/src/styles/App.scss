@@ -1,6 +1,5 @@
 @use './abstracts/reset';
 
-//! components
 @use './components/topNavbar';
 @use './components/bottomNavbar';
 @use './components/carousel';
@@ -15,6 +14,10 @@
 @use './components/singleProductCarousel';
 @use './components/singleProductPhotoCarousel';
 @use './components/loaderScreen';
+@use './components/description';
+@use './components/recentlyViewed';
+@use './components/footerFeatures';
+@use './components/footerInfos';
 
-//! routes
+
 @use './routes/products';

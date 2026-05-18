@@ -194,11 +194,11 @@ function SingleProductPage() {
         <div className="color">
           <p className="colorTitle">Color :</p>
           <ol className="colorList">
-            <li>🟨</li>
-            <li>⬛</li>
-            <li>🟫</li>
-            <li>🟥</li>
-            <li>🟩</li>
+            <li className="yellowBox"></li>
+            <li className="blackBox"></li>
+            <li className="brownBox"></li>
+            <li className="grayBox"></li>
+            <li className="greenBox"></li>
           </ol>
         </div>
         <div className="material">

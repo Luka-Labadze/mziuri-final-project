@@ -1,0 +1,32 @@
+.description {
+  margin: 0 32px 0 32px;
+  padding: 105px 0 30px 0;
+  width: 1167px;
+margin: auto;
+  line-height: 20px;
+  .upperSide {
+    .upperSideList {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      list-style-type: none;
+      padding: 15px 0 15px 0;
+      font-size: 16px;
+      border: 1px solid rgb(229, 229, 229);
+      font-weight: 600;
+      #descriptionTitle {
+        color: #0438a1;
+
+        border-bottom: 2px solid #0438a1;
+      }
+    }
+  }
+  .bottomSide {
+    padding: 30px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid rgb(229, 229, 229);
+    border-top: 0;
+  }
+}

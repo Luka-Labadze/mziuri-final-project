@@ -1,0 +1,157 @@
+.footerInfos {
+  height: auto;
+  background-color: #0b0c0e;
+  color: rgb(241, 241, 241);
+  padding-top: 60px;
+  .footerInfosWrapper {
+    width: 1500px;
+  margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    .recentPostsContainer {
+      line-height: 20px;
+      width: 370px;
+      .recentPostsTitle {
+        margin-bottom: 40px;
+      }
+      .recentPostsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 25px;
+        .rpFirst {
+          display: flex;
+          gap: 20px;
+          .rpFirstTextWrapper {
+            .rpFirstTitle {
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 30px;
+            }
+            .rpFirstDate {
+              line-height: 40px;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .rpSecond {
+          display: flex;
+          gap: 20px;
+          .rpSecondTextWrapper {
+            .rpSecondTitle {
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 30px;
+            }
+            .rpSecondDate {
+              line-height: 40px;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
+    .quickLinks {
+      .quickLinkTitle {
+        margin-bottom: 40px;
+        font-size: 19px;
+      }
+      .quickLinksCont {
+        list-style-type: none;
+        line-height: 20px;
+        li {
+          line-height: 40px;
+        }
+      }
+    }
+
+    .contactInfo {
+      .contactInfoTitle {
+        margin-bottom: 40px;
+        font-size: 19px;
+      }
+      .contactInfoWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        row-gap: 25px;
+        .location {
+          display: flex;
+          gap: 10px;
+          .locationImg {
+            width: auto;
+            height: 28px;
+            margin-top: 5px;
+          }
+          .locationParagraph {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 28px;
+          }
+        }
+
+        .mail {
+          display: flex;
+          gap: 20px;
+          .mailImg {
+            width: auto;
+            height: 20px;
+            margin-top: 5px;
+          }
+          .mailParagraph {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 28px;
+          }
+        }
+
+        .phone {
+          display: flex;
+          gap: 20px;
+          .phoneImg {
+            width: auto;
+            height: 20px;
+            margin-top: 5px;
+          }
+          .phoneParagraph {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+
+    .newsLetter {
+      .newsLetterTitle {
+        margin-bottom: 40px;
+      }
+
+      .newsLetterWrapper {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        row-gap: 25px;
+
+        .newsLetterParagraph {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 40px;
+        }
+        .newsLetterInpCont {
+          margin-bottom: 30px;
+          .newsLetterInp {
+            width: 270px;
+            height: 45px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

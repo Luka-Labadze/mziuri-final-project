@@ -13,7 +13,7 @@ function SingleCarousel({ title, img, subtitle }) {
           Contrary to popular belief, Lorem Ipsum is not simply random text. It{" "}
           <br /> has roots in a piece of classical Latin literature.
         </p>
-        <Link to="/shop">
+        <Link to="/products">
         <button className="carouselShopBtn">Shop Now</button>
         </Link>
       </div>

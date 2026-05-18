@@ -102,7 +102,6 @@
     }
   }
   .productDescription {
-    font-family: "Source Sans Pro", sans-serif;
     .type {
       text-align: left;
       font-size: 16px;
@@ -119,6 +118,7 @@
     .priceContainer {
       display: flex;
       align-items: center;
+      margin-bottom:10px;
       .newPrice {
         font-size: 28px;
         font-weight: 550;
@@ -146,13 +146,14 @@
       }
     }
     .priceRatio {
-      margin: 1px 0 8px 3px;
+      margin: 1px 0 35px 3px;
       font-size: 14px;
       font-weight: 500;
       height: 20px;
       line-height: 20px;
     }
     .productCaption {
+      margin-bottom:30px;
       width: auto;
       height: 75px;
       font-size: 16px;
@@ -167,7 +168,7 @@
       align-items: center;
       text-align: left;
       width: 670px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       .sizeTitle {
         font-size: 16px;
         font-weight: 400;
@@ -193,7 +194,7 @@
       align-items: center;
       text-align: left;
       width: 670px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       .colorTitle {
         font-size: 16px;
         font-weight: 400;
@@ -210,11 +211,62 @@
         align-items: center;
         list-style-type: none;
         cursor: pointer;
+        .yellowBox{
+          width: 23px;
+          height: 21px;
+          background-color: #FFFF00;
+          border: 1px solid black;
+          scale: 0.8;
+          
+          &:active{
+            border: 1px solid black;
+          }
+        }
+        .blackBox{
+          width: 23px;
+          height: 21px;
+          background-color: black;
+          scale: 0.8;
+          
+          &:active{
+            border: 1px solid black;
+          }
+        }
+        .brownBox{
+          width: 23px;
+          height: 21px;
+          background-color: #A52A2A;
+          scale: 0.8;
+          
+          &:active{
+            border: 1px solid black;
+          }
+        }
+        .grayBox{
+          width: 23px;
+          height: 21px;
+          background-color: #808080;
+          scale: 0.8;
+          
+          &:active{
+            border: 1px solid black;
+          }
+        }
+        .greenBox{
+          width: 23px;
+          height: 21px;
+          background-color: green;
+          scale: 0.8;
+          
+          &:active{
+            border:1px double black;
+          }
+        }
       }
     }
 
     .material {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       display: flex;
       height: auto;
       align-items: center;
@@ -240,7 +292,7 @@
     }
 
     .quantityAndAddToCart {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       display: flex;
       height: auto;
       align-items: center;
@@ -303,6 +355,7 @@
       }
     }
     .buyNow{
+      margin-bottom:25px;
       .buyNowBtn{
         width: 321px;
         padding: 14px 20px 14px 20px;
@@ -322,7 +375,7 @@
       }
     }
     .tag {
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       display: flex;
       height: auto;
       align-items: center;
@@ -348,7 +401,7 @@
     }
 
     .share {
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       display: flex;
       height: auto;
       align-items: center;
@@ -479,7 +532,7 @@
   }
 
   .titleAndPriceContainer {
-    font-family: "Source Sans Pro", sans-serif;
+    
     text-align: center;
     line-height: 25px;
     h3 {

@@ -3,7 +3,7 @@ import Footer from './layouts/Footer'
 import Header from './layouts/Header'
 import Main from './layouts/Main'
 import {Routes, Route} from 'react-router-dom'
-import {Contact, Products, SingleProduct, AboutUs, Home} from './routes/index.js'
+import {Contact, Products, SingleProduct, AboutUs, Home, Register, Login} from './routes/index.js'
 import LoaderScreen from './components/LoaderScreen.jsx'
 import { useEffect } from 'react'
 import { useLoader } from './context/LoaderContext.jsx'
@@ -24,6 +24,9 @@ function App() {
            <Route  path='/contact' element={<Contact />}/>
            <Route  path='/products' element={<Products />}/>
            <Route  path='/single-product' element={<SingleProduct />}/>
+
+           <Route path='/register' element={<Register />}/>
+           <Route path='/login' element={<Login />}/>
         </Routes>
       </Main>
       <Footer />

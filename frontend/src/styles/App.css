@@ -1767,4 +1767,147 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.register {
+  width: calc(510px * var(--app-scale));
+  height: calc(491px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
+  background-color: #f3f3f3;
+  margin: calc(100px * var(--app-scale)) auto calc(100px * var(--app-scale)) auto;
+}
+.register form {
+  padding: calc(37px * var(--app-scale)) calc(40px * var(--app-scale)) calc(37px * var(--app-scale)) calc(40px * var(--app-scale));
+}
+.register form .textSideForm {
+  margin-bottom: calc(30px * var(--app-scale));
+}
+.register form .textSideForm .registerTitle {
+  margin-bottom: calc(5px * var(--app-scale));
+  font-size: calc(30px * var(--app-scale));
+  font-weight: 500;
+  text-align: center;
+}
+.register form .textSideForm .registerSubtitle {
+  color: rgb(102, 102, 102);
+  font-size: calc(15px * var(--app-scale));
+  font-weight: 400;
+  text-align: center;
+}
+.register form .inputForm {
+  display: flex;
+  flex-direction: column;
+}
+.register form .inputForm .registerError {
+  color: red;
+  height: calc(20px * var(--app-scale));
+}
+.register form .inputForm .formInputs {
+  width: calc(400px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
+  padding: calc(8px * var(--app-scale)) calc(10px * var(--app-scale)) calc(8px * var(--app-scale)) calc(10px * var(--app-scale));
+}
+.register form .inputForm .formInputs#error {
+  border: calc(2px * var(--app-scale)) solid red;
+}
+.register form .bottomSideForm {
+  display: flex;
+  flex-direction: column;
+}
+.register form .bottomSideForm .registerBtn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale)) calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
+  width: calc(88px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
+  background-color: #0438a1;
+  color: white;
+  cursor: pointer;
+}
+.register form .bottomSideForm .returnToStore {
+  margin-top: calc(20px * var(--app-scale));
+  font-size: calc(16px * var(--app-scale));
+  font-weight: 400;
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+
+.login {
+  width: calc(570px * var(--app-scale));
+  height: calc(395px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
+  margin: calc(100px * var(--app-scale)) auto calc(100px * var(--app-scale)) auto;
+  background-color: #f3f3f3;
+}
+.login form {
+  padding: calc(37px * var(--app-scale)) calc(40px * var(--app-scale)) calc(37px * var(--app-scale)) calc(40px * var(--app-scale));
+}
+.login form .textContainer {
+  text-align: center;
+  margin-bottom: calc(30px * var(--app-scale));
+}
+.login form .textContainer .loginTitle {
+  color: rgb(51, 51, 51);
+  margin-bottom: calc(5px * var(--app-scale));
+  font-size: calc(30px * var(--app-scale));
+  font-weight: 550;
+}
+.login form .textContainer .loginSubtitle {
+  color: rgb(102, 102, 102);
+  font-size: calc(16px * var(--app-scale));
+  font-weight: 400;
+}
+.login form .loginForm {
+  width: calc(490px * var(--app-scale));
+  height: calc(230px * var(--app-scale));
+  padding: calc(30px * var(--app-scale)) calc(30px * var(--app-scale)) calc(20px * var(--app-scale)) calc(30px * var(--app-scale));
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) calc(2px * var(--app-scale)) calc(2px * var(--app-scale)) calc(11px * var(--app-scale)) 0px;
+}
+.login form .loginForm .loginError {
+  color: red;
+  height: calc(20px * var(--app-scale));
+}
+.login form .loginForm .loginInputs {
+  background-color: transparent;
+  padding: calc(8px * var(--app-scale)) calc(10px * var(--app-scale)) calc(8px * var(--app-scale)) calc(10px * var(--app-scale));
+  width: 100%;
+}
+.login form .loginForm .loginInputs#error {
+  border: calc(2px * var(--app-scale)) solid red;
+}
+.login form .loginForm .upperBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: calc(10px * var(--app-scale));
+}
+.login form .loginForm .upperBtns .loginBtn {
+  color: white;
+  font-size: calc(14px * var(--app-scale));
+  font-weight: 400;
+  padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale)) calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
+  background-color: rgb(4, 56, 161);
+  cursor: pointer;
+}
+.login form .loginForm .upperBtns .forgotPassword {
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+}
+.login form .loginForm .upperBtns .forgotPassword:hover {
+  color: black;
+  transition: 0.8s;
+}
+.login form .loginForm .toRegisterContainer {
+  text-decoration: none;
+  color: rgb(102, 102, 102);
+}
+.login form .loginForm .toRegisterContainer .toRegister {
+  margin-top: calc(10px * var(--app-scale));
+  padding-bottom: calc(10px * var(--app-scale));
+}
+.login form .loginForm .toRegisterContainer .toRegister:hover {
+  color: black;
+  transition: 0.8s;
 }/*# sourceMappingURL=App.css.map */

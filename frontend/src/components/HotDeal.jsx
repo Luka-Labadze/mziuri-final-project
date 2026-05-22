@@ -1,57 +1,11 @@
 import React from "react";
-import hotDealHeadset from "../assets/images/10003.png";
-import hotDealBG from "../assets/images/10032.jpg";
-import Headset from "../assets/images/10004.png";
-import VRHeadset from "../assets/images/10005.png";
-import SmartWatch from "../assets/images/10006.png";
-import Microphone from "../assets/images/10009.png";
-import Camera from "../assets/images/10010.png";
-import HeadsetHolder from "../assets/images/10012.png";
-import MicrophoneFilther from "../assets/images/10016.png";
-import Speakers from "../assets/images/10030.png";
 import HotDealCarousel from "./HotDealCarousel";
 
-function HotDeal() {
-
-  
-  const slides = [
-    {
-      id: 1,
-      image1: Headset,
-      image2: VRHeadset,
-      title: "Demo Product Title",
-      price: 349.99,
-    },
-    {
-      id: 2,
-      image1: SmartWatch,
-      image2: Camera,
-      title: "Demo Product Title",
-      price: 525.0,
-    },
-    {
-      id: 3,
-      image1: Microphone,
-      image2: MicrophoneFilther,
-      title: "Demo Product Title",
-      price: 145.5,
-    },
-    {
-      id: 4,
-      image1: HeadsetHolder,
-      image2: Speakers,
-      title: "Demo Product Title",
-      price: 89.95,
-    },
-  ];
-
-
-  
-  
+function HotDeal({ products }) {
   return (
     <div className="hotDeal">
       <div className="hDLeftSide">
-        <img src={hotDealBG} className="hdBgImg" alt="Background" />
+        <img src="/images/10032.jpg" className="hdBgImg" alt="Background" />
 
         <div className="hDContent">
           <div className="textContainer">
@@ -81,7 +35,7 @@ function HotDeal() {
 
           <div className="imgContainer">
             <img
-              src={hotDealHeadset}
+              src="/images/10003.png"
               className="hotDealHeadset"
               alt="Headset"
             />
@@ -91,9 +45,9 @@ function HotDeal() {
 
       <div className="hdCarousel">
         <div className="hdCarouselWrapper">
-          <HotDealCarousel
-            slides={slides}
-          />
+          <div className="carouselContainer">
+            <HotDealCarousel slides={products} />
+          </div>
         </div>
       </div>
     </div>

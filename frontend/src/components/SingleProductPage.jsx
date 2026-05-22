@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import HotDealCarousel from "./HotDealCarousel";
-import Headset from "../assets/images/10004.png";
-import VRHeadset from "../assets/images/10005.png";
-import SmartWatch from "../assets/images/10006.png";
-import Microphone from "../assets/images/10009.png";
-import Camera from "../assets/images/10010.png";
-import HeadsetHolder from "../assets/images/10012.png";
-import MicrophoneFilther from "../assets/images/10016.png";
-import Speakers from "../assets/images/10030.png";
-import SingleProductCarousel from "./SingleProductCarousel";
-import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
+// import Headset from "../../public/images/10004.png";
+// import VRHeadset from "../../public/images/10005.png";
+// import SmartWatch from "../../public/images/10006.png";
+// import Microphone from "../../public/images/10009.png";
+// import Camera from "../../public/images/10010.png";
+// import HeadsetHolder from "../../public/images/10012.png";
+// import MicrophoneFilther from "../../public/images/10016.png";
+// import Speakers from "../../public/images/10030.png";
+// import SingleProductCarousel from "./SingleProductCarousel";
+// import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
 
 function SingleProductPage() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);

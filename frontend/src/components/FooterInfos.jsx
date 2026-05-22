@@ -1,6 +1,4 @@
 import React from "react";
-import FooterImg1 from "../assets/images/footerImg1.avif";
-import FooterImg2 from "../assets/images/footerImg2.avif";
 import Phone from "../assets/icons/call.png";
 import Email from "../assets/icons/email.png";
 import Location from "../assets/icons/location.png";
@@ -13,7 +11,7 @@ function FooterInfos() {
           <h3 className="recentPostsTitle">Recent Post</h3>
           <ul className="recentPostsWrapper">
             <li className="rpFirst">
-              <img src={FooterImg1} className="rpFirstImg" />
+              <img src="/images/footerImg1.avif" className="rpFirstImg" alt="Recent post 1" />
               <div className="rpFirstTextWrapper">
                 <h4 className="rpFirstTitle">
                   Temporibus autem <br /> quibusdam
@@ -22,7 +20,7 @@ function FooterInfos() {
               </div>
             </li>
             <li className="rpSecond">
-              <img src={FooterImg2} className="rpSecondImg" />
+              <img src="/images/footerImg2.avif" className="rpSecondImg" alt="Recent post 2" />
               <div className="rpSecondTextWrapper">
                 <h3 className="rpSecondTitle">
                   Temporibus autem <br /> quibusdam
@@ -46,21 +44,21 @@ function FooterInfos() {
           <h4 className="contactInfoTitle">Contact Info</h4>
           <ul className="contactInfoWrapper">
             <li className="location">
-              <img src={Location} className="locationImg" />
+              <img src={Location} className="locationImg" alt="Location" />
               <p className="locationParagraph">
                 lorem address south road <br />
                 77 north, USA -9991
               </p>
             </li>
             <li className="mail">
-              <img src={Email} className="mailImg" />
+              <img src={Email} className="mailImg" alt="Email" />
               <p className="mailParagraph">
                 info@mail.com <br />
                 info@mail.com
               </p>
             </li>
             <li className="phone">
-              <img src={Phone} className="phoneImg" />
+              <img src={Phone} className="phoneImg" alt="Phone" />
               <p className="phoneParagraph">
                 123 456 789 <br />
                 123 456 789

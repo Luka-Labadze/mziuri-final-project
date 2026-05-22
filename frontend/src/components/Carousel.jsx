@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import SingleCarousel from "./SingleCarousel";
-import carouselImg1 from "../assets/images/10001.png";
-import carouselImg2 from "../assets/images/10002.png";
-import carouselBg from "../assets/images/10033.jpg";
 import prevClick from "../assets/icons/left.png";
 import nextClick from "../assets/icons/right.png";
+
 function Carousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const carouselBg = "/images/10033.jpg";
 
   const slides = [
     {
       id: 1,
-      img: carouselImg1,
+      img: "/images/10001.png",
       subtitle: "Best Products",
       title: "Mount Carved 2200XD",
     },
     {
       id: 2,
-      img: carouselImg2,
+      img: "/images/10002.png",
       subtitle: "Best Products",
       title: "Mount Carved 2200XD",
     },
@@ -48,6 +48,7 @@ function Carousel() {
         <button onClick={handlePrevClick} className="carouselPrevClick">
           <span className="carouselBtns">&lt;</span>
         </button>
+        
         <div className="singleCarouselContainer">
           <SingleCarousel
             key={currentImage.id}
@@ -56,7 +57,8 @@ function Carousel() {
             subtitle={currentImage.subtitle}
           />
         </div>
-        <button onClick={handlePrevClick} className="carouselPrevClick">
+        
+        <button onClick={handleNextClick} className="carouselPrevClick">
           <span className="carouselBtns">&gt;</span>
         </button>
       </div>

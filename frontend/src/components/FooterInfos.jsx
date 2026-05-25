@@ -2,7 +2,8 @@ import React from "react";
 import Phone from "../assets/icons/call.png";
 import Email from "../assets/icons/email.png";
 import Location from "../assets/icons/location.png";
-
+import RpFirstImage from '../assets/staticImages/footerImg1.avif'
+import RpSecondImage from '../assets/staticImages/footerImg2.avif'
 function FooterInfos() {
   return (
     <div className="footerInfos">
@@ -11,7 +12,7 @@ function FooterInfos() {
           <h3 className="recentPostsTitle">Recent Post</h3>
           <ul className="recentPostsWrapper">
             <li className="rpFirst">
-              <img src="/images/footerImg1.avif" className="rpFirstImg" alt="Recent post 1" />
+              <img src={RpFirstImage} className="rpFirstImg" alt="Recent post 1" />
               <div className="rpFirstTextWrapper">
                 <h4 className="rpFirstTitle">
                   Temporibus autem <br /> quibusdam
@@ -20,7 +21,7 @@ function FooterInfos() {
               </div>
             </li>
             <li className="rpSecond">
-              <img src="/images/footerImg2.avif" className="rpSecondImg" alt="Recent post 2" />
+              <img src={RpSecondImage} className="rpSecondImg" alt="Recent post 2" />
               <div className="rpSecondTextWrapper">
                 <h3 className="rpSecondTitle">
                   Temporibus autem <br /> quibusdam

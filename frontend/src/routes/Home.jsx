@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Carousel from '../components/Carousel'
 import HotDeal from '../components/HotDeal'
 import { useLoader } from '../context/LoaderContext';
-import { fetchProducts } from '../api/api';
+import { getProducts } from '../api/api';
 
 function Home() {
   const { useFakeLoader } = useLoader();
@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     useFakeLoader();
 
-    fetchProducts()
+    getProducts()
       .then(data => {
         if (Array.isArray(data)) {
           setProducts(data);

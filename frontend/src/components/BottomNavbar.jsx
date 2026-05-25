@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function BottomNavbar() {
+  const staticProductId = "6a118ecd8ecd47c3272b0c5d";
+
   return (
     <div className="bottomNavbar">
       <div className="navWrapper">
@@ -11,7 +13,7 @@ function BottomNavbar() {
         <Link className="links" to="/products">
           Shop
         </Link>
-        <Link className="links" to="/single-product">
+        <Link className="links" to={`/single-product/${staticProductId}`}>
           Products
         </Link>
         <Link className="links" to="/contact">

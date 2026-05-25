@@ -1,10 +1,14 @@
 import React from 'react';
 
-function SingleProductPhotoCarousel({ slides }) {
+function SingleProductPhotoCarousel({ image }) { 
   return (
     <div className='singleProductPhotoCarousel'>
       <div className="thumbnailBox">
-        <img src={slides.image1} alt="product thumbnail" className="photoCarouselImg" />
+        <img 
+          src={image} 
+          alt='ProductthumnailCarouselImage'
+          className="photoCarouselImg" 
+        />
       </div>
     </div>
   );

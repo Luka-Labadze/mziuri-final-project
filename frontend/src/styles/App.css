@@ -503,6 +503,7 @@
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease;
+  color: black;
 }
 .productSingle:hover {
   border-color: #e0e0e0;

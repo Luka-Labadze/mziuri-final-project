@@ -1,178 +1,117 @@
-import React, { useState } from "react";
-import HotDealCarousel from "./HotDealCarousel";
-// import Headset from "../../public/images/10004.png";
-// import VRHeadset from "../../public/images/10005.png";
-// import SmartWatch from "../../public/images/10006.png";
-// import Microphone from "../../public/images/10009.png";
-// import Camera from "../../public/images/10010.png";
-// import HeadsetHolder from "../../public/images/10012.png";
-// import MicrophoneFilther from "../../public/images/10016.png";
-// import Speakers from "../../public/images/10030.png";
-// import SingleProductCarousel from "./SingleProductCarousel";
-// import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
+import React, { useEffect, useState } from "react";
+import SingleProductCarousel from "./SingleProductCarousel";
+import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
+import { getProducts } from "../api/api";
 
-function SingleProductPage() {
+function SingleProductPage({ product }) {
+
+
+
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
+  const [currentPhotoSlideIndex, setCurrentPhotoSlideIndex] = useState(0);
+  const [allProducts, setAllProducts] = useState([])
   const ITEMS_VISIBLE = 3;
+  const PHOTO_ITEMS_VISIBLE = 3;
+  const photoCarouselImages = [
+    product.image1,
+    product.image2,
+    product.image1,
+    product.image2,
+  ];
 
-  const handleNextClick = () => {
-    if (currentSlideIndex < slides.length - ITEMS_VISIBLE) {
-      setCurrentSlideIndex(currentSlideIndex + 1);
-    } else {
-      setCurrentSlideIndex(0);
-    }
-  };
+  useEffect(() => {
+    getProducts()
+    .then((data) => setAllProducts(data))
+  }, [])
 
-  const handlePrevClick = () => {
-    if (currentSlideIndex > 0) {
-      setCurrentSlideIndex(currentSlideIndex - 1);
-    } else {
-      setCurrentSlideIndex(slides.length - ITEMS_VISIBLE);
-    }
-  };
+ const relatedMaxSlides = allProducts.length - ITEMS_VISIBLE;
 
-   const handlePhotoNextClick = () => {
-    if (currentSlideIndex < slides.length - ITEMS_VISIBLE) {
-      setCurrentSlideIndex(currentSlideIndex + 1);
+const handleNextClick = () => {
+  if (currentSlideIndex < relatedMaxSlides) {
+    setCurrentSlideIndex(currentSlideIndex + 1);
+  } else {
+    setCurrentSlideIndex(0);
+  }
+};
+
+const handlePrevClick = () => {
+  if (currentSlideIndex > 0) {
+    setCurrentSlideIndex(currentSlideIndex - 1);
+  } else {
+    setCurrentSlideIndex(relatedMaxSlides);
+  }
+};
+
+  const photoMaxSlides = photoCarouselImages.length - PHOTO_ITEMS_VISIBLE;
+
+  const handlePhotoNextClick = () => {
+    if (currentPhotoSlideIndex < photoMaxSlides) {
+      setCurrentPhotoSlideIndex(currentPhotoSlideIndex + 1);
     } else {
-      setCurrentSlideIndex(0);
+      setCurrentPhotoSlideIndex(0);
     }
   };
 
   const handlePhotoPrevClick = () => {
-    if (currentSlideIndex > 0) {
-      setCurrentSlideIndex(currentSlideIndex - 1);
+    if (currentPhotoSlideIndex > 0) {
+      setCurrentPhotoSlideIndex(currentPhotoSlideIndex - 1);
     } else {
-      setCurrentSlideIndex(slides.length - ITEMS_VISIBLE);
+      setCurrentPhotoSlideIndex(photoMaxSlides);
     }
   };
 
-  const slides = [
-    {
-      id: 1,
-      image1: Headset,
-      image2: VRHeadset,
-      title: "Demo Product Title",
-      price: 349.99,
-    },
-    {
-      id: 2,
-      image1: SmartWatch,
-      image2: Camera,
-      title: "Demo Product Title",
-      price: 525.0,
-    },
-    {
-      id: 3,
-      image1: Microphone,
-      image2: MicrophoneFilther,
-      title: "Demo Product Title",
-      price: 145.5,
-    },
-    {
-      id: 4,
-      image1: HeadsetHolder,
-      image2: Speakers,
-      title: "Demo Product Title",
-      price: 89.95,
-    },
-    {
-      id: 5,
-      image1: Headset,
-      image2: VRHeadset,
-      title: "Demo Product Title",
-      price: 349.99,
-    },
-    {
-      id: 6,
-      image1: SmartWatch,
-      image2: Camera,
-      title: "Demo Product Title",
-      price: 525.0,
-    },
-    {
-      id: 7,
-      image1: Microphone,
-      image2: MicrophoneFilther,
-      title: "Demo Product Title",
-      price: 145.5,
-    },
-    {
-      id: 8,
-      image1: HeadsetHolder,
-      image2: Speakers,
-      title: "Demo Product Title",
-      price: 89.95,
-    },
-    {
-      id: 9,
-      image1: Headset,
-      image2: VRHeadset,
-      title: "Demo Product Title",
-      price: 349.99,
-    },
-    {
-      id: 10,
-      image1: SmartWatch,
-      image2: Camera,
-      title: "Demo Product Title",
-      price: 525.0,
-    },
-    {
-      id: 11,
-      image1: Microphone,
-      image2: MicrophoneFilther,
-      title: "Demo Product Title",
-      price: 145.5,
-    },
-    {
-      id: 12,
-      image1: HeadsetHolder,
-      image2: Speakers,
-      title: "Demo Product Title",
-      price: 89.95,
-    },
-  ];
+  if (!product) {
+    return <div className="loading">Loading product...</div>;
+  }
 
   return (
     <div className="singleProductPage">
       <div className="thumbnail">
         <div className="mainImg">
-          <img src={Camera} alt="mainImg" className="thumbnailMainImg" />
+          <img
+            src={product.image1}
+            alt="mainImg"
+            className="thumbnailMainImg"
+          />
         </div>
         <div className="thumbnailCarousel">
-          <button className="photoCarouselBtn prev" onClick={handlePhotoPrevClick}>
+          <button
+            className="photoCarouselBtn prev"
+            onClick={handlePhotoPrevClick}
+          >
             &lt;
           </button>
-          <button className="photoCarouselBtn next" onClick={handlePhotoNextClick}>
+          <button
+            className="photoCarouselBtn next"
+            onClick={handlePhotoNextClick}
+          >
             &gt;
           </button>
           <div className="thumbnailCarouselWrapper">
             <div
               className="carouselContainer"
               style={{
-                transform: `translateX(-${currentSlideIndex * (100 / 3)}%)`,
+                transform: `translateX(-${currentPhotoSlideIndex * (100 / PHOTO_ITEMS_VISIBLE)}%)`,
                 display: "flex",
-                transition: "transform 0.3s ease",
+                transition: " transform 0.3s ease",
               }}
             >
-              {slides.map((slide) => (
-                <SingleProductPhotoCarousel key={slide.id} slides={slide} />
-              ))}
+              {photoCarouselImages.map((image, index) => {
+                return <SingleProductPhotoCarousel key={index} image={image} />;
+              })}
             </div>
           </div>
         </div>
       </div>
       <div className="productDescription">
-        <span className="type">{"hatil"}</span>
-        <h3 className="productTitle">{"Accusantium doloremque"}</h3>
+        <span className="type">category</span>
+        <h3 className="productTitle">{product.title}</h3>
         <div className="priceContainer">
-          <span className="newPrice">{"$130.00"}</span>
-          <span className="oldPrice">{"$150.00"}</span>
-          <p className="discount">Save -13%</p>
+          <span className="newPrice">${product.price}</span>
+          <span className="oldPrice">$160.00</span>
+          <p className="discount">Save -20%</p>
         </div>
-        <p className="priceRatio">{"$130 / 2g"}</p>
+        <p className="priceRatio">In stock</p>
         <p className="productCaption">
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered <br />
@@ -241,14 +180,13 @@ function SingleProductPage() {
           <ol className="shareList">
             <li>Facebook</li>
             <li>Twitter</li>
-            <li>Google + </li>
-            <li>Pintereset</li>
+            <li>Google +</li>
+            <li>Pinterest</li>
           </ol>
         </div>
         <div className="checkout">
           <p>Guaranteed safe checkout</p>
         </div>
-
         <div className="singleProductPageCarousel">
           <button className="carouselBtn prev" onClick={handlePrevClick}>
             &lt;
@@ -264,9 +202,7 @@ function SingleProductPage() {
                 transition: "transform 0.3s ease",
               }}
             >
-              {slides.map((slide) => (
-                <SingleProductCarousel key={slide.id} slides={slide} />
-              ))}
+              <SingleProductCarousel slides={allProducts} />
             </div>
           </div>
         </div>

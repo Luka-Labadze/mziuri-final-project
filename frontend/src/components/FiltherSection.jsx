@@ -1,5 +1,4 @@
 import React from "react";
-import ProductData from "../data/productsData.json";
 
 function FiltherSection() {
   return (

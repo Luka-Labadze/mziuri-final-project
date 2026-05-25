@@ -1,3 +1,4 @@
+
 .productSingle {
   width: calc(308px * var(--app-scale));
   height: calc(458px * var(--app-scale));
@@ -5,8 +6,8 @@
   background-color: #f7f8fa;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease;
-
+  transition: border-color 0.3s ease ;
+  color:  black;
   &:hover {
     border-color: #e0e0e0;
   }

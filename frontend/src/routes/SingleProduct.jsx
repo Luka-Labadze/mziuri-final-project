@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProductById } from "../api/api.js";
 import SingleProductPage from "../components/SingleProductPage";
 import { useLoader } from "../context/LoaderContext";
 import Description from "../components/Description";
@@ -6,10 +8,28 @@ import RecentlyViewed from "../components/RecentlyViewed";
 
 function SingleProduct() {
   const { useFakeLoader } = useLoader();
-  useEffect(() => useFakeLoader(), []);
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    useFakeLoader();
+    if (!id) return;
+
+    getProductById(id)
+      .then((data) => {
+        setProduct(data);
+      })
+      .catch((err) => {
+        console.error("Fetch Error:", err);
+      });
+  }, [id]);
+  if (!product) {
+    return <div className="loading">Loading product...</div>;
+  }
+
   return (
     <>
-      <SingleProductPage />
+      <SingleProductPage product={product} />
       <Description />
       <RecentlyViewed />
     </>

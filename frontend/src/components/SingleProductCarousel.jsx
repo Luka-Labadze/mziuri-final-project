@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function SingleProductCarousel({ slides }) {
   return (
     <>
@@ -24,7 +24,9 @@ function SingleProductCarousel({ slides }) {
             <h3>{product.title}</h3>
             <p>${product.price}</p>
           </div>
-          <button className="shopNow">Shop Now</button>
+          <Link to="/products" style={{textDecoration: "none"}}>
+          <button className="shopNow" >Shop Now</button>
+          </Link>
         </div>
       ))}
     </>

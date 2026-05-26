@@ -1756,6 +1756,170 @@
   border-radius: calc(5px * var(--app-scale));
 }
 
+.featuredProducts {
+  width: 100%;
+  padding-bottom: calc(80px * var(--app-scale));
+}
+.featuredProducts .featuredProductsNavCont {
+  width: calc(1170px * var(--app-scale));
+  margin: 0 auto;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav {
+  list-style-type: none;
+  margin-bottom: calc(60px * var(--app-scale));
+  position: relative;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: rgba(34, 34, 34, 0.1);
+  z-index: 1;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav .featuredProductsNavBorder {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(40px * var(--app-scale));
+  background-color: white;
+  border-radius: 25px;
+  width: calc(584px * var(--app-scale));
+  padding-top: calc(15px * var(--app-scale));
+  padding-bottom: calc(15px * var(--app-scale));
+  transform: translateY(45px);
+  z-index: 2;
+  position: relative;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav .navItem {
+  color: rgb(69, 69, 69);
+  font-size: calc(19px * var(--app-scale));
+  cursor: pointer;
+  padding: 8px 39px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: white;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav .navItem.active {
+  border: calc(1px * var(--app-scale)) solid rgba(69, 69, 69, 0.25);
+  background-color: #f8f8f8;
+}
+.featuredProducts .featuredProductsNavCont .featuredProductsNav .navItem:hover:not(.active) {
+  color: #0638a1;
+}
+.featuredProducts .featuredProductsCarousel {
+  margin: 0 auto;
+  position: relative;
+  width: calc(1250px * var(--app-scale));
+  max-width: 100%;
+}
+.featuredProducts .featuredProductsCarousel .wishlist {
+  padding: calc(10px * var(--app-scale));
+  width: calc(12px * var(--app-scale));
+  height: auto;
+  font-size: calc(34px * var(--app-scale));
+  font-weight: 400;
+  cursor: pointer;
+  scale: 0.8;
+  transform: translateX(calc(9px * var(--app-scale)));
+}
+.featuredProducts .featuredProductsCarousel .wishlist:hover {
+  color: #0438a1;
+  transform: 0.3s ease-in;
+}
+.featuredProducts .featuredProductsCarousel .carouselWrapper {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+}
+.featuredProducts .featuredProductsCarousel .carouselContainer {
+  display: flex;
+  transition: transform 0.7s;
+}
+.featuredProducts .featuredProductsCarousel .product-slide {
+  flex: 0 0 25%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0 calc(15px * var(--app-scale));
+}
+.featuredProducts .featuredProductsCarousel .carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-90%);
+  background: white;
+  border: calc(1px * var(--app-scale)) solid #ccc;
+  cursor: pointer;
+  font-size: calc(18px * var(--app-scale));
+  padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
+  z-index: 10;
+  scale: 0.8;
+}
+.featuredProducts .featuredProductsCarousel .carouselBtn.next {
+  font-size: calc(28px * var(--app-scale));
+  right: calc(8px * var(--app-scale));
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  transform: translateY(-90%) scale(0.7);
+  color: #0638a1;
+  background: white;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
+  border-radius: 50%;
+  border: calc(1px * var(--app-scale)) solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  padding: calc(35px * var(--app-scale));
+}
+.featuredProducts .featuredProductsCarousel .carouselBtn.next:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  color: white;
+}
+.featuredProducts .featuredProductsCarousel .carouselBtn.prev {
+  font-size: calc(28px * var(--app-scale));
+  left: calc(8px * var(--app-scale));
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  transform: translateY(-90%) scale(0.7);
+  color: #0638a1;
+  background: white;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
+  border-radius: 50%;
+  border: calc(1px * var(--app-scale)) solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  padding: calc(35px * var(--app-scale));
+}
+.featuredProducts .featuredProductsCarousel .carouselBtn.prev:hover {
+  transition: 1s;
+  background-color: #0638a1;
+  color: white;
+}
+.featuredProducts .featuredProductsCarousel:hover .prev {
+  opacity: 1;
+  transition: 1s;
+}
+.featuredProducts .featuredProductsCarousel:hover .next {
+  opacity: 1;
+  transition: 1s;
+}
+.featuredProducts .featuredProductsCarousel:hover .carouselBtn {
+  opacity: 1;
+}
+
 .productsWrapper {
   display: flex;
   align-items: flex-start;

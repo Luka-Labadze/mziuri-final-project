@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function HotDealCarousel({ slides }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
@@ -10,7 +10,7 @@ function HotDealCarousel({ slides }) {
       setCurrentSlideIndex(0);
     }
   };
-  
+
   const handlePrevClick = () => {
     if (currentSlideIndex > 0) {
       setCurrentSlideIndex(currentSlideIndex - 1);
@@ -33,13 +33,13 @@ function HotDealCarousel({ slides }) {
       <div className="imgContainer">
         <img
           alt="IMAGE"
-          src={slides[currentSlideIndex]?.image1 }
+          src={slides[currentSlideIndex]?.image1}
           className="hdCarouselImg"
           id="image1"
         />
         <img
           alt="IMAGE2"
-          src={slides[currentSlideIndex]?.image2 }
+          src={slides[currentSlideIndex]?.image2}
           className="hdCarouselImg"
           id="image2"
         />
@@ -49,8 +49,9 @@ function HotDealCarousel({ slides }) {
         <h3>{slides[currentSlideIndex]?.title || ""}</h3>
         <p>${slides[currentSlideIndex]?.price || "0.00"}</p>
       </div>
-
-      <button className="shopNow">Shop Now</button>
+      <Link to="/products" style={{ textDecoration: "none" }}>
+        <button className="shopNow">Shop Now</button>
+      </Link>
     </div>
   );
 }

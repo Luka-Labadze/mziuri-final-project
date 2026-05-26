@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel'
 import HotDeal from '../components/HotDeal'
 import { useLoader } from '../context/LoaderContext';
 import { getProducts } from '../api/api';
+import FeaturedProducts from '../components/FeaturedProducts';
 
 function Home() {
   const { useFakeLoader } = useLoader();
@@ -26,6 +27,7 @@ function Home() {
     <>
       <Carousel /> 
       <HotDeal products={products} />
+      <FeaturedProducts slides={products}/>
     </>
   )
 }

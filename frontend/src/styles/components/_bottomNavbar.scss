@@ -1,14 +1,28 @@
 .bottomNavbar {
-  // position: fixed;
-  // z-index: 1000;
-  // top: ;
-
+  position: relative;
+  z-index: 1000;
   width: 100%;
-  height: calc(70px * var(--app-scale)); 
+  height: calc(70px * var(--app-scale));
   background-color: rgb(4, 56, 161);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: all 1s ease-in-out;
+
+  top: 0;
+
+  &.active {
+    position: fixed;
+    top: -100%;
+    animation: slideDown 0.7s forwards;
+  }
+
+  @keyframes slideDown {
+    100% {
+      top: 0;
+    }
+  }
+
   .navWrapper {
     display: flex;
     justify-content: space-evenly;
@@ -16,13 +30,14 @@
     gap: calc(55px * var(--app-scale));
     .links {
       color: rgb(244, 246, 255);
-      padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
+      padding: calc(20px * var(--app-scale)) 0;
       text-decoration: none;
       font-weight: 600;
       font-size: calc(16px * var(--app-scale));
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   }
+
   .authWrapper {
     display: flex;
     justify-content: space-evenly;
@@ -30,7 +45,7 @@
     gap: calc(30px * var(--app-scale));
     .auth {
       color: rgb(244, 246, 255);
-      padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
+      padding: calc(20px * var(--app-scale)) 0;
       text-decoration: none;
       font-weight: 600;
       font-size: calc(16px * var(--app-scale));

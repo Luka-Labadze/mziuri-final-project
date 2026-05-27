@@ -2,10 +2,13 @@ import React from "react";
 import ponnoLogo from "../assets/logos/10041.png";
 import cartLogo from "../assets/icons/shopping-bag.png";
 import searchIcon from "../assets/icons/search.png";
+import { Link } from "react-router-dom";
 function TopNavbar() {
   return (
     <div className="topNavbar">
-      <img src={ponnoLogo} alt="ponnoLogo" className="ponnoLogo" />
+      <Link to="/">
+        <img src={ponnoLogo} alt="ponnoLogo" className="ponnoLogo" />
+      </Link>
       <div className="searchWrap">
         <input
           type="text"

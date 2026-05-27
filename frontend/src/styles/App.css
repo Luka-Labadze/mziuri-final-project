@@ -72,12 +72,26 @@
 }
 
 .bottomNavbar {
+  position: relative;
+  z-index: 1000;
   width: 100%;
   height: calc(70px * var(--app-scale));
   background-color: rgb(4, 56, 161);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: all 1s ease-in-out;
+  top: 0;
+}
+.bottomNavbar.active {
+  position: fixed;
+  top: -100%;
+  animation: slideDown 0.7s forwards;
+}
+@keyframes slideDown {
+  100% {
+    top: 0;
+  }
 }
 .bottomNavbar .navWrapper {
   display: flex;
@@ -87,7 +101,7 @@
 }
 .bottomNavbar .navWrapper .links {
   color: rgb(244, 246, 255);
-  padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
+  padding: calc(20px * var(--app-scale)) 0;
   text-decoration: none;
   font-weight: 600;
   font-size: calc(16px * var(--app-scale));
@@ -101,7 +115,7 @@
 }
 .bottomNavbar .authWrapper .auth {
   color: rgb(244, 246, 255);
-  padding: calc(20px * var(--app-scale)) 0 calc(20px * var(--app-scale)) 0;
+  padding: calc(20px * var(--app-scale)) 0;
   text-decoration: none;
   font-weight: 600;
   font-size: calc(16px * var(--app-scale));
@@ -257,8 +271,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: calc(30px * var(--app-scale));
-  padding: calc(80px * var(--app-scale)) 0 calc(80px * var(--app-scale)) 0;
+  padding: calc(80px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
 }
 .hotDeal .hDLeftSide {
   width: calc(870px * var(--app-scale));
@@ -266,12 +281,12 @@
   position: relative;
   overflow: hidden;
   border-radius: calc(8px * var(--app-scale));
+  margin-left: calc(75px * var(--app-scale));
 }
 .hotDeal .hDLeftSide .hdBgImg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -342,7 +357,6 @@
 }
 
 .hotDealCarousel {
-  width: calc(308px * var(--app-scale));
   height: calc(458px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
   background-color: #f7f8fa;
@@ -1814,7 +1828,7 @@
 .featuredProducts .featuredProductsCarousel {
   margin: 0 auto;
   position: relative;
-  width: calc(1250px * var(--app-scale));
+  width: calc(1180px * var(--app-scale));
   max-width: 100%;
 }
 .featuredProducts .featuredProductsCarousel .wishlist {
@@ -1918,6 +1932,32 @@
 }
 .featuredProducts .featuredProductsCarousel:hover .carouselBtn {
   opacity: 1;
+}
+
+.banner {
+  width: 100%;
+  padding-bottom: 50px;
+}
+.banner .bannerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.banner .bannerWrapper .imageContainer {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.banner .bannerWrapper .banners {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 1.3s ease;
+}
+.banner .bannerWrapper .banners:hover {
+  transform: scale(1.04);
 }
 
 .productsWrapper {

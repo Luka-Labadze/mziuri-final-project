@@ -20,10 +20,12 @@
 @use './components/footerInfos';
 @use './components/featuredProducts';
 @use './components/banner';
-
+@use './components/modal';
 
 
 @use './routes/products';
 @use './routes/register';
 @use './routes/login';
 
+
+@use './modals/newsletterModal';

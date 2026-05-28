@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Backdrop fade in */
+  animation: modalBackdropFade 0.3s ease forwards;
+
+  &__content {
+    position: relative;
+    animation: modalContentPop 0.4s ease forwards;   /* Content animation */
+
+    &__close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 50;
+      width: 32px;
+      height: 32px;
+      fill: red;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Animations */
+@keyframes modalBackdropFade {
+  0% { opacity: 0; }
+  100%   { opacity: 1; }
+}
+
+@keyframes modalContentPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

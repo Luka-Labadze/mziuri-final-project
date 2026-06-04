@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import SingleProductCarousel from "./SingleProductCarousel";
+import  { useState } from 'react';
+import SingleProductCarousel from './SingleProductCarousel';
 
 function FeaturedProducts({ slides }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -35,11 +35,17 @@ function FeaturedProducts({ slides }) {
       </div>
 
       <div className="featuredProductsCarousel">
-        <button className="carouselBtn prev" onClick={handlePrevClick}>
+        <button
+          className="carouselBtn prev"
+          onClick={handlePrevClick}
+        >
           &lt;
         </button>
 
-        <button className="carouselBtn next" onClick={handleNextClick}>
+        <button
+          className="carouselBtn next"
+          onClick={handleNextClick}
+        >
           &gt;
         </button>
 
@@ -48,11 +54,14 @@ function FeaturedProducts({ slides }) {
             className="carouselContainer"
             style={{
               transform: `translateX(-${currentSlideIndex * 308}px)`,
-              transition: "transform 1.7s ease",
+              transition: 'transform 1.7s ease',
             }}
           >
             {slides.map((product, index) => (
-              <div key={index} className="product-slide">
+              <div
+                key={index}
+                className="product-slide"
+              >
                 <SingleProductCarousel slides={product.slides || [product]} />
               </div>
             ))}

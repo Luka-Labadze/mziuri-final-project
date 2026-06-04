@@ -1,13 +1,13 @@
-import React from 'react';
+import "react";
 
-function SingleProductPhotoCarousel({ image }) { 
+function SingleProductPhotoCarousel({ image }) {
   return (
-    <div className='singleProductPhotoCarousel'>
+    <div className="singleProductPhotoCarousel">
       <div className="thumbnailBox">
-        <img 
-          src={image} 
-          alt='ProductthumnailCarouselImage'
-          className="photoCarouselImg" 
+        <img
+          src={image}
+          alt="ProductthumnailCarouselImage"
+          className="photoCarouselImg"
         />
       </div>
     </div>

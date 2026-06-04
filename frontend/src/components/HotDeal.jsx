@@ -1,7 +1,7 @@
-import React from "react";
+import "react";
 import HotDealCarousel from "./HotDealCarousel";
-import HotDealBg from '../assets/staticImages/10032.jpg'
-import HotDealHeadset from '../assets/staticImages/10003.png'
+import HotDealBg from "../assets/staticImages/10032.jpg";
+import HotDealHeadset from "../assets/staticImages/10003.png";
 function HotDeal({ products }) {
   return (
     <div className="hotDeal">
@@ -47,7 +47,7 @@ function HotDeal({ products }) {
       <div className="hdCarousel">
         <div className="hdCarouselWrapper">
           <div className="carouselContainer">
-            <HotDealCarousel slides={products} />
+            <HotDealCarousel id={products._id} slides={products} />
           </div>
         </div>
       </div>

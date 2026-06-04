@@ -1,23 +1,20 @@
-import React from 'react'
+import "react";
+import { useCartModal } from "../context/AddToCartModalContext";
 
-function ProductSingle({ img1,img2, title, price}) {
+function ProductSingle({ id, img1, img2, title, price }) {
+  const { openAddToCartModal } = useCartModal();
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openAddToCartModal(id);
+  };
   return (
-   <div className="productSingle">
+    <div className="productSingle">
       <p className="wishlist">♡</p>
 
       <div className="imgContainer">
-        <img
-          alt="IMAGE"
-          src={img1}
-          className="productImg"
-          id="image1"
-        />
-        <img
-          alt="IMAGE2"
-          src={img2}
-          className="productImg"
-          id="image2"
-        />
+        <img alt="IMAGE" src={img1} className="productImg" id="image1" />
+        <img alt="IMAGE2" src={img2} className="productImg" id="image2" />
       </div>
 
       <div className="titleAndPriceContainer">
@@ -25,9 +22,11 @@ function ProductSingle({ img1,img2, title, price}) {
         <p>${price}</p>
       </div>
 
-      <button className="addToCart">ADD TO CART</button>
+      <button className="addToCart" onClick={handleAddToCart}>
+        ADD TO CART
+      </button>
     </div>
-  )
+  );
 }
 
-export default ProductSingle
+export default ProductSingle;

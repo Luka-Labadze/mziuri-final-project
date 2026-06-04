@@ -8,7 +8,7 @@
 @use './components/hotDealCarousel';
 @use './components/productSingle';
 @use './components/productList';
-@use './components/filtherSection';
+@use './components/filterSection';
 @use './components/sortBy';
 @use './components/singleProductPage';
 @use './components/singleProductCarousel';
@@ -21,11 +21,13 @@
 @use './components/featuredProducts';
 @use './components/banner';
 @use './components/modal';
-
+@use './components/notification';
 
 @use './routes/products';
 @use './routes/register';
 @use './routes/login';
-
+@use './routes/contact';
 
 @use './modals/newsletterModal';
+@use './modals/addToCart';
+@use './modals/cartModal'

@@ -1,19 +1,14 @@
-import React from 'react'
-import TopNavbar from '../components/TopNavbar'
-import BottomNavbar from '../components/BottomNavbar'
-import { getProducts } from "../api/api";
-import { useState } from 'react';
-import { useEffect } from 'react';
+import "react";
+import TopNavbar from "../components/TopNavbar";
+import BottomNavbar from "../components/BottomNavbar";
 
 function Header() {
-
-
   return (
     <>
-      <TopNavbar/>
+      <TopNavbar />
       <BottomNavbar />
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;

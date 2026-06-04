@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 import ponnoLogo from "../assets/logos/10042.webp";
 import Shipping from "../assets/icons/10035.png";
 import Support from "../assets/icons/10036.png";
@@ -16,8 +16,7 @@ function FooterFeatures() {
       </div>
       <div className="supportArea">
         <div className="shippingSection">
-          
-            <img src={Shipping} className="shippingLogo" />
+          <img src={Shipping} className="shippingLogo" />
           <div className="shippingDesc">
             <h6 className="shippingTitle">Free Shipping</h6>
             <span className="borderBottom"></span>
@@ -28,8 +27,7 @@ function FooterFeatures() {
         </div>
 
         <div className="supportSection">
-          
-            <img src={Support} className="supportLogo" />
+          <img src={Support} className="supportLogo" />
           <div className="supportDesc">
             <h6 className="supportTitle">Customer Support</h6>
             <span className="borderBottom"></span>
@@ -38,8 +36,7 @@ function FooterFeatures() {
         </div>
 
         <div className="securitySection">
-          
-            <img src={Security} className="securityLogo" />
+          <img src={Security} className="securityLogo" />
           <div className="securityDesc">
             <h6 className="securityTitle">Secure Payment</h6>
             <span className="borderBottom"></span>

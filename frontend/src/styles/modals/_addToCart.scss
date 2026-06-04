@@ -1,0 +1,75 @@
+.addToCart {
+  width: calc(500px * var(--app-scale));
+  height: calc(185px * var(--app-scale));
+  margin: auto;
+  border: calc(1px * var(--app-scale)) solid transparent;
+  position: relative;
+  background-color: white;
+  // position: absolute;
+    top: 0;
+    left: 0;
+    // transform: translateY(-40vh);
+    z-index: 1;
+  .ATCWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    margin-top: 10px;
+    .ATCLeftSide {
+      .ATCImg {
+        margin-left: calc(20px * var(--app-scale));
+        height: calc(135px * var(--app-scale));
+        width: calc(135px * var(--app-scale));
+      }
+    }
+    .ATCRightSide {
+      .ATCRigthWrapper {
+        list-style-type: none;
+        .ATCTitle {
+          font-size: calc(16px * var(--app-scale));
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+        .ASTCSWrapper {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: calc(30px * var(--app-scale));
+          .ASTCSuccess {
+            width: calc(24px * var(--app-scale));
+            height: calc(24px * var(--app-scale));
+            background: url("../../assets/icons/checkmark.png") center/contain no-repeat;
+          }
+          .successMsg{
+                font-size: 16px;
+                font-weight: 400;
+
+          }
+        }
+        .ATCBtnWrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            button{
+                width: calc(115px * var(--app-scale));
+                height: calc(37px * var(--app-scale));
+                background-color: black;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgb(4, 56, 161);
+                    transition: 0.2s ease-in;
+                }
+
+            }
+
+        }
+      }
+    }
+  }
+}

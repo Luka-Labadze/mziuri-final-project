@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 import Grid from "../assets/icons/grid.png";
 function SortBy() {
   return (

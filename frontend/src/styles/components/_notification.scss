@@ -1,0 +1,43 @@
+.notification {
+  position: fixed;
+  top: calc(20px * var(--app-scale));
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-12px * var(--app-scale)));
+
+  background-color: #0438a1;
+  color: #ffffff;
+
+  border: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.15);
+  border-radius: calc(3px * var(--app-scale));
+
+  padding: calc(11px * var(--app-scale)) calc(24px * var(--app-scale));
+
+  font-size: calc(13px * var(--app-scale));
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 calc(4px * var(--app-scale)) calc(16px * var(--app-scale))
+      rgba(4, 56, 161, 0.3),
+    0 calc(1px * var(--app-scale)) calc(4px * var(--app-scale))
+      rgba(0, 0, 0, 0.12);
+
+  z-index: 9999;
+  opacity: 0;
+  transition:
+    opacity 500ms ease-in-out,
+    transform 500ms ease-in-out;
+
+  &.fade-in {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(calc(-12px * var(--app-scale)));
+  }
+}

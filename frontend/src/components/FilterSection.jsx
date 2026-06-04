@@ -1,8 +1,8 @@
-import React from "react";
+import "react";
 
-function FiltherSection() {
+function FilterSection() {
   return (
-    <div className="filther">
+    <div className="filter">
       <div className="availability">
         <h2 className="availabilityTitle">Availability</h2>
         <ul className="availability-olst">
@@ -239,4 +239,4 @@ function FiltherSection() {
   );
 }
 
-export default FiltherSection;
+export default FilterSection;

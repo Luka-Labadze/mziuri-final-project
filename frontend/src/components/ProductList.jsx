@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import ProductSingle from "./ProductSingle";
-import { getProducts } from "../api/api";
-import { Link } from 'react-router-dom'
+import  { useEffect, useState } from 'react';
+import ProductSingle from './ProductSingle';
+import { getProducts } from '../api/api';
+import { Link } from 'react-router-dom';
 function ProductList() {
   const [products, setProducts] = useState([]);
 
@@ -11,13 +11,18 @@ function ProductList() {
         const productData = Array.isArray(data) ? data : data.products;
         setProducts(productData);
       })
-      .catch((err) => console.error("Error loading products:", err));
+      .catch((err) => console.error('Error loading products:', err));
   }, []);
   return (
-   <div className="productList">
+    <div className="productList">
       {products.map((item) => (
-        <Link key={item._id} to={`/single-product/${item._id}`} style={{textDecoration: 'none'}}>
+        <Link
+          key={item._id}
+          to={`/single-product/${item._id}`}
+          style={{ textDecoration: 'none' }}
+        >
           <ProductSingle
+            id={item._id}
             img1={item.image1}
             img2={item.image2}
             title={item.title}

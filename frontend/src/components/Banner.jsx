@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 import FirstBanner from "../assets/staticImages/10024.jpg";
 import SecondBanner from "../assets/staticImages/10025.jpg";
 import { Link } from "react-router-dom";

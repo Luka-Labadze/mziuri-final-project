@@ -9,41 +9,41 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-
-  /* Backdrop fade in */
   animation: modalBackdropFade 0.3s ease forwards;
 
   &__content {
     position: relative;
-    animation: modalContentPop 0.4s ease forwards;   /* Content animation */
+    animation: modalContentPop 0.4s ease forwards;
 
-    &__close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 50;
-      width: 32px;
-      height: 32px;
-      fill: red;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    // &__close {
+    //   position: absolute;
+    //   top: 15px;
+    //   right: 20px;
+    //   cursor: pointer;
+    //   z-index: 50;
+    //   background: none;
+    //   border: none;
+    //   width: 32px;
+    //   height: 32px;
+    //   fill: red;
+    //   padding: 0;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
 
     h2 {
       text-transform: uppercase;
     }
   }
 }
-
-/* Animations */
 @keyframes modalBackdropFade {
-  0% { opacity: 0; }
-  100%   { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes modalContentPop {

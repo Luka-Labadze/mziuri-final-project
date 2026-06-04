@@ -14,10 +14,19 @@ export const getProducts = async () => {
   }
 };
 
-
-
-
 export const getProductById = async (id) => {
   const response = await axios.get(`/api/single-product/${id}`);
   return response.data;
+};
+
+export const contact = async (data) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:3000/api/users/contact`,
+      data,
+    );
+    return response.data;
+  } catch (error) {
+    throw new error(error.response?.data?.err || "Something went wrong");
+  }
 };

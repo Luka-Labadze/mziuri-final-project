@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import "react";
+import { Link } from "react-router-dom";
 function SingleCarousel({ title, img, subtitle }) {
   return (
     <div className="singleCarousel carousel-slide animated fadeIn active slide-visible">
@@ -14,7 +14,7 @@ function SingleCarousel({ title, img, subtitle }) {
           <br /> has roots in a piece of classical Latin literature.
         </p>
         <Link to="/products">
-        <button className="carouselShopBtn">Shop Now</button>
+          <button className="carouselShopBtn">Shop Now</button>
         </Link>
       </div>
     </div>

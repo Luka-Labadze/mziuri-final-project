@@ -1,8 +1,19 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import  { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useCartModal } from '../context/AddToCartModalContext';
 function HotDealCarousel({ slides }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const { openAddToCartModal } = useCartModal();
 
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const currentProductId = slides[currentSlideIndex]?._id;
+    if (currentProductId) {
+      openAddToCartModal(currentProductId);
+    }
+  };
   const handleNextClick = () => {
     if (currentSlideIndex < (slides?.length || 0) - 1) {
       setCurrentSlideIndex(currentSlideIndex + 1);
@@ -21,10 +32,16 @@ function HotDealCarousel({ slides }) {
 
   return (
     <div className="hotDealCarousel">
-      <button className="carouselBtn prev" onClick={handlePrevClick}>
+      <button
+        className="carouselBtn prev"
+        onClick={handlePrevClick}
+      >
         &lt;
       </button>
-      <button className="carouselBtn next" onClick={handleNextClick}>
+      <button
+        className="carouselBtn next"
+        onClick={handleNextClick}
+      >
         &gt;
       </button>
 
@@ -46,11 +63,19 @@ function HotDealCarousel({ slides }) {
       </div>
 
       <div className="titleAndPriceContainer">
-        <h3>{slides[currentSlideIndex]?.title || ""}</h3>
-        <p>${slides[currentSlideIndex]?.price || "0.00"}</p>
+        <h3>{slides[currentSlideIndex]?.title || ''}</h3>
+        <p>${slides[currentSlideIndex]?.price || '0.00'}</p>
       </div>
-      <Link to="/products" style={{ textDecoration: "none" }}>
-        <button className="shopNow">Shop Now</button>
+      <Link
+        to="/products"
+        style={{ textDecoration: 'none' }}
+      >
+        <button
+          className="shopNow"
+          onClick={handleAddToCart}
+        >
+          Add to cart
+        </button>
       </Link>
     </div>
   );

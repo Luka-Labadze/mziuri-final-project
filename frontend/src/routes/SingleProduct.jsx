@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProductById } from "../api/api.js";
-import SingleProductPage from "../components/SingleProductPage";
-import { useLoader } from "../context/LoaderContext";
-import Description from "../components/Description";
-import RecentlyViewed from "../components/RecentlyViewed";
+import  { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProductById } from '../api/api.js';
+import SingleProductPage from '../components/SingleProductPage';
+import { useLoader } from '../context/LoaderContext';
+import Description from '../components/Description';
+import RecentlyViewed from '../components/RecentlyViewed';
 
 function SingleProduct() {
   const { useFakeLoader } = useLoader();
@@ -20,9 +20,10 @@ function SingleProduct() {
         setProduct(data);
       })
       .catch((err) => {
-        console.error("Fetch Error:", err);
+        console.log(err);
       });
   }, [id]);
+
   if (!product) {
     return <div className="loading">Loading product...</div>;
   }

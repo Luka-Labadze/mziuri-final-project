@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 
 function RecentlyViewed() {
   const rvCards = [
@@ -27,7 +27,11 @@ function RecentlyViewed() {
         {rvCards.map((product) => (
           <div className="rvCard" key={product.id}>
             <div className="imgContainer">
-              <img alt={product.title} src={product.image1} className="rvCardsImg" />
+              <img
+                alt={product.title}
+                src={product.image1}
+                className="rvCardsImg"
+              />
             </div>
 
             <div className="titleAndPriceContainer">
@@ -38,7 +42,7 @@ function RecentlyViewed() {
               </div>
             </div>
 
-            <button className="shopNow">Shop Now</button>
+            <button className="shopNow">Add To cart</button>
           </div>
         ))}
       </div>

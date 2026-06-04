@@ -8,6 +8,7 @@ import helmet from "helmet"
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import CardsRouter from './routes/cards.js'
+import UsersRouter from './routes/users.router.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -27,7 +28,7 @@ const limiter = rateLimit({
 // app.use(limiter)
 
 app.use('/api', CardsRouter)
-
+app.use('/api/users', UsersRouter)
 app.listen(PORT, () => {
     console.log("Server is running on PORT :", PORT);
     connectDB(process.env.CONNECTION_STRING)

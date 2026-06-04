@@ -1,46 +1,47 @@
-import React, { useEffect, useState } from "react";
-import SingleProductCarousel from "./SingleProductCarousel";
-import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
-import { getProducts } from "../api/api";
+import React, { useEffect, useState } from 'react';
+import SingleProductCarousel from './SingleProductCarousel';
+import SingleProductPhotoCarousel from './SingleProductPhotoCarousel';
+import { getProducts } from '../api/api';
+import { useCartModal } from '../context/AddToCartModalContext';
 
 function SingleProductPage({ product }) {
-
-
-
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentPhotoSlideIndex, setCurrentPhotoSlideIndex] = useState(0);
-  const [allProducts, setAllProducts] = useState([])
+  const [allProducts, setAllProducts] = useState([]);
+  const { openAddToCartModal } = useCartModal();
+
   const ITEMS_VISIBLE = 3;
   const PHOTO_ITEMS_VISIBLE = 3;
-  const photoCarouselImages = [
-    product.image1,
-    product.image2,
-    product.image1,
-    product.image2,
-  ];
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openAddToCartModal(product._id);
+  };
+
+  const photoCarouselImages = [product.image1, product.image2, product.image1, product.image2];
 
   useEffect(() => {
-    getProducts()
-    .then((data) => setAllProducts(data))
-  }, [])
+    getProducts().then((data) => setAllProducts(data));
+  }, []);
 
- const relatedMaxSlides = allProducts.length - ITEMS_VISIBLE;
+  const relatedMaxSlides = allProducts.length - ITEMS_VISIBLE;
 
-const handleNextClick = () => {
-  if (currentSlideIndex < relatedMaxSlides) {
-    setCurrentSlideIndex(currentSlideIndex + 1);
-  } else {
-    setCurrentSlideIndex(0);
-  }
-};
+  const handleNextClick = () => {
+    if (currentSlideIndex < relatedMaxSlides) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+    } else {
+      setCurrentSlideIndex(0);
+    }
+  };
 
-const handlePrevClick = () => {
-  if (currentSlideIndex > 0) {
-    setCurrentSlideIndex(currentSlideIndex - 1);
-  } else {
-    setCurrentSlideIndex(relatedMaxSlides);
-  }
-};
+  const handlePrevClick = () => {
+    if (currentSlideIndex > 0) {
+      setCurrentSlideIndex(currentSlideIndex - 1);
+    } else {
+      setCurrentSlideIndex(relatedMaxSlides);
+    }
+  };
 
   const photoMaxSlides = photoCarouselImages.length - PHOTO_ITEMS_VISIBLE;
 
@@ -92,12 +93,17 @@ const handlePrevClick = () => {
               className="carouselContainer"
               style={{
                 transform: `translateX(-${currentPhotoSlideIndex * (100 / PHOTO_ITEMS_VISIBLE)}%)`,
-                display: "flex",
-                transition: " transform 0.3s ease",
+                display: 'flex',
+                transition: ' transform 0.3s ease',
               }}
             >
               {photoCarouselImages.map((image, index) => {
-                return <SingleProductPhotoCarousel key={index} image={image} />;
+                return (
+                  <SingleProductPhotoCarousel
+                    key={index}
+                    image={image}
+                  />
+                );
               })}
             </div>
           </div>
@@ -113,10 +119,10 @@ const handlePrevClick = () => {
         </div>
         <p className="priceRatio">In stock</p>
         <p className="productCaption">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered <br />
-          alteration in some form, by injected humour, or randomised words which
-          don't look even slightly <br />
+          There are many variations of passages of Lorem Ipsum available, but the majority have
+          suffered <br />
+          alteration in some form, by injected humour, or randomised words which don't look even
+          slightly <br />
           believable.
         </p>
         <div className="size">
@@ -154,10 +160,19 @@ const handlePrevClick = () => {
               <p className="quantityTitle">Quantity:</p>
             </li>
             <li>
-              <input type="number" defaultValue={1} className="quantityInput" />
+              <input
+                type="number"
+                defaultValue={1}
+                className="quantityInput"
+              />
             </li>
             <li>
-              <button className="addToCart">ADD TO CART</button>
+              <button
+                className="addToCartBtn"
+                onClick={handleAddToCart}
+              >
+                ADD TO CART
+              </button>
             </li>
             <li>
               <p className="wishlist">♡</p>
@@ -188,10 +203,16 @@ const handlePrevClick = () => {
           <p>Guaranteed safe checkout</p>
         </div>
         <div className="singleProductPageCarousel">
-          <button className="carouselBtn prev" onClick={handlePrevClick}>
+          <button
+            className="carouselBtn prev"
+            onClick={handlePrevClick}
+          >
             &lt;
           </button>
-          <button className="carouselBtn next" onClick={handleNextClick}>
+          <button
+            className="carouselBtn next"
+            onClick={handleNextClick}
+          >
             &gt;
           </button>
           <div className="carouselWrapper">
@@ -199,7 +220,7 @@ const handlePrevClick = () => {
               className="carouselContainer"
               style={{
                 transform: `translateX(-${currentSlideIndex * 308}px)`,
-                transition: "transform 0.3s ease",
+                transition: 'transform 0.3s ease',
               }}
             >
               <SingleProductCarousel slides={allProducts} />

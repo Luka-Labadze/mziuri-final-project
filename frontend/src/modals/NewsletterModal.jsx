@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 import NewsletterBg from "../assets/staticImages/10032.jpg";
 import Modal from "../components/Modal";
 function NewsletterModal({ isOpen, onClose }) {

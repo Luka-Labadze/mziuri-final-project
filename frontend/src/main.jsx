@@ -7,21 +7,24 @@ import { CartModalProvider } from "./context/AddToCartModalContext.jsx";
 import { BrowserRouter } from "react-router-dom";
 import AddToCartModal from "./modals/AddToCart.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
-import { NotificationProvider } from './context/NotificationContext.jsx';
+import { NotificationProvider } from "./context/NotificationContext.jsx";
+import { UserProvider } from "./context/UserContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <LoaderProvider>
-        <NotificationProvider>
-          <CartModalProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-            <AddToCartModal />
-          </CartModalProvider>
-        </NotificationProvider>
-      </LoaderProvider>
+      <UserProvider>
+        <LoaderProvider>
+          <NotificationProvider>
+            <CartModalProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+              <AddToCartModal />
+            </CartModalProvider>
+          </NotificationProvider>
+        </LoaderProvider>
+      </UserProvider>
     </BrowserRouter>
   </StrictMode>,
 );

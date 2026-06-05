@@ -2,11 +2,11 @@ import "react";
 import TopNavbar from "../components/TopNavbar";
 import BottomNavbar from "../components/BottomNavbar";
 
-function Header() {
+function Header({ isLoggedIn }) {
   return (
     <>
       <TopNavbar />
-      <BottomNavbar />
+      <BottomNavbar isLoggedIn={isLoggedIn}/>
     </>
   );
 }

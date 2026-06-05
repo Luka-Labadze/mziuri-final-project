@@ -1,32 +1,91 @@
+/* eslint-disable preserve-caught-error */
 import axios from "axios";
+
+const baseURL = "http://localhost:3000";
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/api/products");
-
+    const response = await axios.get(`${baseURL}/api/products`);
     return response.data;
   } catch (error) {
-    console.error(
-      "Failed fetching products from backend with Axios:",
-      error.message,
-    );
-    throw error;
+    throw new Error(error.response?.data?.err || "Failed to fetch products");
   }
 };
 
 export const getProductById = async (id) => {
-  const response = await axios.get(`/api/single-product/${id}`);
-  return response.data;
+  try {
+    const response = await axios.get(`${baseURL}/api/single-product/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to fetch product");
+  }
 };
 
 export const contact = async (data) => {
   try {
-    const response = await axios.post(
-      `http://localhost:3000/api/users/contact`,
-      data,
-    );
+    const response = await axios.post(`${baseURL}/api/users/contact`, data, {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
-    throw new error(error.response?.data?.err || "Something went wrong");
+    throw new Error(error.response?.data?.err || "Failed to send contact email");
+  }
+};
+
+export const registerUser = async (data) => {
+  try {
+    const response = await axios.post(`${baseURL}/api/users/register`, data, {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Registration failed");
+  }
+};
+
+export const loginUser = async (data) => {
+  try {
+    const response = await axios.post(`${baseURL}/api/users/login`, data, {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Login failed");
+  }
+};
+
+export const logoutUser = async () => {
+  try {
+    const response = await axios.post(`${baseURL}/api/users/logout`, null, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Logout failed");
+  }
+};
+
+export const getToken = async () => {
+  try {
+    const response = await axios.post(`${baseURL}/api/users/get-token`, null, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Token retrieval failed");
+  }
+};
+
+export const getUser = async () => {
+  try {
+    const response = await axios.get(`${baseURL}/api/users/get`, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to fetch user data");
   }
 };

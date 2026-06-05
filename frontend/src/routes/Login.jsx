@@ -1,20 +1,20 @@
-import  { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLoader } from '../context/LoaderContext';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoader } from "../context/LoaderContext";
 
-function Login() {
+function Login({setIsLoggedIn}) {
   const { useFakeLoader } = useLoader();
   useEffect(() => useFakeLoader(), []);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const [errors, setErrors] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -32,8 +32,8 @@ function Login() {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      // setIsLoggedIn(true)
-      navigate('/products');
+      setIsLoggedIn(true)
+      navigate("/products");
     }
   };
 
@@ -41,13 +41,13 @@ function Login() {
     const errors = {};
 
     if (!formData.email) {
-      errors.email = 'email field is required';
-    } else if (!formData.email.includes('@')) {
-      errors.email = 'email should contain @ symbol';
+      errors.email = "email field is required";
+    } else if (!formData.email.includes("@")) {
+      errors.email = "email should contain @ symbol";
     }
 
     if (!formData.password) {
-      errors.password = 'password field is required';
+      errors.password = "password field is required";
     }
 
     return errors;
@@ -58,7 +58,9 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <div className="textContainer">
           <h2 className="loginTitle">Login</h2>
-          <p className="loginSubtitle">Please login using account detail bellow.</p>
+          <p className="loginSubtitle">
+            Please login using account detail bellow.
+          </p>
         </div>
         <div className="loginForm">
           <input
@@ -68,9 +70,8 @@ function Login() {
             className="loginInputs"
             value={formData.email}
             onChange={handleChange}
-            id={`${errors.email ? 'error' : ''}`}
-            onFocus={() => console.log('focus')}
-            onBlur={() => console.log('unfocus')}
+            id={`${errors.email ? "error" : ""}`}
+            autoComplete="email"
           />
           <p className="loginError">{errors.email}</p>
           <input
@@ -80,22 +81,17 @@ function Login() {
             className="loginInputs"
             value={formData.password}
             onChange={handleChange}
-            id={`${errors.password ? 'error' : ''}`}
+            id={`${errors.password ? "error" : ""}`}
+            autoComplete="current-password"
           />
           <p className="loginError">{errors.password}</p>
           <div className="upperBtns">
-            <button
-              className="loginBtn"
-              type="submit"
-            >
+            <button className="loginBtn" type="submit">
               Sign In
             </button>
             <p className="forgotPassword">Forgot your password?</p>
           </div>
-          <Link
-            to="/register"
-            className="toRegisterContainer"
-          >
+          <Link to="/register" className="toRegisterContainer">
             <p className="toRegister">Create account</p>
           </Link>
         </div>

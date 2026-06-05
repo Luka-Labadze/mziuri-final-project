@@ -1,9 +1,11 @@
-import  { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-function BottomNavbar() {
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useUserData } from "../context/UserContext";
+import * as api from "../api/api";
+function BottomNavbar({ isLoggedIn }) {
   const [scrolled, setScrolled] = useState(false);
-
+  const { userData } = useUserData();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -13,59 +15,63 @@ function BottomNavbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!userData?._id) return; 
+      try {
+        const data = await api.getTodos(userData._id);
+        if (data?.data) {
+          console.log(data.data);
+        } else if (data?.err) {
+          alert(data.err);
+          navigate("/login");
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+    fetchData();
+  }, [userData, navigate]);
 
-  const staticProductId = '6a118ecd8ecd47c3272b0c5d';
+  const staticProductId = "6a118ecd8ecd47c3272b0c5d";
 
   return (
-    <div className={`bottomNavbar ${scrolled ? 'active' : ''}`}>
+    <div className={`bottomNavbar ${scrolled ? "active" : ""}`}>
       <div className="navWrapper">
-        <Link
-          className="links"
-          to="/"
-        >
+        <Link className="links" to="/">
           Home
         </Link>
-        <Link
-          className="links"
-          to="/products"
-        >
+        <Link className="links" to="/products">
           Shop
         </Link>
-        <Link
-          className="links"
-          to={`/single-product/${staticProductId}`}
-        >
+        <Link className="links" to={`/single-product/${staticProductId}`}>
           Products
         </Link>
-        <Link
-          className="links"
-          to="/contact"
-        >
+        <Link className="links" to="/contact">
           Contact
         </Link>
-        <Link
-          className="links"
-          to="/about"
-        >
+        <Link className="links" to="/about">
           About Us
         </Link>
       </div>
       <div className="authWrapper">
-        <Link
-          to="/register"
-          className="auth"
-        >
-          Sign Up
-        </Link>
-        <Link
-          to="/login"
-          className="auth"
-        >
-          Log In
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/home" className="auth">
+            Hi, {userData ? userData.firstname : "Luka!"}
+          </Link>
+        ) : (
+          <>
+            <Link to="/register" className="auth">
+              Sign Up
+            </Link>
+            <Link to="/login" className="auth">
+              Log In
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

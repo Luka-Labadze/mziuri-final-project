@@ -17,36 +17,35 @@ import Notification from "./components/Notification.jsx";
 
 import useScrollTop from "./hooks/useScrollTop.jsx";
 import useAppScale from "./hooks/useAppScale.jsx";
-// import { useUserData } from "./context/UserContext.jsx";
+import { useUserData } from "./context/UserContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getToken } from "./api/api.js";
 
 function App() {
   useAppScale();
   useScrollTop();
+  const { loggedIn, login, logout } = useUserData();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-useEffect(() => {
+  useEffect(() => {
     const checkAuth = async () => {
       try {
-        // This hits your /api/users/get-token endpoint
         const response = await getToken();
         if (response.data) {
-          setIsLoggedIn(true);
+          login(response.data);
         }
-      // eslint-disable-next-line no-unused-vars
       } catch (err) {
-        setIsLoggedIn(false);
+        logout();
+        console.error("Auth check failed", err);
       }
     };
 
     checkAuth();
   }, []);
+
   return (
     <>
-      <Header isLoggedIn={isLoggedIn}/>
+      <Header />
       <Main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -55,15 +54,12 @@ useEffect(() => {
           <Route
             path="/products"
             element={
-              <ProtectedRoute isLoggedIn={isLoggedIn} element={<Products />} />
+              <ProtectedRoute loggedIn={loggedIn} element={<Products />} />
             }
           />
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/login"
-            element={<Login setIsLoggedIn={setIsLoggedIn} />}
-          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Main>
       <Footer />

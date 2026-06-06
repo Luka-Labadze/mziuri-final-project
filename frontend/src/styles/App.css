@@ -121,6 +121,20 @@
   font-size: calc(16px * var(--app-scale));
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.bottomNavbar .authWrapper .logoutBtn {
+  width: calc(149px * var(--app-scale));
+  height: calc(44px * var(--app-scale));
+  border-radius: calc(5px * var(--app-scale));
+  color: white;
+  background-color: #0438a1;
+  border: calc(1px * var(--app-scale)) solid #0438a1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.bottomNavbar .authWrapper .logoutBtn:hover {
+  background-color: #0279d1;
+  border: calc(1px * var(--app-scale)) solid transparent;
+}
 
 .carousel {
   width: 100%;

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserData } from "../context/UserContext";
 import * as api from "../api/api";
-function BottomNavbar({ isLoggedIn }) {
+function BottomNavbar() {
   const [scrolled, setScrolled] = useState(false);
-  const { userData } = useUserData();
+  const { loggedIn, logout, userData } = useUserData();
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -18,9 +19,10 @@ function BottomNavbar({ isLoggedIn }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     const fetchData = async () => {
-      if (!userData?._id) return; 
+      if (!userData?._id) return;
       try {
         const data = await api.getTodos(userData._id);
         if (data?.data) {
@@ -35,6 +37,15 @@ function BottomNavbar({ isLoggedIn }) {
     };
     fetchData();
   }, [userData, navigate]);
+
+  const handleLogout = async () => {
+    try {
+      await api.logoutUser();
+      logout();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const staticProductId = "6a118ecd8ecd47c3272b0c5d";
 
@@ -58,10 +69,15 @@ function BottomNavbar({ isLoggedIn }) {
         </Link>
       </div>
       <div className="authWrapper">
-        {isLoggedIn ? (
-          <Link to="/home" className="auth">
-            Hi, {userData ? userData.firstname : "Luka!"}
-          </Link>
+        {loggedIn && userData ? (
+          <>
+            <Link to="/contacts" className="auth">
+              Hi, {userData.firstname}
+            </Link>
+            <button onClick={handleLogout} className="logoutBtn">
+              logout
+            </button>
+          </>
         ) : (
           <>
             <Link to="/register" className="auth">

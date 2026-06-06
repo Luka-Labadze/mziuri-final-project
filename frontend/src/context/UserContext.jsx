@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const UserContext = createContext({
   userData: null,
@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
   const login = async (userData) => {
     setUserData(userData);
     setLoggedIn(true);
-  }  
+  };
 
   const logout = () => {
     setUserData(null);
@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ loggedIn, userData, login, logout  }}>
+    <UserContext.Provider value={{ loggedIn, userData, login, logout }}>
       {children}
     </UserContext.Provider>
   );

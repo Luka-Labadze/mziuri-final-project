@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoader } from "../context/LoaderContext";
-
-function Login({setIsLoggedIn}) {
+import { useUserData } from "../context/UserContext";
+import * as api from "../api/api";
+function Login() {
+  const { login } = useUserData();
   const { useFakeLoader } = useLoader();
   useEffect(() => useFakeLoader(), []);
   const navigate = useNavigate();
@@ -24,16 +26,26 @@ function Login({setIsLoggedIn}) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const validationErrors = validate();
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      setIsLoggedIn(true)
-      navigate("/products");
+      try {
+        const response = await api.loginUser(formData);
+
+        if (response?.data) {
+          login(response.data);
+          navigate("/products");
+        } else {
+          alert(response?.err || "Login failed");
+        }
+      } catch (err) {
+        console.error("Submission error:", err);
+      }
     }
   };
 

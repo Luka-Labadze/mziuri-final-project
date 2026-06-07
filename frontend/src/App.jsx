@@ -21,10 +21,12 @@ import { useUserData } from "./context/UserContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { useEffect } from "react";
 import { getToken } from "./api/api.js";
+import useDocumentTitle from "./hooks/useDocumentTitle.jsx";
 
 function App() {
   useAppScale();
   useScrollTop();
+  useDocumentTitle()
   const { loggedIn, login, logout } = useUserData();
 
   useEffect(() => {

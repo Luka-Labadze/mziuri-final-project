@@ -5,54 +5,28 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
   animation: modalBackdropFade 0.3s ease forwards;
+  &.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal__content {
+      position: static;
+      top: auto;
+      right: auto;
+    }
+  }
 
   &__content {
-    position: relative;
+    position: absolute;
     animation: modalContentPop 0.4s ease forwards;
-
-    // &__close {
-    //   position: absolute;
-    //   top: 15px;
-    //   right: 20px;
-    //   cursor: pointer;
-    //   z-index: 50;
-    //   background: none;
-    //   border: none;
-    //   width: 32px;
-    //   height: 32px;
-    //   fill: red;
-    //   padding: 0;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    // }
+    top: 20px;
+    right: 20px;
 
     h2 {
       text-transform: uppercase;
     }
-  }
-}
-@keyframes modalBackdropFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes modalContentPop {
-  0% {
-    opacity: 0;
-    transform: scale(0.85) translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
   }
 }

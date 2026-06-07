@@ -1,0 +1,36 @@
+.laptAndComp {
+  margin-bottom: 80px;
+  height: auto;
+  .titleSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 62vh;
+    margin-bottom: 40px;
+    .laptAndCompTitle {
+      font-size: calc(20px * var(--app-scale));
+      font-weight: 600;
+    }
+    .titleSectionRightWrap {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .titleSectionRight {
+        font-weight: 550;
+        font-size: 16px;
+      }
+      #TSRActive {
+        color: #0438a1;
+      }
+    }
+  }
+  .laptAndCompGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 374px);
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+  }
+}

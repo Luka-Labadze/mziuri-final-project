@@ -1,0 +1,26 @@
+.onSaleGrid {
+  width: calc(370px * var(--app-scale));
+  height: calc(168px * var(--app-scale));
+  border: 1px solid #dddddd;
+  background-color: #f7f8f9;
+  display: flex;
+  align-items: center;
+  gap: calc(12px * var(--app-scale));
+  margin-bottom: calc(20px * var(--app-scale));
+  .onSaleGridImg {
+    width: calc(164px * var(--app-scale));
+    height: auto;
+    border: 1px solid rgb(188, 186, 186);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .onSaleGridInfo {
+    flex: 1;
+    .onSaleGridTitle:hover {
+      color: #0648cb;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.onSale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 80px;
+  .onSaleBannerSection {
+    .onSaleBannerWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      list-style-type: none;
+      padding: 0;
+
+      .OSbannerItems {
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .onSaleBanners {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.3s ease;
+
+        &:hover {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}

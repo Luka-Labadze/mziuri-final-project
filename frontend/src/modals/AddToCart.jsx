@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import Modal from '../components/Modal';
-import { useCartModal } from '../context/AddToCartModalContext';
-import { getProductById } from '../api/api'; // Using your API helper
-
+import { useState, useEffect } from "react";
+import Modal from "../components/Modal";
+import { useCartModal } from "../context/AddToCartModalContext";
+import { getProductById } from "../api/api"; // Using your API helper
+import CloseImage from "../assets/icons/X.svg";
 const AddToCart = () => {
   const { isOpen, selectedId, closeAddToCartModal } = useCartModal();
   const [product, setProduct] = useState(null);
@@ -11,21 +11,25 @@ const AddToCart = () => {
     if (isOpen && selectedId) {
       getProductById(selectedId)
         .then((data) => setProduct(data))
-        .catch((err) => console.error('Failed to fetch product:', err));
+        .catch((err) => console.error("err", err));
     } else {
-      setProduct(null); // Clear data when modal closes
+      setProduct(null);
     }
   }, [selectedId, isOpen]);
 
   if (!isOpen) return null;
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={closeAddToCartModal}
-    >
+    <Modal isOpen={isOpen} onClose={closeAddToCartModal}     >
       {product ? (
         <div className="addToCart">
+          <button
+            className="atcCloseBtn"
+            onClick={closeAddToCartModal}
+            aria-label="Close"
+          >
+            <img src={CloseImage} alt="Close" />
+          </button>
           <div className="ATCWrapper">
             <div className="ATCLeftSide">
               <img
@@ -42,16 +46,10 @@ const AddToCart = () => {
                   <p className="successMsg">Added to cart successfully!</p>
                 </li>
                 <li className="ATCBtnWrapper">
-                  <button
-                    className="viewCart"
-                    onClick={closeAddToCartModal}
-                  >
+                  <button className="viewCart" onClick={closeAddToCartModal}>
                     View Cart
                   </button>
-                  <button
-                    className="checkout"
-                    onClick={closeAddToCartModal}
-                  >
+                  <button className="checkout" onClick={closeAddToCartModal}>
                     Checkout
                   </button>
                 </li>

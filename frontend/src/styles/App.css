@@ -1974,6 +1974,25 @@
   transform: scale(1.04);
 }
 
+.secondBanner {
+  margin: auto;
+  overflow: hidden;
+  width: calc(1170px * var(--app-scale));
+  height: calc(220px * var(--app-scale));
+  margin-bottom: 80px;
+}
+.secondBanner .secondBannerImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 1.3s ease;
+}
+.secondBanner .secondBannerImg:hover {
+  transform: scale(1.04);
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -1981,38 +2000,29 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
   animation: modalBackdropFade 0.3s ease forwards;
 }
+.modal.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.centered .modal__content {
+  position: static;
+  top: auto;
+  right: auto;
+}
 .modal__content {
-  position: relative;
+  position: absolute;
   animation: modalContentPop 0.4s ease forwards;
+  top: 20px;
+  right: 20px;
 }
 .modal__content h2 {
   text-transform: uppercase;
 }
 
-@keyframes modalBackdropFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes modalContentPop {
-  0% {
-    opacity: 0;
-    transform: scale(0.85) translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
 .notification {
   position: fixed;
   top: calc(20px * var(--app-scale));
@@ -2041,6 +2051,137 @@
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(calc(-12px * var(--app-scale)));
+}
+
+.lacGrid {
+  width: calc(370px * var(--app-scale));
+  height: calc(168px * var(--app-scale));
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #dddddd;
+  background-color: #f7f8f9;
+  display: flex;
+  gap: 20px;
+}
+.lacGrid .lacGridImg {
+  width: calc(164px * var(--app-scale));
+  height: auto;
+  border: 1px solid rgb(188, 186, 186);
+  cursor: pointer;
+}
+.lacGrid .lacGridInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 170px;
+  gap: 15px;
+}
+.lacGrid .lacGridInfo .lacGridTitle {
+  font-size: 18px;
+  font-weight: 50;
+  margin-top: calc(30px * var(--app-scale));
+  cursor: pointer;
+}
+.lacGrid .lacGridInfo .lacGridTitle:hover {
+  color: #0648cb;
+  transition: 0.5s ease;
+}
+.lacGrid .lacGridInfo .lacGridPrice {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.laptAndComp {
+  margin-bottom: 80px;
+  height: auto;
+}
+.laptAndComp .titleSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 62vh;
+  margin-bottom: 40px;
+}
+.laptAndComp .titleSection .laptAndCompTitle {
+  font-size: calc(20px * var(--app-scale));
+  font-weight: 600;
+}
+.laptAndComp .titleSection .titleSectionRightWrap {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.laptAndComp .titleSection .titleSectionRightWrap .titleSectionRight {
+  font-weight: 550;
+  font-size: 16px;
+}
+.laptAndComp .titleSection .titleSectionRightWrap #TSRActive {
+  color: #0438a1;
+}
+.laptAndComp .laptAndCompGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 374px);
+  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.onSale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+.onSale .onSaleBannerSection .onSaleBannerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+.onSale .onSaleBannerSection .onSaleBannerWrapper .OSbannerItems {
+  overflow: hidden;
+  cursor: pointer;
+}
+.onSale .onSaleBannerSection .onSaleBannerWrapper .onSaleBanners {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 1.3s ease;
+}
+.onSale .onSaleBannerSection .onSaleBannerWrapper .onSaleBanners:hover {
+  transform: scale(1.04);
+}
+
+.onSaleGrid {
+  width: calc(370px * var(--app-scale));
+  height: calc(168px * var(--app-scale));
+  border: 1px solid #dddddd;
+  background-color: #f7f8f9;
+  display: flex;
+  align-items: center;
+  gap: calc(12px * var(--app-scale));
+  margin-bottom: calc(20px * var(--app-scale));
+}
+.onSaleGrid .onSaleGridImg {
+  width: calc(164px * var(--app-scale));
+  height: auto;
+  border: 1px solid rgb(188, 186, 186);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.onSaleGrid .onSaleGridInfo {
+  flex: 1;
+}
+.onSaleGrid .onSaleGridInfo .onSaleGridTitle:hover {
+  color: #0648cb;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
 
 .productsWrapper {
@@ -2276,8 +2417,31 @@
 .newsletterModal {
   width: calc(820px * var(--app-scale));
   height: calc(420px * var(--app-scale));
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   overflow: hidden;
+  background: white;
+  z-index: 1001;
+}
+.newsletterModal .closeBtn {
+  position: absolute;
+  top: calc(15px * var(--app-scale));
+  right: calc(15px * var(--app-scale));
+  z-index: 3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: calc(24px * var(--app-scale));
+}
+.newsletterModal .closeBtn img {
+  width: 100%;
+  height: auto;
+}
+.newsletterModal .closeBtn:hover {
+  opacity: 0.8;
 }
 .newsletterModal .newsletterBg {
   position: absolute;
@@ -2358,13 +2522,30 @@
 .addToCart {
   width: calc(500px * var(--app-scale));
   height: calc(185px * var(--app-scale));
-  margin: auto;
   border: calc(1px * var(--app-scale)) solid transparent;
-  position: relative;
   background-color: white;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  position: relative;
+  transform: translateX(-145%);
+  z-index: 1001;
+}
+.addToCart .atcCloseBtn {
+  position: absolute;
+  top: calc(10px * var(--app-scale));
+  right: calc(10px * var(--app-scale));
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 10;
+  width: calc(33px * var(--app-scale));
+}
+.addToCart .atcCloseBtn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.addToCart .atcCloseBtn:hover {
+  opacity: 0.7;
 }
 .addToCart .ATCWrapper {
   display: flex;

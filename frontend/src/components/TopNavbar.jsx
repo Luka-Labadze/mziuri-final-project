@@ -7,7 +7,6 @@ import { useCart } from "../context/CartContext";
 function TopNavbar() {
   const { toggleCart, cartItems } = useCart();
 
-  // Calculate totals dynamically
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,

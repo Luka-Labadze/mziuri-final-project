@@ -1,176 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { useLoader } from "../context/LoaderContext";
-// import { useNotification } from "../context/NotificationContext";
-// import { contact } from "../api/api";
-
-// function Contact() {
-//   const { useFakeLoader } = useLoader();
-//   useEffect(() => useFakeLoader(), []);
-//   const [errors, setErrors] = useState({
-//     name: "",
-//     subject: "",
-//     email: "",
-//     message: "",
-//   });
-
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     subject: "",
-//     email: "",
-//     message: "",
-//   });
-//   const { showNotification } = useNotification();
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const validationErrors = validate();
-
-//     if (Object.keys(validationErrors).length === 0) {
-//       try {
-//         await contact(formData);
-//         showNotification("Message sent successfully!");
-//         setFormData({ name: "", subject: "", email: "", message: "" });
-//         // eslint-disable-next-line no-unused-vars
-//       } catch (err) {
-//         showNotification("Failed to send message.");
-//       }
-//     } else {
-//       setErrors(validationErrors);
-//     }
-//   };
-
-//   const validate = () => {
-//     const errors = {};
-
-//     if (!formData.email) {
-//       errors.email = "email field is required";
-//     } else if (!formData.email.includes("@")) {
-//       errors.email = "email should contain @ symbol";
-//     }
-
-//     if (!formData.name) {
-//       errors.name = "name field is required";
-//     } else if (formData.name.length < 4) {
-//       errors.name = "name must be at least 4 characters long";
-//     } else if (formData.name.length > 20) {
-//       errors.name = "name must be less than 20 characters long";
-//     } else if (formData.name.includes(" ")) {
-//       errors.name = "name must not contain spaces";
-//     } else if (!/^[a-zA-Z]+$/.test(formData.name)) {
-//       errors.name = "name must contain only letters";
-//     } else if (!/[a-zA-Z]/.test(formData.name)) {
-//       errors.name = "name must contain at least one letter";
-//     }
-
-//     if (!formData.subject) {
-//       errors.subject = "subject field is required";
-//     } else if (formData.subject.length < 4) {
-//       errors.subject = "subject must be at least 4 characters long";
-//     } else if (formData.subject.length > 90) {
-//       errors.subject = "subject must be less than 90 characters long";
-//     }
-//      else if (!/^[a-zA-Z0-9 ]+$/.test(formData.subject)) {
-//       errors.subject = "subject must contain only letters and digits";
-//     } else if (!/[a-zA-Z]/.test(formData.subject)) {
-//       errors.subject = "subject must contain at least one letter";
-//     }
-
-//     if (!formData.message) {
-//       errors.message = "message field is required";
-//     } else if (formData.message.length < 4) {
-//       errors.message = "message must be at least 4 characters long";
-//     } else if (formData.message.length > 250) {
-//       errors.message = "message must be less than 90 characters long";
-//     }
-//      else if (!/^[a-zA-Z]+$/.test(formData.message)) {
-//       errors.message = "message must contain only letters and digits";
-//     } else if (!/[a-zA-Z]/.test(formData.message)) {
-//       errors.message = "message must contain at least one letter";
-//     }
-//     return errors;
-//   };
-
-//   return (
-//     <div className="contact">
-//       <form onSubmit={handleSubmit}>
-//         <div className="contactInputSection">
-//           <ul className="contactInputWrapper">
-//             <h4 className="contactTitle">Contact us</h4>
-//             <li className="nameAndEmailWrapper">
-//               <div className="nameAndErr">
-//                 <input
-//                   type="text"
-//                   name="name"
-//                   placeholder="Name"
-//                   className="nameAndEmail"
-//                   value={formData.name}
-//                   onChange={handleChange}
-//                   id={`${errors.name ? "error" : ""}`}
-//                 />
-//                 <p className="contactValidationError">{errors.name}</p>
-//               </div>
-//               <div className="emailAndErr">
-//                 <input
-//                   type="email"
-//                   name="email"
-//                   placeholder="Email"
-//                   className="nameAndEmail"
-//                   value={formData.email}
-//                   onChange={handleChange}
-//                   id={`${errors.email ? "error" : ""}`}
-//                 />
-//                 <p className="contactValidationError">{errors.email}</p>
-//               </div>
-//             </li>
-
-//             <li>
-//               <input
-//                 type="text"
-//                 name="subject"
-//                 placeholder="subject"
-//                 className="contactInpSubject"
-//                 value={formData.subject}
-//                 onChange={handleChange}
-//                 id={`${errors.subject ? "error" : ""}`}
-//               />
-//               <p
-//                 className="contactValidationError"
-//                 style={{ marginBottom: "5px" }}
-//               >
-//                 {errors.subject}
-//               </p>
-//             </li>
-//             <li>
-//               <textarea
-//                 placeholder="Message"
-//                 name="message"
-//                 className="contactInpMessage"
-//                 value={formData.message}
-//                 onChange={handleChange}
-//                 id={`${errors.message ? "error" : ""}`}
-//               />
-//               <p className="contactValidationError">{errors.message}</p>
-//             </li>
-//             <li>
-//               <button className="contactSubmit" type="submit">
-//                 SUBMIT
-//               </button>
-//             </li>
-//           </ul>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Contact;
-
 import { useEffect, useState } from "react";
 import { useLoader } from "../context/LoaderContext";
 import { useNotification } from "../context/NotificationContext";
@@ -198,7 +25,6 @@ function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    // Clear the error for the field being edited
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
@@ -237,8 +63,6 @@ function Contact() {
     } else if (formData.name.length > 20) {
       errors.name = "Name must be less than 20 characters long";
     } else if (!/^[a-zA-Z]+$/.test(formData.name)) {
-      // This one regex already covers: no spaces, only letters, contains a letter
-      // so the separate space/letter checks below it were redundant and unreachable
       errors.name = "Name must contain only letters (no spaces)";
     }
 
@@ -259,10 +83,8 @@ function Contact() {
     } else if (formData.message.length < 4) {
       errors.message = "Message must be at least 4 characters long";
     } else if (formData.message.length > 250) {
-      // Was "less than 90" in the error text but the limit was 250 — typo fixed
       errors.message = "Message must be less than 250 characters long";
     } else if (!/^[\w\s.,!?'"()-]+$/i.test(formData.message)) {
-      // Original regex ^[a-zA-Z]+$ rejected spaces, digits, punctuation — too strict for a message
       errors.message = "Message contains invalid characters";
     }
 

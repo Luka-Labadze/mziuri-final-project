@@ -1,9 +1,36 @@
 .newsletterModal {
   width: calc(820px * var(--app-scale));
   height: calc(420px * var(--app-scale));
-  position: relative;
-  overflow: hidden;
 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
+  background: white;
+  z-index: 1001;
+
+  .closeBtn {
+    position: absolute;
+    top: calc(15px * var(--app-scale));
+    right: calc(15px * var(--app-scale));
+    z-index: 3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: calc(24px * var(--app-scale));
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   .newsletterBg {
     position: absolute;
     top: 0;
@@ -67,7 +94,6 @@
       font-weight: 700;
       font-size: calc(13px * var(--app-scale));
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    //   margin: 20px 200px;
       color: white;
       background-color: #0638a1;
       cursor: pointer;

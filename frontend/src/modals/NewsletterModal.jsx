@@ -1,10 +1,14 @@
 import "react";
 import NewsletterBg from "../assets/staticImages/10032.jpg";
 import Modal from "../components/Modal";
+import CloseImage from "../assets/icons/X.svg";
 function NewsletterModal({ isOpen, onClose }) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} className="centered">
       <div className="newsletterModal">
+        <button className="closeBtn" onClick={onClose} aria-label="Close">
+          <img src={CloseImage} alt="CloseBtn" />
+        </button>
         <div className="newsletterBgCont">
           <img src={NewsletterBg} alt="newsletterBg" className="newsletterBg" />
         </div>

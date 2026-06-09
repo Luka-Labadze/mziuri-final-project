@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   src: url("/frontend/public/fonts/SansPro.woff2") format("woff2");
   font-weight: 400;
@@ -2182,6 +2183,182 @@
   color: #0648cb;
   cursor: pointer;
   transition: 0.5s ease;
+}
+
+.aboutUsMission {
+  width: 100%;
+  padding: 80px;
+  height: 40vh;
+}
+.aboutUsMission .AUMWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper {
+  list-style-type: none;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMTextSectionItems {
+  margin-bottom: 10px;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMTitle {
+  font-size: 28px;
+  font-weight: 600;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMFirstParagraph,
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMSecondParagraph {
+  font-size: 16px;
+  font-weight: 400;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMBtn {
+  width: 105px;
+  height: 40px;
+  background-color: #333333;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 35px;
+  cursor: pointer;
+}
+.aboutUsMission .AUMWrapper .AUMTextSection .AUMTextSectionWrapper .AUMBtn:hover {
+  background-color: rgb(4, 56, 161);
+  transition: 0.5s ease-in;
+}
+.aboutUsMission .AUMWrapper .skillContainer {
+  margin-bottom: 2rem;
+  font-family: sans-serif;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper {
+  list-style-type: none;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .skillItems {
+  margin-bottom: 15px;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .skillLabel {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .progressBar {
+  background-color: #e0e0e0;
+  height: 12px;
+  width: 500px;
+  position: relative;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .progressBar .progressFill {
+  background-color: #333;
+  height: 100%;
+  position: relative;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .progressBar .progressFill::after {
+  content: "▼";
+  position: absolute;
+  right: -5px;
+  top: -15px;
+  font-size: 15px;
+  color: #333;
+}
+.aboutUsMission .AUMWrapper .skillContainer .skillContainerWrapper .progressBar .progressFill .percentage {
+  position: absolute;
+  right: -8px;
+  top: -28px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.ourTeam {
+  width: 100%;
+  height: 60vh;
+  background-color: #f7f8f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ourTeam .ourTeamTitle {
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems {
+  background-color: white;
+  width: calc(270px * var(--app-scale));
+  height: auto;
+  border: 1px solid transparent;
+  padding: 10px 15px 15px 10px;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .ImageAndIconsContainer {
+  position: relative;
+  width: calc(250px * var(--app-scale));
+  height: calc(312px * var(--app-scale));
+  overflow: hidden;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .ImageAndIconsContainer .teamMembersImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .ImageAndIconsContainer .TMSocialMIconsWrapper {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-out;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  list-style-type: none;
+  margin: 0;
+  z-index: 20;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .ImageAndIconsContainer .TMSocialMIconsWrapper .TMSocialITems .TMSocialMIcons {
+  width: 30px;
+  cursor: pointer;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .ImageAndIconsContainer:hover .TMSocialMIconsWrapper {
+  opacity: 1;
+  visibility: visible;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .teamMembersInfo {
+  padding-top: 15px;
+  text-align: center;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .teamMembersInfo .teamMembersName {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.ourTeam .ourTeamMembersContainer .teamMembersWrapper .teamItems .teamMembersInfo .teamMembersRole {
+  margin: 5px 0 0 0;
+  color: #666;
+}
+
+.brands {
+  width: 100%;
+  padding: 50px;
+}
+.brands .brandsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  list-style-type: none;
+}
+.brands .brandsWrapper .brandImages {
+  cursor: pointer;
 }
 
 .productsWrapper {

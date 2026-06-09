@@ -6,29 +6,29 @@ const useDocumentTitle = () => {
 
   useEffect(() => {
     switch (pathname) {
-      case '/':
-        document.title = 'Home - Ponno';
+      case "/":
+        document.title = "Home - Ponno";
         break;
-      case '/about':
-        document.title = 'About Us - Ponno';
+      case "/about":
+        document.title = "About Us - Ponno";
         break;
-      case '/contact':
-        document.title = 'Contact Us - Ponno';
+      case "/contact":
+        document.title = "Contact Us - Ponno";
         break;
-      case '/login':
-        document.title = 'Login - Ponno';
+      case "/login":
+        document.title = "Login - Ponno";
         break;
-      case '/register':
-        document.title = 'Create Account - Ponno';
+      case "/register":
+        document.title = "Create Account - Ponno";
         break;
-      case '/products':
-        document.title = 'Shop - Ponno';
+      case "/products":
+        document.title = "Shop - Ponno";
         break;
       case (pathname.match(/\/products\/.+/) || {}).input:
-        document.title = 'Product Details - Ponno';
+        document.title = "Product Details - Ponno";
         break;
       default:
-        document.title = 'Ponno - eCommerce Theme';
+        document.title = "Single Product Details - Ponno";
     }
   }, [pathname]);
 };

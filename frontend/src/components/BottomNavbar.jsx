@@ -71,7 +71,7 @@ function BottomNavbar() {
       <div className="authWrapper">
         {loggedIn && userData ? (
           <>
-            <Link to="/contacts" className="auth">
+            <Link to="/contact" className="auth">
               Hi, {userData.firstname}
             </Link>
             <button onClick={handleLogout} className="logoutBtn">

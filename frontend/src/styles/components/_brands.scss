@@ -1,0 +1,14 @@
+.brands {
+  width: 100%;
+  padding: 50px;
+  .brandsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    list-style-type: none;
+    .brandImages {
+      cursor: pointer;
+    }
+  }
+}

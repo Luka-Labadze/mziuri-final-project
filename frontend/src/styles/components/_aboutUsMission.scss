@@ -1,0 +1,88 @@
+.aboutUsMission {
+  width: 100%;
+  // margin: 40px 0 40px 0;
+  padding: 80px;
+  height: 40vh;
+  .AUMWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    .AUMTextSection {
+      .AUMTextSectionWrapper {
+        list-style-type: none;
+        .AUMTextSectionItems {
+          margin-bottom: 10px;
+        }
+        .AUMTitle {
+          font-size: 28px;
+          font-weight: 600;
+        }
+        .AUMFirstParagraph,
+        .AUMSecondParagraph {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .AUMBtn {
+          width: 105px;
+          height: 40px;
+          background-color: #333333;
+          color: white;
+          font-size: 11px;
+          font-weight: bold;
+          margin-top: 35px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(4, 56, 161);
+            transition: 0.5s ease-in;
+          }
+        }
+      }
+    }
+    .skillContainer {
+      margin-bottom: 2rem;
+      font-family: sans-serif;
+      .skillContainerWrapper {
+        list-style-type: none;
+        .skillItems {
+          margin-bottom: 15px;
+        }
+        .skillLabel {
+          display: block;
+          margin-bottom: 1.25rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        .progressBar {
+          background-color: #e0e0e0;
+          height: 12px;
+          width: 500px;
+          position: relative;
+
+          .progressFill {
+            background-color: #333;
+            height: 100%;
+            position: relative;
+
+            &::after {
+              content: "▼";
+              position: absolute;
+              right: -5px;
+              top: -15px;
+              font-size: 15px;
+              color: #333;
+            }
+            .percentage {
+              position: absolute;
+              right: -8px;
+              top: -28px;
+              font-size: 0.8rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

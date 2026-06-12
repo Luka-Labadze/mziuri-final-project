@@ -22,11 +22,13 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { useEffect } from "react";
 import { getToken } from "./api/api.js";
 import useDocumentTitle from "./hooks/useDocumentTitle.jsx";
+import ForgotPassword from "./routes/ForgotPassword.jsx";
+import ResetPassword from "./routes/ResetPassword.jsx";
 
 function App() {
   useAppScale();
   useScrollTop();
-  useDocumentTitle()
+  useDocumentTitle();
   const { loggedIn, login, logout } = useUserData();
 
   useEffect(() => {
@@ -62,6 +64,9 @@ function App() {
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          
         </Routes>
       </Main>
       <Footer />

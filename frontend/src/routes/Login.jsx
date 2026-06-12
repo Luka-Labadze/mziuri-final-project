@@ -101,7 +101,9 @@ function Login() {
             <button className="loginBtn" type="submit">
               Sign In
             </button>
-            <p className="forgotPassword">Forgot your password?</p>
+            <Link to="/forgot-password">
+              <p className="forgotPassword">Forgot your password?</p>
+            </Link>
           </div>
           <Link to="/register" className="toRegisterContainer">
             <p className="toRegister">Create account</p>

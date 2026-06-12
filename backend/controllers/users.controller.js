@@ -1,5 +1,5 @@
 import Users from "../models/users.models.js";
-import { sendContactMail } from "../utils/mailSender.js";
+import { sendContactMail, sendResetPasswordMail } from "../utils/mailSender.js";
 import { hashPassword, comparePassword } from "../utils/bcrypt.js";
 import jwt from "jsonwebtoken";
 
@@ -132,4 +132,50 @@ export const getUser = async (req, res) => {
     console.error("Auth Error:", err);
     res.status(401).json({ err: "Invalid or expired token" });
   }
+};
+
+
+
+
+
+export const forgotPasswordUser = async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ err: "Email is required" });
+  }
+
+  try {
+    const user = await Users.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ err: "No user found with that email" });
+    }
+
+    const resetToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: "15m" });
+    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+
+    await sendResetPasswordMail(email, resetUrl);
+
+    return res.status(200).json({ data: "Email has been sent!" });
+  } catch (err) {
+    console.error("Forgot Password Error:", err);
+    return res.status(500).json({ err: "Internal server error" });
+  }
+};
+
+export const resetPasswordUser = async (req, res) => {
+    try {
+        const { password } = req.body;
+        const token = req.header('Authorization');
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        const hashedPassword = await hashPassword(password);
+
+        await Users.findOneAndUpdate({ _id: decoded.id }, { password: hashedPassword });
+
+        res.status(200).json({ msg: "Password successfully changed!" });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ msg: "Failed to reset password" });
+    }
 };

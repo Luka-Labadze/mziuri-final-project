@@ -89,3 +89,30 @@ export const getUser = async () => {
     throw new Error(error.response?.data?.err || "Failed to fetch user data");
   }
 };
+
+// api/api.js
+export const forgotPasswordUser = async (data) => {
+  try {
+    // Ensure the URL matches your backend exactly
+    const response = await axios.put(`${baseURL}/api/users/forgot-password`, data, {
+      withCredentials: true,
+      headers: { "Content-Type": "application/json" },
+    });
+    return response.data;
+  } catch (error) {
+    // If the server returns a 400, this will capture the 'err' message
+    throw new Error(error.response?.data?.err || "Failed to send reset email");
+  }
+};
+
+export const resetPasswordUser = async (data, token) => {
+  try {
+    const response = await axios.put(`${baseURL}/api/users/reset-password`, data, {
+      headers: { Authorization: token },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to reset password");
+  }
+};

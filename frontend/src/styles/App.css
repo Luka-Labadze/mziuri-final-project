@@ -1,15 +1,18 @@
 @charset "UTF-8";
 @font-face {
-  src: url("/frontend/public/fonts/SansPro.woff2") format("woff2");
+  font-family: "Source Sans Pro";
+  src: url("/fonts/SansPro.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  font-optical-sizing: auto;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -2589,6 +2592,137 @@
   border: transparent;
   border-radius: 6px;
   float: right;
+}
+
+.forgotPasswordContainer {
+  width: 100%;
+  height: 50vh;
+}
+.forgotPasswordContainer .fpForm {
+  margin: 60px auto auto auto;
+  width: calc(590px * var(--app-scale));
+  height: calc(331px * var(--app-scale));
+  padding: 37px 40px 37px 40px;
+  text-align: center;
+  background-color: #f3f3f3;
+}
+.forgotPasswordContainer .fpForm .fPTextSection {
+  margin-bottom: 30px;
+}
+.forgotPasswordContainer .fpForm .fPTextSection .forgotPasswordTitle {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.forgotPasswordContainer .fpForm .fPTextSection .forgotPasswordParagraph {
+  font-size: 16px;
+  font-weight: 400;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection {
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection .forgotPasswordInput {
+  margin-bottom: calc(10px * var(--app-scale));
+  width: calc(455px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection .forgotPasswordError {
+  color: red;
+  height: calc(20px * var(--app-scale));
+  float: left;
+  font-weight: 600;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection .fpInputBtns {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection .fpInputBtns .fpSubmit {
+  width: calc(85px * var(--app-scale));
+  height: calc(45px * var(--app-scale));
+  padding: 8px 25px 8px 20px;
+  color: white;
+  background-color: #0b46bb;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.forgotPasswordContainer .fpForm .fpInputFormSection .fpInputBtns .fpCancel {
+  cursor: pointer;
+}
+
+.resetPassword {
+  width: 100%;
+  height: 50vh;
+}
+.resetPassword .rpForm {
+  margin: 60px auto auto auto;
+  width: calc(590px * var(--app-scale));
+  height: calc(391px * var(--app-scale));
+  padding: 37px 40px 37px 40px;
+  text-align: center;
+  background-color: #f3f3f3;
+}
+.resetPassword .rpForm .rpTextContainer {
+  margin-bottom: 30px;
+}
+.resetPassword .rpForm .rpTextContainer .rpTitle {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.resetPassword .rpForm .rpTextContainer .rpParagraph {
+  font-size: 16px;
+  font-weight: 400;
+}
+.resetPassword .rpForm .resetPasswordForm {
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+}
+.resetPassword .rpForm .resetPasswordForm .rpInputs {
+  margin-bottom: calc(10px * var(--app-scale));
+  width: calc(455px * var(--app-scale));
+  height: calc(40px * var(--app-scale));
+  padding: 8px 10px 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.resetPassword .rpForm .resetPasswordForm .rpError {
+  color: red;
+  height: calc(20px * var(--app-scale));
+  float: left;
+  font-weight: 600;
+}
+.resetPassword .rpForm .resetPasswordForm .upperBtns {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.resetPassword .rpForm .resetPasswordForm .upperBtns .rpBtn {
+  height: calc(45px * var(--app-scale));
+  padding: 8px 25px 8px 20px;
+  color: white;
+  background-color: #0b46bb;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.resetPassword .rpForm .resetPasswordForm .upperBtns .toRegisterContainer {
+  text-decoration: none;
+}
+.resetPassword .rpForm .resetPasswordForm .upperBtns .toRegisterContainer .toRegister {
+  cursor: pointer;
+  color: #0b46bb;
+}
+.resetPassword .rpForm .resetPasswordForm .upperBtns .toRegisterContainer .toRegister:hover {
+  font-weight: 600;
+  transition: transform 0.9s ease;
 }
 
 .newsletterModal {

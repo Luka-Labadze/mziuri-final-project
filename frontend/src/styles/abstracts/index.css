@@ -1,7 +1,7 @@
 @font-face {
-  src: url("/frontend/public/fonts/SansPro.woff2") format("woff2");
+  font-family: "Source Sans Pro";
+  src: url("/fonts/SansPro.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  font-optical-sizing: auto;
 }/*# sourceMappingURL=index.css.map */

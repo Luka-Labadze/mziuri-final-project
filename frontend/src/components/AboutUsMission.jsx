@@ -1,13 +1,15 @@
 import "react";
+import { useTranslation } from "react-i18next";
 
 function AboutUsMission() {
+  const { t } = useTranslation();
   return (
     <div className="aboutUsMission">
       <div className="AUMWrapper">
         <div className="AUMTextSection">
           <ul className="AUMTextSectionWrapper">
             <li className="AUMTextSectionItems">
-              <h3 className="AUMTitle">ABOUT OUR MISSION</h3>
+              <h3 className="AUMTitle">{t("About-our-mission")}</h3>
             </li>
             <li className="AUMTextSectionItems">
               <p className="AUMFirstParagraph">
@@ -27,14 +29,14 @@ function AboutUsMission() {
               </p>
             </li>
             <li className="AUMTextSectionItems">
-              <button className="AUMBtn">READ MORE</button>
+              <button className="AUMBtn">{t("Read-more")}</button>
             </li>
           </ul>
         </div>
         <div className="skillContainer">
           <ul className="skillContainerWrapper">
             <li className="skillItems">
-              <span className="skillLabel">UI & UX DESIGN</span>
+              <span className="skillLabel">{t("UI-UX-design")}</span>
               <div className="progressBar">
                 <div className="progressFill" style={{ width: "85%" }}>
                   <span className="percentage">85%</span>
@@ -42,7 +44,7 @@ function AboutUsMission() {
               </div>
             </li>
             <li className="skillItems">
-              <span className="skillLabel">WEB DESIGN</span>
+              <span className="skillLabel">{t("Web-design")}</span>
               <div className="progressBar">
                 <div className="progressFill" style={{ width: "95%" }}>
                   <span className="percentage">70%</span>
@@ -50,7 +52,7 @@ function AboutUsMission() {
               </div>
             </li>
             <li className="skillItems">
-              <span className="skillLabel">APP DESIGN</span>
+              <span className="skillLabel">{t("App-design")}</span>
               <div className="progressBar">
                 <div className="progressFill" style={{ width: "75%" }}>
                   <span className="percentage">75%</span>
@@ -58,7 +60,7 @@ function AboutUsMission() {
               </div>
             </li>
             <li className="skillItems">
-              <span className="skillLabel">SKETCH DESIGN</span>
+              <span className="skillLabel">{t("Sketch-design")}</span>
               <div className="progressBar">
                 <div className="progressFill" style={{ width: "68%" }}>
                   <span className="percentage">68%</span>

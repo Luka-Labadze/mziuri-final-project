@@ -117,6 +117,20 @@ body {
   align-items: center;
   gap: calc(30px * var(--app-scale));
 }
+.bottomNavbar .authWrapper .changeLanguage {
+  width: 140px;
+  height: 40px;
+  background-color: #0438a1;
+  border: 1px solid #0438a1;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.bottomNavbar .authWrapper .changeLanguage:hover {
+  background-color: #052668;
+  transition: 0.8s;
+  cursor: pointer;
+}
 .bottomNavbar .authWrapper .auth {
   color: rgb(244, 246, 255);
   padding: calc(20px * var(--app-scale)) 0;

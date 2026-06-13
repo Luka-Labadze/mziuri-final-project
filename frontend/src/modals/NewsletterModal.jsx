@@ -2,40 +2,48 @@ import "react";
 import NewsletterBg from "../assets/staticImages/10032.jpg";
 import Modal from "../components/Modal";
 import CloseImage from "../assets/icons/X.svg";
+import { useTranslation } from "react-i18next";
+
 function NewsletterModal({ isOpen, onClose }) {
+  const { t } = useTranslation();
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="centered">
       <div className="newsletterModal">
         <button className="closeBtn" onClick={onClose} aria-label="Close">
           <img src={CloseImage} alt="CloseBtn" />
         </button>
+
         <div className="newsletterBgCont">
           <img src={NewsletterBg} alt="newsletterBg" className="newsletterBg" />
         </div>
+
         <div className="subscribeArea">
           <div className="TitleAndParagraphContainer">
-            <h2 className="TAPTitle">NEWSLETTER</h2>
-            <p className="TAPParagraph">
-              Join over 1,000 people who get free and fresh content delivered{" "}
-              <br /> automatically each time we publish
-            </p>
+            <h2 className="TAPTitle">{t("Newsletter")}</h2>
+
+            <p className="TAPParagraph">{t("Newsletter-text")}</p>
           </div>
+
           <div className="newsletterInput">
             <input
               type="email"
-              placeholder="email@example.com"
+              placeholder={t("Email-placeholder")}
               className="newsletterEmailInput"
             />
           </div>
+
           <div className="subsBtn">
             <button className="subscribe" type="submit">
-              SUBSCRIBE
+              {t("Subscribe")}
             </button>
           </div>
+
           <div className="newsletterCheckboxContainer">
-            <input type="checkbox" name="" id="newsletterCheckbox" />
+            <input type="checkbox" id="newsletterCheckbox" />
+
             <label htmlFor="newsletterCheckbox" className="dontShowThisAgain">
-              Don't show this again
+              {t("Dont-show-again")}
             </label>
           </div>
         </div>

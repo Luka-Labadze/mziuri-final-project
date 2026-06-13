@@ -2,10 +2,32 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserData } from "../context/UserContext";
 import * as api from "../api/api";
+import useLanguage from "../hooks/useLanguage";
+import { useTranslation } from "react-i18next";
 function BottomNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const { loggedIn, logout, userData } = useUserData();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
+  const { handleChangeLanguage } = useLanguage();
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!userData?._id) return;
+      try {
+        const data = await api.getProducts(userData._id);
+        if (data?.data) {
+          console.log(data.data);
+        } else if (data?.err) {
+          alert(data.err);
+          navigate("/login");
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+    fetchData();
+  }, [userData, navigate]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,24 +41,6 @@ function BottomNavbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!userData?._id) return;
-      try {
-        const data = await api.getTodos(userData._id);
-        if (data?.data) {
-          console.log(data.data);
-        } else if (data?.err) {
-          alert(data.err);
-          navigate("/login");
-        }
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-    };
-    fetchData();
-  }, [userData, navigate]);
 
   const handleLogout = async () => {
     try {
@@ -53,41 +57,44 @@ function BottomNavbar() {
     <div className={`bottomNavbar ${scrolled ? "active" : ""}`}>
       <div className="navWrapper">
         <Link className="links" to="/">
-          Home
+          {t("Home")}
         </Link>
         <Link className="links" to="/products">
-          Shop
+          {t("Shop")}
         </Link>
         <Link className="links" to={`/single-product/${staticProductId}`}>
-          Products
+          {t("Products")}
         </Link>
         <Link className="links" to="/contact">
-          Contact
+          {t("Contact")}
         </Link>
         <Link className="links" to="/about">
-          About Us
+          {t("About-Us")}
         </Link>
       </div>
       <div className="authWrapper">
         {loggedIn && userData ? (
           <>
             <Link to="/contact" className="auth">
-              Hi, {userData.firstname}
+              {t("Hi")}, {userData.firstname}
             </Link>
             <button onClick={handleLogout} className="logoutBtn">
-              logout
+              {t("Logout")}
             </button>
           </>
         ) : (
           <>
             <Link to="/register" className="auth">
-              Sign Up
+              {t("Sign-Up")}
             </Link>
             <Link to="/login" className="auth">
-              Log In
+              {t("Log-In")}
             </Link>
           </>
         )}
+        <button onClick={handleChangeLanguage} className="changeLanguage">
+          {t("Change-Language")}
+        </button>
       </div>
     </div>
   );

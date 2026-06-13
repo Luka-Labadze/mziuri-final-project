@@ -2,7 +2,9 @@ import "react";
 import HotDealCarousel from "./HotDealCarousel";
 import HotDealBg from "../assets/staticImages/10032.jpg";
 import HotDealHeadset from "../assets/staticImages/10003.png";
+import { useTranslation } from "react-i18next";
 function HotDeal({ products }) {
+  const {t} = useTranslation()
   return (
     <div className="hotDeal">
       <div className="hDLeftSide">
@@ -10,7 +12,7 @@ function HotDeal({ products }) {
 
         <div className="hDContent">
           <div className="textContainer">
-            <h6 className="hot-deal">Hot Deal</h6>
+            <h6 className="hot-deal">{t('Hot-Deal')}</h6>
             <h1 className="hdLeftSideTitle">Kemioo DX24 Headphone</h1>
             <p>
               Contrary to popular belief, Lorem Ipsum is not simply <br />
@@ -26,10 +28,10 @@ function HotDeal({ products }) {
                 <ol>00</ol>
               </ul>
               <ul className="timespan">
-                <ol>Days</ol>
-                <ol>Hrs</ol>
-                <ol>Min</ol>
-                <ol>Secs</ol>
+                <ol>{t("Days")}</ol>
+                <ol>{t("Hrs")}</ol>
+                <ol>{t("Min")}</ol>
+                <ol>{t("Secs")}</ol>
               </ul>
             </div>
           </div>

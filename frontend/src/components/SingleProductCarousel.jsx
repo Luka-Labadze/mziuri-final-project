@@ -1,10 +1,11 @@
 import "react";
 import { Link } from "react-router-dom";
 import { useCartModal } from "../context/AddToCartModalContext";
+import { useTranslation } from "react-i18next";
 
 function SingleProductCarousel({ slides }) {
   const { openAddToCartModal } = useCartModal();
-
+  const { t } = useTranslation();
   const handleAddToCart = (e, productId) => {
     e.preventDefault();
     e.stopPropagation();
@@ -43,7 +44,7 @@ function SingleProductCarousel({ slides }) {
             className="shopNow"
             onClick={(e) => handleAddToCart(e, product._id)}
           >
-            Add to cart
+            {t("Add-to-cart")}
           </button>
         </div>
       ))}

@@ -1,10 +1,11 @@
-import  { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCartModal } from '../context/AddToCartModalContext';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCartModal } from "../context/AddToCartModalContext";
+import { useTranslation } from "react-i18next";
 function HotDealCarousel({ slides }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const { openAddToCartModal } = useCartModal();
-
+  const { t } = useTranslation();
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -32,16 +33,10 @@ function HotDealCarousel({ slides }) {
 
   return (
     <div className="hotDealCarousel">
-      <button
-        className="carouselBtn prev"
-        onClick={handlePrevClick}
-      >
+      <button className="carouselBtn prev" onClick={handlePrevClick}>
         &lt;
       </button>
-      <button
-        className="carouselBtn next"
-        onClick={handleNextClick}
-      >
+      <button className="carouselBtn next" onClick={handleNextClick}>
         &gt;
       </button>
 
@@ -63,18 +58,12 @@ function HotDealCarousel({ slides }) {
       </div>
 
       <div className="titleAndPriceContainer">
-        <h3>{slides[currentSlideIndex]?.title || ''}</h3>
-        <p>${slides[currentSlideIndex]?.price || '0.00'}</p>
+        <h3>{slides[currentSlideIndex]?.title || ""}</h3>
+        <p>${slides[currentSlideIndex]?.price || "0.00"}</p>
       </div>
-      <Link
-        to="/products"
-        style={{ textDecoration: 'none' }}
-      >
-        <button
-          className="shopNow"
-          onClick={handleAddToCart}
-        >
-          Add to cart
+      <Link to="/products" style={{ textDecoration: "none" }}>
+        <button className="shopNow" onClick={handleAddToCart}>
+          {t("Add-to-cart")}
         </button>
       </Link>
     </div>

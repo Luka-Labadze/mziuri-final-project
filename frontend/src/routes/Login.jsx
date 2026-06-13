@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLoader } from "../context/LoaderContext";
 import { useUserData } from "../context/UserContext";
 import * as api from "../api/api";
+import { useTranslation } from "react-i18next";
 function Login() {
   const { login } = useUserData();
   const { useFakeLoader } = useLoader();
+  const { t } = useTranslation();
   useEffect(() => useFakeLoader(), []);
   const navigate = useNavigate();
 
@@ -69,44 +71,47 @@ function Login() {
     <div className="login">
       <form onSubmit={handleSubmit}>
         <div className="textContainer">
-          <h2 className="loginTitle">Login</h2>
-          <p className="loginSubtitle">
-            Please login using account detail bellow.
-          </p>
+          <h2 className="loginTitle">{t("Login")}</h2>
+          <p className="loginSubtitle">{t("Login-subtitle")}</p>
         </div>
+
         <div className="loginForm">
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("Email")}
             name="email"
             className="loginInputs"
             value={formData.email}
             onChange={handleChange}
-            id={`${errors.email ? "error" : ""}`}
+            id={errors.email ? "error" : ""}
             autoComplete="email"
           />
           <p className="loginError">{errors.email}</p>
+
           <input
             type="password"
-            placeholder="Password"
+            placeholder={t("Password")}
             name="password"
             className="loginInputs"
             value={formData.password}
             onChange={handleChange}
-            id={`${errors.password ? "error" : ""}`}
+            id={errors.password ? "error" : ""}
             autoComplete="current-password"
           />
           <p className="loginError">{errors.password}</p>
+
           <div className="upperBtns">
             <button className="loginBtn" type="submit">
-              Sign In
+              {t("Sign-in")}
             </button>
+
             <Link to="/forgot-password">
-              <p className="forgotPassword">Forgot your password?</p>
+              <p className="forgotPassword">{t("Forgot-password")}</p>
             </Link>
           </div>
+
           <Link to="/register" className="toRegisterContainer">
-            <p className="toRegister">Create account</p>
+            <p className="toRegister">{t("Create-account")}</p>
           </Link>
         </div>
       </form>

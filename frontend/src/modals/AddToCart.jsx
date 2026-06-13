@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Modal from "../components/Modal";
 import { useCartModal } from "../context/AddToCartModalContext";
-import { getProductById } from "../api/api"; // Using your API helper
+import { getProductById } from "../api/api"; 
 import CloseImage from "../assets/icons/X.svg";
 const AddToCart = () => {
   const { isOpen, selectedId, closeAddToCartModal } = useCartModal();

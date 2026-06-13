@@ -1,7 +1,10 @@
 import "react";
 import { useCartModal } from "../context/AddToCartModalContext";
+import { useTranslation } from "react-i18next";
+
 
 function ProductSingle({ id, img1, img2, title, price }) {
+  const {t} = useTranslation()
   const { openAddToCartModal } = useCartModal();
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -23,7 +26,7 @@ function ProductSingle({ id, img1, img2, title, price }) {
       </div>
 
       <button className="addToCart" onClick={handleAddToCart}>
-        ADD TO CART
+        {t("ADD-TO-CART")}
       </button>
     </div>
   );

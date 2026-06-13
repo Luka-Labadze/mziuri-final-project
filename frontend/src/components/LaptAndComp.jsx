@@ -2,9 +2,11 @@ import "react";
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/api";
 import LACGrid from "./LACGrid";
+import { useTranslation } from "react-i18next";
 
 function LaptAndComp() {
   const [products, setProducts] = useState([]);
+  const {t} = useTranslation()
   useEffect(() => {
     getProducts()
       .then((data) => {
@@ -16,11 +18,11 @@ function LaptAndComp() {
   return (
     <div className="laptAndComp">
       <div className="titleSection">
-        <h5 className="laptAndCompTitle">Laptops & Computers</h5>
+        <h5 className="laptAndCompTitle">{t("Laptops-Computers")}</h5>
         <ul className="titleSectionRightWrap">
-          <li className="titleSectionRight" id="TSRActive">Featured</li>
-          <li className="titleSectionRight">New Product</li>
-          <li className="titleSectionRight">Best Deal</li>
+          <li className="titleSectionRight" id="TSRActive">{t("Featured")}</li>
+          <li className="titleSectionRight">{t("New-Product")}</li>
+          <li className="titleSectionRight">{t("Best-Deal")}</li>
         </ul>
       </div>
       <div className="laptAndCompGrid">

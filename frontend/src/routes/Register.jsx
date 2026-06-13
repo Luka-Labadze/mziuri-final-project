@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoader } from "../context/LoaderContext";
 import * as api from "../api/api";
+import { useTranslation } from "react-i18next";
 
 function Register() {
   const { useFakeLoader } = useLoader();
   useEffect(() => useFakeLoader(), []);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [errors, setErrors] = useState({
     firstname: "",
     lastname: "",
@@ -104,35 +106,36 @@ function Register() {
     <div className="register">
       <form onSubmit={handleSubmit}>
         <div className="textSideForm">
-          <h2 className="registerTitle">Create Account</h2>
-          <p className="registerSubtitle">
-            Please Register using account detail bellow.
-          </p>
+          <h2 className="registerTitle">{t("Create-account")}</h2>
+          <p className="registerSubtitle">{t("Register-subtitle")}</p>
         </div>
+
         <div className="inputForm">
           <input
             type="text"
-            placeholder="First Name"
+            placeholder={t("First-name")}
             className="formInputs"
             value={formData.firstname}
             onChange={handleChange}
-            id={`${errors.firstname ? "error" : ""}`}
+            id={errors.firstname ? "error" : ""}
             name="firstname"
           />
           <p className="registerError">{errors.firstname}</p>
+
           <input
             type="text"
-            placeholder="Last Name"
+            placeholder={t("Last-name")}
             className="formInputs"
             value={formData.lastname}
             onChange={handleChange}
-            id={`${errors.lastname ? "error" : ""}`}
+            id={errors.lastname ? "error" : ""}
             name="lastname"
           />
           <p className="registerError">{errors.lastname}</p>
+
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("Email")}
             className="formInputs"
             value={formData.email}
             onChange={handleChange}
@@ -140,24 +143,27 @@ function Register() {
             autoComplete="email"
           />
           <p className="registerError">{errors.email}</p>
+
           <input
             type="password"
-            placeholder="Password"
+            placeholder={t("Password")}
             className="formInputs"
             value={formData.password}
             onChange={handleChange}
-            id={`${errors.password ? "error" : ""}`}
+            id={errors.password ? "error" : ""}
             autoComplete="new-password"
             name="password"
           />
           <p className="registerError">{errors.password}</p>
         </div>
+
         <div className="bottomSideForm">
           <button className="registerBtn" type="submit">
-            Create
+            {t("Create")}
           </button>
+
           <Link to="/" className="returnToStore">
-            Return To Store
+            {t("Return-to-store")}
           </Link>
         </div>
       </form>

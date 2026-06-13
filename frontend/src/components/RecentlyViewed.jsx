@@ -1,6 +1,9 @@
 import "react";
+import { useTranslation } from "react-i18next";
 
 function RecentlyViewed() {
+  const { t } = useTranslation();
+
   const rvCards = [
     {
       id: 1,
@@ -21,8 +24,9 @@ function RecentlyViewed() {
   return (
     <div className="recentlyViewed">
       <div className="titleContainer">
-        <h3 className="rvTitle">Recently Viewed</h3>
+        <h3 className="rvTitle">{t("Recently-viewed")}</h3>
       </div>
+
       <div className="rvCardsWrapper">
         {rvCards.map((product) => (
           <div className="rvCard" key={product.id}>
@@ -36,13 +40,19 @@ function RecentlyViewed() {
 
             <div className="titleAndPriceContainer">
               <h3>{product.title}</h3>
+
               <div className="priceContainer">
-                <p className="newPrice">${product.price} USD</p>
-                <p className="oldPrice">${product.oldPrice} USD</p>
+                <p className="newPrice">
+                  ${product.price} {t("USD")}
+                </p>
+
+                <p className="oldPrice">
+                  ${product.oldPrice} {t("USD")}
+                </p>
               </div>
             </div>
 
-            <button className="shopNow">Add To cart</button>
+            <button className="shopNow">{t("Add-to-cart")}</button>
           </div>
         ))}
       </div>

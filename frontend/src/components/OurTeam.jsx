@@ -6,7 +6,9 @@ import TeamMem4 from "../assets/staticImages/team4.webp";
 import FacebookIcon from "../assets/icons/facebook.png";
 import TwitterIcon from "../assets/icons/twitter.png";
 import GooglePlusIcon from "../assets/icons/google-plus.png";
+import { useTranslation } from "react-i18next";
 function OurTeam() {
+  const { t } = useTranslation();
   const TeamMembersData = [
     {
       id: 1,
@@ -36,7 +38,7 @@ function OurTeam() {
   return (
     <div className="ourTeam">
       <div className="ourTeamMembersContainer">
-        <h3 className="ourTeamTitle">OUR TEAM</h3>
+        <h3 className="ourTeamTitle">{t("Our-team")}</h3>
         <div className="teamMembersWrapper">
           {TeamMembersData.map((item) => {
             return (

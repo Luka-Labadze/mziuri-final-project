@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import SingleProductCarousel from './SingleProductCarousel';
-import SingleProductPhotoCarousel from './SingleProductPhotoCarousel';
-import { getProducts } from '../api/api';
-import { useCartModal } from '../context/AddToCartModalContext';
+import { useEffect, useState } from "react";
+import SingleProductCarousel from "./SingleProductCarousel";
+import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
+import { getProducts } from "../api/api";
+import { useCartModal } from "../context/AddToCartModalContext";
+import { useTranslation } from "react-i18next";
 
 function SingleProductPage({ product }) {
+  const { t } = useTranslation();
+
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentPhotoSlideIndex, setCurrentPhotoSlideIndex] = useState(0);
   const [allProducts, setAllProducts] = useState([]);
@@ -19,7 +22,12 @@ function SingleProductPage({ product }) {
     openAddToCartModal(product._id);
   };
 
-  const photoCarouselImages = [product.image1, product.image2, product.image1, product.image2];
+  const photoCarouselImages = [
+    product.image1,
+    product.image2,
+    product.image1,
+    product.image2,
+  ];
 
   useEffect(() => {
     getProducts().then((data) => setAllProducts(data));
@@ -62,7 +70,7 @@ function SingleProductPage({ product }) {
   };
 
   if (!product) {
-    return <div className="loading">Loading product...</div>;
+    return <div className="loading">{t("Loading-product")}</div>;
   }
 
   return (
@@ -75,6 +83,7 @@ function SingleProductPage({ product }) {
             className="thumbnailMainImg"
           />
         </div>
+
         <div className="thumbnailCarousel">
           <button
             className="photoCarouselBtn prev"
@@ -82,51 +91,52 @@ function SingleProductPage({ product }) {
           >
             &lt;
           </button>
+
           <button
             className="photoCarouselBtn next"
             onClick={handlePhotoNextClick}
           >
             &gt;
           </button>
+
           <div className="thumbnailCarouselWrapper">
             <div
               className="carouselContainer"
               style={{
-                transform: `translateX(-${currentPhotoSlideIndex * (100 / PHOTO_ITEMS_VISIBLE)}%)`,
-                display: 'flex',
-                transition: ' transform 0.3s ease',
+                transform: `translateX(-${
+                  currentPhotoSlideIndex * (100 / PHOTO_ITEMS_VISIBLE)
+                }%)`,
+                display: "flex",
+                transition: "transform 0.3s ease",
               }}
             >
-              {photoCarouselImages.map((image, index) => {
-                return (
-                  <SingleProductPhotoCarousel
-                    key={index}
-                    image={image}
-                  />
-                );
-              })}
+              {photoCarouselImages.map((image, index) => (
+                <SingleProductPhotoCarousel key={index} image={image} />
+              ))}
             </div>
           </div>
         </div>
       </div>
+
       <div className="productDescription">
-        <span className="type">category</span>
+        <span className="type">{t("Category")}</span>
+
         <h3 className="productTitle">{product.title}</h3>
+
         <div className="priceContainer">
           <span className="newPrice">${product.price}</span>
           <span className="oldPrice">$160.00</span>
-          <p className="discount">Save -20%</p>
+          <p className="discount">{t("Save-discount", { value: 20 })}</p>
         </div>
-        <p className="priceRatio">In stock</p>
+
+        <p className="priceRatio">{t("In-stock")}</p>
+
         <p className="productCaption">
-          There are many variations of passages of Lorem Ipsum available, but the majority have
-          suffered <br />
-          alteration in some form, by injected humour, or randomised words which don't look even
-          slightly <br />
-          believable.
+          {t("Product-description")}
         </p>
+
         <div className="size">
-          <h4 className="sizeTitle">Size :</h4>
+          <h4 className="sizeTitle">{t("Size")} :</h4>
           <ul className="sizeList">
             <li>Xl</li>
             <li>Ml</li>
@@ -136,8 +146,9 @@ function SingleProductPage({ product }) {
             <li>M</li>
           </ul>
         </div>
+
         <div className="color">
-          <p className="colorTitle">Color :</p>
+          <p className="colorTitle">{t("Color")} :</p>
           <ol className="colorList">
             <li className="yellowBox"></li>
             <li className="blackBox"></li>
@@ -146,19 +157,22 @@ function SingleProductPage({ product }) {
             <li className="greenBox"></li>
           </ol>
         </div>
+
         <div className="material">
-          <p className="materialTitle">Material :</p>
+          <p className="materialTitle">{t("Material")} :</p>
           <ol className="materialList">
-            <li>Partex</li>
-            <li>Wood</li>
-            <li>Glass</li>
+            <li>{t("Partex")}</li>
+            <li>{t("Wood")}</li>
+            <li>{t("Glass")}</li>
           </ol>
         </div>
+
         <div className="quantityAndAddToCart">
           <ol className="quantityList">
             <li>
-              <p className="quantityTitle">Quantity:</p>
+              <p className="quantityTitle">{t("Quantity")}:</p>
             </li>
+
             <li>
               <input
                 type="number"
@@ -166,32 +180,39 @@ function SingleProductPage({ product }) {
                 className="quantityInput"
               />
             </li>
+
             <li>
               <button
                 className="addToCartBtn"
                 onClick={handleAddToCart}
               >
-                ADD TO CART
+                {t("Add-to-cart")}
               </button>
             </li>
+
             <li>
               <p className="wishlist">♡</p>
             </li>
           </ol>
         </div>
+
         <div className="buyNow">
-          <button className="buyNowBtn">BUY IT NOW</button>
+          <button className="buyNowBtn">
+            {t("Buy-now")}
+          </button>
         </div>
+
         <div className="tag">
-          <p className="tagTitle">Tag :</p>
+          <p className="tagTitle">{t("Tag")} :</p>
           <ol className="tagList">
             <li>black,</li>
             <li>brown,</li>
             <li>cyan</li>
           </ol>
         </div>
+
         <div className="share">
-          <p className="shareTitle">Share :</p>
+          <p className="shareTitle">{t("Share")} :</p>
           <ol className="shareList">
             <li>Facebook</li>
             <li>Twitter</li>
@@ -199,9 +220,11 @@ function SingleProductPage({ product }) {
             <li>Pinterest</li>
           </ol>
         </div>
+
         <div className="checkout">
-          <p>Guaranteed safe checkout</p>
+          <p>{t("Safe-checkout")}</p>
         </div>
+
         <div className="singleProductPageCarousel">
           <button
             className="carouselBtn prev"
@@ -209,18 +232,20 @@ function SingleProductPage({ product }) {
           >
             &lt;
           </button>
+
           <button
             className="carouselBtn next"
             onClick={handleNextClick}
           >
             &gt;
           </button>
+
           <div className="carouselWrapper">
             <div
               className="carouselContainer"
               style={{
                 transform: `translateX(-${currentSlideIndex * 308}px)`,
-                transition: 'transform 0.3s ease',
+                transition: "transform 0.3s ease",
               }}
             >
               <SingleProductCarousel slides={allProducts} />

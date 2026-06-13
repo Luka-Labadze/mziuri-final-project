@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import { useLoader } from "../context/LoaderContext";
 import { useNotification } from "../context/NotificationContext";
 import { contact } from "../api/api";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
+
   const { useFakeLoader } = useLoader();
+
   useEffect(() => useFakeLoader(), []);
+
   const [errors, setErrors] = useState({
     name: "",
     subject: "",
@@ -19,7 +24,9 @@ function Contact() {
     email: "",
     message: "",
   });
+
   const { showNotification } = useNotification();
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -38,7 +45,7 @@ function Contact() {
         showNotification("Message sent successfully!");
         setFormData({ name: "", subject: "", email: "", message: "" });
         setErrors({ name: "", subject: "", email: "", message: "" });
-        // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
       } catch (err) {
         showNotification("Failed to send message.");
       }
@@ -96,29 +103,31 @@ function Contact() {
       <form onSubmit={handleSubmit}>
         <div className="contactInputSection">
           <ul className="contactInputWrapper">
-            <h4 className="contactTitle">Contact us</h4>
+            <h4 className="contactTitle">{t("Contact-us")}</h4>
+
             <li className="nameAndEmailWrapper">
               <div className="nameAndErr">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder={t("Name")}
                   className="nameAndEmail"
                   value={formData.name}
                   onChange={handleChange}
-                  id={`${errors.name ? "error" : ""}`}
+                  id={errors.name ? "error" : ""}
                 />
                 <p className="contactValidationError">{errors.name}</p>
               </div>
+
               <div className="emailAndErr">
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t("Email")}
                   className="nameAndEmail"
                   value={formData.email}
                   onChange={handleChange}
-                  id={`${errors.email ? "error" : ""}`}
+                  id={errors.email ? "error" : ""}
                 />
                 <p className="contactValidationError">{errors.email}</p>
               </div>
@@ -128,33 +137,30 @@ function Contact() {
               <input
                 type="text"
                 name="subject"
-                placeholder="subject"
+                placeholder={t("Subject")}
                 className="contactInpSubject"
                 value={formData.subject}
                 onChange={handleChange}
-                id={`${errors.subject ? "error" : ""}`}
+                id={errors.subject ? "error" : ""}
               />
-              <p
-                className="contactValidationError"
-                style={{ marginBottom: "5px" }}
-              >
-                {errors.subject}
-              </p>
+              <p className="contactValidationError">{errors.subject}</p>
             </li>
+
             <li>
               <textarea
-                placeholder="Message"
+                placeholder={t("Message")}
                 name="message"
                 className="contactInpMessage"
                 value={formData.message}
                 onChange={handleChange}
-                id={`${errors.message ? "error" : ""}`}
+                id={errors.message ? "error" : ""}
               />
               <p className="contactValidationError">{errors.message}</p>
             </li>
+
             <li>
               <button className="contactSubmit" type="submit">
-                SUBMIT
+                {t("Submit")}
               </button>
             </li>
           </ul>

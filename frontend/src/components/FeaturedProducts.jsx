@@ -1,9 +1,10 @@
-import  { useState } from 'react';
-import SingleProductCarousel from './SingleProductCarousel';
+import { useState } from "react";
+import SingleProductCarousel from "./SingleProductCarousel";
+import { useTranslation } from "react-i18next";
 
 function FeaturedProducts({ slides }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
+  const { t } = useTranslation();
   const ITEMS_VISIBLE = 4;
 
   const handleNextClick = () => {
@@ -27,25 +28,19 @@ function FeaturedProducts({ slides }) {
       <div className="featuredProductsNavCont">
         <ul className="featuredProductsNav">
           <span className="featuredProductsNavBorder">
-            <li className="navItem active">New Product</li>
-            <li className="navItem">Featured</li>
-            <li className="navItem">Best Deal</li>
+            <li className="navItem active">{t("New-Product")}</li>
+            <li className="navItem">{t("Featured")}</li>
+            <li className="navItem">{t("Best-Deal")}</li>
           </span>
         </ul>
       </div>
 
       <div className="featuredProductsCarousel">
-        <button
-          className="carouselBtn prev"
-          onClick={handlePrevClick}
-        >
+        <button className="carouselBtn prev" onClick={handlePrevClick}>
           &lt;
         </button>
 
-        <button
-          className="carouselBtn next"
-          onClick={handleNextClick}
-        >
+        <button className="carouselBtn next" onClick={handleNextClick}>
           &gt;
         </button>
 
@@ -54,14 +49,11 @@ function FeaturedProducts({ slides }) {
             className="carouselContainer"
             style={{
               transform: `translateX(-${currentSlideIndex * 308}px)`,
-              transition: 'transform 1.7s ease',
+              transition: "transform 1.7s ease",
             }}
           >
             {slides.map((product, index) => (
-              <div
-                key={index}
-                className="product-slide"
-              >
+              <div key={index} className="product-slide">
                 <SingleProductCarousel slides={product.slides || [product]} />
               </div>
             ))}

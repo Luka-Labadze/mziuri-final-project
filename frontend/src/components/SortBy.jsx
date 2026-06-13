@@ -1,6 +1,10 @@
 import "react";
 import Grid from "../assets/icons/grid.png";
+import { useTranslation } from "react-i18next";
+
 function SortBy() {
+  const { t } = useTranslation();
+
   return (
     <div className="sortBy">
       <div className="gridView">
@@ -9,17 +13,26 @@ function SortBy() {
           ⋮☰
         </p>
       </div>
+
       <div className="showingProducts">
-        <p>Showing 1 - 15 of 44 result</p>
+        <p>{t("Showing-results", { from: 1, to: 15, total: 44 })}</p>
       </div>
+
       <div className="sorting">
-        <p>Sort by</p>
+        <p>{t("Sort-by")}</p>
+
         <select name="sorting" id="sorting">
-          <option value="alphabeticallyReverse">Alphabetically, Z-A</option>
-          <option value="featured">Featured</option>
-          <option value="alphabetically">Alphabetically, A-Z</option>
-          <option value="priceLowToHigh">Price low to high</option>
-          <option value="priceHighToLow">Price high to low</option>
+          <option value="alphabeticallyReverse">
+            {t("Alphabetically-Z-A")}
+          </option>
+
+          <option value="featured">{t("Featured")}</option>
+
+          <option value="alphabetically">{t("Alphabetically-A-Z")}</option>
+
+          <option value="priceLowToHigh">{t("Price-low-to-high")}</option>
+
+          <option value="priceHighToLow">{t("Price-high-to-low")}</option>
         </select>
       </div>
     </div>

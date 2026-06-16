@@ -25,16 +25,14 @@ import useDocumentTitle from "./hooks/useDocumentTitle.jsx";
 import ForgotPassword from "./routes/ForgotPassword.jsx";
 import ResetPassword from "./routes/ResetPassword.jsx";
 import useLanguage from "./hooks/useLanguage.jsx";
+import Cart from "./routes/Cart.jsx";
 
-function App() { 
-
+function App() {
   useAppScale();
   useScrollTop();
   useDocumentTitle();
-  useLanguage()
+  useLanguage();
   const { loggedIn, login, logout } = useUserData();
-
-
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -71,6 +69,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Main>
       <Footer />

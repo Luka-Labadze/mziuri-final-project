@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Modal from "../components/Modal";
 import { useCartModal } from "../context/AddToCartModalContext";
-import { getProductById } from "../api/api"; 
+import { getProductById } from "../api/api";
 import CloseImage from "../assets/icons/X.svg";
+import { Link } from "react-router-dom";
 const AddToCart = () => {
   const { isOpen, selectedId, closeAddToCartModal } = useCartModal();
   const [product, setProduct] = useState(null);
@@ -10,7 +11,14 @@ const AddToCart = () => {
   useEffect(() => {
     if (isOpen && selectedId) {
       getProductById(selectedId)
-        .then((data) => setProduct(data))
+        .then((data) => {
+          setProduct(data);
+          const prev = JSON.parse(localStorage.getItem("cart")) || [];
+          const alreadyExists = prev.find((p) => p._id === data._id);
+          if (!alreadyExists) {
+            localStorage.setItem("cart", JSON.stringify([...prev, data]));
+          }
+        })
         .catch((err) => console.error("err", err));
     } else {
       setProduct(null);
@@ -20,7 +28,7 @@ const AddToCart = () => {
   if (!isOpen) return null;
 
   return (
-    <Modal isOpen={isOpen} onClose={closeAddToCartModal}     >
+    <Modal isOpen={isOpen} onClose={closeAddToCartModal}>
       {product ? (
         <div className="addToCart">
           <button
@@ -46,12 +54,10 @@ const AddToCart = () => {
                   <p className="successMsg">Added to cart successfully!</p>
                 </li>
                 <li className="ATCBtnWrapper">
-                  <button className="viewCart" onClick={closeAddToCartModal}>
-                    View Cart
-                  </button>
-                  <button className="checkout" onClick={closeAddToCartModal}>
-                    Checkout
-                  </button>
+                  <Link to="/cart" onClick={closeAddToCartModal}>
+                    <button className="viewCart">View Cart</button>
+                  </Link>
+                  <button className="checkout">Checkout</button>
                 </li>
               </ul>
             </div>

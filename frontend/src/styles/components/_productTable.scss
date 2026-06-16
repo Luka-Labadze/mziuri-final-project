@@ -1,0 +1,261 @@
+.EmptyCart {
+  margin: auto;
+  line-height: calc(35px * var(--app-scale));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 14%;
+  justify-content: center;
+  min-height: calc(400px * var(--app-scale));
+  .SC {
+    font-size: calc(32px * var(--app-scale));
+    font-weight: 600;
+  }
+  .CartIsEmpty {
+    font-size: calc(28px * var(--app-scale));
+    font-weight: 600;
+  }
+  .CBH {
+    font-size: calc(16px * var(--app-scale));
+    font-weight: 400;
+  }
+}
+.productTable {
+  width: calc(1190px * var(--app-scale, 1));
+  margin: calc(150px * var(--app-scale, 1)) auto; // ← add top/bottom margin here
+  padding: 0 calc(16px * var(--app-scale, 1));
+
+  .tableWrapper {
+    width: 100%;
+  }
+
+  .tableHeader,
+  .productRow {
+    display: grid;
+    grid-template-columns:
+      calc(120px * var(--app-scale, 1)) 1fr calc(140px * var(--app-scale, 1))
+      calc(180px * var(--app-scale, 1)) calc(140px * var(--app-scale, 1))
+      calc(80px * var(--app-scale, 1));
+    align-items: center;
+    min-width: calc(1170px * var(--app-scale, 1));
+  }
+
+  .tableHeader {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .headerCell {
+      height: calc(58px * var(--app-scale, 1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+      border-right: none;
+      font-size: calc(14px * var(--app-scale, 1));
+      font-weight: 600;
+      color: #111827;
+      background: #fff;
+
+      &:first-child {
+        border-left: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+      }
+
+      &:last-child {
+        border-right: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+      }
+    }
+  }
+
+  .productList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .productRow {
+    min-height: calc(115px * var(--app-scale, 1));
+
+    .imageCell,
+    .infoCell,
+    .priceCell,
+    .quantityCell,
+    .totalCell,
+    .removeCell {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+      border-right: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+    }
+
+    .imageCell {
+      border-left: calc(1px * var(--app-scale, 1)) solid #e5e7eb;
+      padding: calc(10px * var(--app-scale, 1));
+    }
+
+    .infoCell {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 calc(20px * var(--app-scale, 1));
+      text-align: left;
+    }
+  }
+
+  .productImage {
+    width: calc(80px * var(--app-scale, 1));
+    height: calc(80px * var(--app-scale, 1));
+    object-fit: cover;
+    background: #f8f8f8;
+    border-radius: calc(4px * var(--app-scale, 1));
+  }
+
+  .productName {
+    font-size: calc(15px * var(--app-scale, 1));
+    font-weight: 500;
+    color: #111827;
+    line-height: 1.4;
+  }
+
+  .productVariant {
+    margin-top: calc(4px * var(--app-scale, 1));
+    font-size: calc(13px * var(--app-scale, 1));
+    color: #6b7280;
+  }
+
+  .priceCell,
+  .totalCell {
+    font-size: calc(16px * var(--app-scale, 1));
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .qtyControl {
+    display: flex;
+    align-items: center;
+    border: calc(1px * var(--app-scale, 1)) solid #d1d5db;
+    border-radius: calc(4px * var(--app-scale, 1));
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .qtyBtn {
+    width: calc(34px * var(--app-scale, 1));
+    height: calc(34px * var(--app-scale, 1));
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: calc(16px * var(--app-scale, 1));
+    color: #6b7280;
+    transition: 0.2s;
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+
+  .qtyValue {
+    width: calc(42px * var(--app-scale, 1));
+    text-align: center;
+    font-size: calc(14px * var(--app-scale, 1));
+    color: #111827;
+  }
+
+  .removeBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: calc(35px * var(--app-scale, 1));
+    border-radius: calc(5px * var(--app-scale, 1));
+    height: calc(35px * var(--app-scale, 1));
+    font-size: calc(18px * var(--app-scale, 1));
+    font-weight: 700;
+    color: #111827;
+    transition: 0.2s;
+
+    &:hover {
+      color: #ec0e0e;
+      background-color: #e79a9a;
+    }
+  }
+  .cartFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: calc(24px * var(--app-scale, 1));
+
+    .cartActions {
+      display: flex;
+      gap: calc(12px * var(--app-scale, 1));
+    }
+
+    .cartActionBtn {
+      padding: calc(12px * var(--app-scale, 1)) calc(20px * var(--app-scale, 1));
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      font-size: calc(13px * var(--app-scale, 1));
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-transform: uppercase;
+      &:hover {
+        background: #374151;
+      }
+    }
+
+    .cartTotals {
+      min-width: calc(280px * var(--app-scale, 1));
+      display: flex;
+      flex-direction: column;
+      gap: calc(10px * var(--app-scale, 1));
+    }
+
+    .cartTotalsTitle {
+      font-size: calc(20px * var(--app-scale, 1));
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: calc(2px * var(--app-scale, 1)) solid #111827;
+      padding-bottom: calc(8px * var(--app-scale, 1));
+      margin: 0;
+    }
+
+    .totalsRow {
+      display: flex;
+      justify-content: space-between;
+      font-size: calc(14px * var(--app-scale, 1));
+      color: #111827;
+
+      .totalsValue {
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      &.totalBold {
+        font-weight: 700;
+        font-size: calc(15px * var(--app-scale, 1));
+      }
+    }
+
+    .checkoutBtn {
+      margin-top: calc(8px * var(--app-scale, 1));
+      width: 100%;
+      padding: calc(14px * var(--app-scale, 1));
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      font-size: calc(13px * var(--app-scale, 1));
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover {
+        background: #374151;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import './i18n/i18n.js'
+import "./i18n/i18n.js";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -7,7 +7,6 @@ import { LoaderProvider } from "./context/LoaderContext.jsx";
 import { CartModalProvider } from "./context/AddToCartModalContext.jsx";
 import { BrowserRouter } from "react-router-dom";
 import AddToCartModal from "./modals/AddToCart.jsx";
-import { CartProvider } from "./context/CartContext.jsx";
 import { NotificationProvider } from "./context/NotificationContext.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
 createRoot(document.getElementById("root")).render(
@@ -17,9 +16,7 @@ createRoot(document.getElementById("root")).render(
         <LoaderProvider>
           <NotificationProvider>
             <CartModalProvider>
-              <CartProvider>
-                <App />
-              </CartProvider>
+              <App />
               <AddToCartModal />
             </CartModalProvider>
           </NotificationProvider>

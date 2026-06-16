@@ -6,7 +6,6 @@ import HotDeal from "../components/HotDeal";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Banner from "../components/Banner";
 import NewsletterModal from "../modals/NewsletterModal";
-import CartModal from "../modals/CartModal";
 import LaptAndComp from "../components/LaptAndComp";
 import SecondBanner from "../components/SecondBanner";
 import OnSale from "../components/OnSale";
@@ -46,8 +45,6 @@ function Home() {
       <LaptAndComp />
       <SecondBanner />
       <OnSale />
-
-      <CartModal/>
     </>
   );
 }

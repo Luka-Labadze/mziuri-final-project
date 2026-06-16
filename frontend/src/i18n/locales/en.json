@@ -154,8 +154,10 @@
   "Newsletter-text": "Join over 1,000 people who get free and fresh content delivered automatically each time we publish",
   "Email-placeholder": "email@example.com",
   "Subscribe": "SUBSCRIBE",
-  "Dont-show-again": "Don't show this again"
-
-
+  "Dont-show-again": "Don't show this again",
+ "Image":"Image",
+  "Total": "Total",
+  "Remove": "Remove",
+"Product": "Product"
 
 }

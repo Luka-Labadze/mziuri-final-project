@@ -16,7 +16,19 @@ const UsersSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    cart: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Card",
+        },
+    ],
+    wishlist: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Card",
+        }
+    ]
 })
 
 export default mongoose.model('Users', UsersSchema)

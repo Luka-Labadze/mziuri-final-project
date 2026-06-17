@@ -29,7 +29,9 @@ export const contact = async (data) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.err || "Failed to send contact email");
+    throw new Error(
+      error.response?.data?.err || "Failed to send contact email",
+    );
   }
 };
 
@@ -92,10 +94,14 @@ export const getUser = async () => {
 
 export const forgotPasswordUser = async (data) => {
   try {
-    const response = await axios.put(`${baseURL}/api/users/forgot-password`, data, {
-      withCredentials: true,
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await axios.put(
+      `${baseURL}/api/users/forgot-password`,
+      data,
+      {
+        withCredentials: true,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
     return response.data;
   } catch (error) {
     throw new Error(error.response?.data?.err || "Failed to send reset email");
@@ -104,12 +110,66 @@ export const forgotPasswordUser = async (data) => {
 
 export const resetPasswordUser = async (data, token) => {
   try {
-    const response = await axios.put(`${baseURL}/api/users/reset-password`, data, {
-      headers: { Authorization: token },
-      withCredentials: true,
-    });
+    const response = await axios.put(
+      `${baseURL}/api/users/reset-password`,
+      data,
+      {
+        headers: { Authorization: token },
+        withCredentials: true,
+      },
+    );
     return response.data;
   } catch (error) {
     throw new Error(error.response?.data?.err || "Failed to reset password");
+  }
+};
+
+export const addToCartAPI = async (productId) => {
+  try {
+    const response = await axios.post(
+      `${baseURL}/api/users/cart`,
+      { productId },
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to add to cart");
+  }
+};
+
+export const removeFromCartAPI = async (productId) => {
+  try {
+    const response = await axios.delete(
+      `${baseURL}/api/users/cart/${productId}`,
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to remove from cart");
+  }
+};
+
+export const addToWishlistAPI = async (productId) => {
+  try {
+    const response = await axios.post(
+      `${baseURL}/api/users/wishlist`,
+      { productId },
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to add to wishlist");
+  }
+};
+
+export const removeFromWishlistAPI = async (productId) => {
+  try {
+    const response = await axios.delete(
+      `${baseURL}/api/users/wishlist/${productId}`,
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.err || "Failed to remove from wishlist");
   }
 };

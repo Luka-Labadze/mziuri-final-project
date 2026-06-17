@@ -4,6 +4,8 @@ import SingleProductPhotoCarousel from "./SingleProductPhotoCarousel";
 import { getProducts } from "../api/api";
 import { useCartModal } from "../context/AddToCartModalContext";
 import { useTranslation } from "react-i18next";
+import { useWishlistModal } from "../context/AddToWishlistModalContext";
+import { useCartWishlist } from "../context/CartWishlistContext";
 
 function SingleProductPage({ product }) {
   const { t } = useTranslation();
@@ -12,6 +14,8 @@ function SingleProductPage({ product }) {
   const [currentPhotoSlideIndex, setCurrentPhotoSlideIndex] = useState(0);
   const [allProducts, setAllProducts] = useState([]);
   const { openAddToCartModal } = useCartModal();
+  const { openAddToWishlistModal } = useWishlistModal();
+  const { addToWishlist } = useCartWishlist();
 
   const ITEMS_VISIBLE = 3;
   const PHOTO_ITEMS_VISIBLE = 3;
@@ -22,6 +26,18 @@ function SingleProductPage({ product }) {
     openAddToCartModal(product._id);
   };
 
+  const handleAddToWishlist = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToWishlist({
+      _id: product._id,
+      title: product.title,
+      price: product.price,
+      image1: product.image1,
+      image2: product.image2,
+    });
+    openAddToWishlistModal(product._id);
+  };
   const photoCarouselImages = [
     product.image1,
     product.image2,
@@ -131,9 +147,7 @@ function SingleProductPage({ product }) {
 
         <p className="priceRatio">{t("In-stock")}</p>
 
-        <p className="productCaption">
-          {t("Product-description")}
-        </p>
+        <p className="productCaption">{t("Product-description")}</p>
 
         <div className="size">
           <h4 className="sizeTitle">{t("Size")} :</h4>
@@ -174,32 +188,25 @@ function SingleProductPage({ product }) {
             </li>
 
             <li>
-              <input
-                type="number"
-                defaultValue={1}
-                className="quantityInput"
-              />
+              <input type="number" defaultValue={1} className="quantityInput" />
             </li>
 
             <li>
-              <button
-                className="addToCartBtn"
-                onClick={handleAddToCart}
-              >
+              <button className="addToCartBtn" onClick={handleAddToCart}>
                 {t("Add-to-cart")}
               </button>
             </li>
 
             <li>
-              <p className="wishlist">♡</p>
+              <p className="wishlist" onClick={handleAddToWishlist}>
+                ♡
+              </p>
             </li>
           </ol>
         </div>
 
         <div className="buyNow">
-          <button className="buyNowBtn">
-            {t("Buy-now")}
-          </button>
+          <button className="buyNowBtn">{t("Buy-now")}</button>
         </div>
 
         <div className="tag">
@@ -226,17 +233,11 @@ function SingleProductPage({ product }) {
         </div>
 
         <div className="singleProductPageCarousel">
-          <button
-            className="carouselBtn prev"
-            onClick={handlePrevClick}
-          >
+          <button className="carouselBtn prev" onClick={handlePrevClick}>
             &lt;
           </button>
 
-          <button
-            className="carouselBtn next"
-            onClick={handleNextClick}
-          >
+          <button className="carouselBtn next" onClick={handleNextClick}>
             &gt;
           </button>
 

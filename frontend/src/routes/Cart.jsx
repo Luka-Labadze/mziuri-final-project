@@ -5,7 +5,7 @@ function Cart() {
   return (
     <div className="Cart">
       <div className="productTableSection">
-        <ProductTable />
+        <ProductTable mode="cart"/>
       </div>
     </div>
   );

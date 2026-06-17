@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./styles/App.scss";
 import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
@@ -14,18 +15,19 @@ import {
 } from "./routes/index.js";
 import LoaderScreen from "./components/LoaderScreen.jsx";
 import Notification from "./components/Notification.jsx";
-
 import useScrollTop from "./hooks/useScrollTop.jsx";
 import useAppScale from "./hooks/useAppScale.jsx";
 import { useUserData } from "./context/UserContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { useEffect } from "react";
-import { getToken } from "./api/api.js";
+import { getUser } from "./api/api.js";
 import useDocumentTitle from "./hooks/useDocumentTitle.jsx";
 import ForgotPassword from "./routes/ForgotPassword.jsx";
 import ResetPassword from "./routes/ResetPassword.jsx";
 import useLanguage from "./hooks/useLanguage.jsx";
 import Cart from "./routes/Cart.jsx";
+import Wishlist from "./routes/Wishlist.jsx";
+import Checkout from "./routes/Checkout.jsx";
 
 function App() {
   useAppScale();
@@ -34,22 +36,22 @@ function App() {
   useLanguage();
   const { loggedIn, login, logout } = useUserData();
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await getToken();
-        if (response.data) {
-          login(response.data);
-        }
-      } catch (err) {
-        logout();
-        console.error("Auth check failed", err);
+ useEffect(() => {
+  const checkAuth = async () => {
+    try {
+      const response = await getUser();
+      if (response.data) {
+        login(response.data);
       }
-    };
+    } catch (err) {
+      // don't call logout() here — user is simply not logged in
+      // logout() should only be called when user explicitly clicks logout
+      console.log("No active session");
+    }
+  };
 
-    checkAuth();
-  }, []);
-
+  checkAuth();
+}, []);
   return (
     <>
       <Header />
@@ -70,6 +72,8 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Main>
       <Footer />

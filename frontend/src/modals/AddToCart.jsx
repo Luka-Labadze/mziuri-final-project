@@ -57,7 +57,9 @@ const AddToCart = () => {
                   <Link to="/cart" onClick={closeAddToCartModal}>
                     <button className="viewCart">View Cart</button>
                   </Link>
-                  <button className="checkout">Checkout</button>
+                  <Link to="/checkout" onClick={closeAddToCartModal}>
+                    <button className="checkout">Checkout</button>
+                  </Link>
                 </li>
               </ul>
             </div>

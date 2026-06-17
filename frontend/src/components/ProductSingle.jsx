@@ -1,19 +1,32 @@
 import "react";
-import { useCartModal } from "../context/AddToCartModalContext";
+import { useCartWishlist } from "../context/CartWishlistContext";
 import { useTranslation } from "react-i18next";
-
-
+import { useCartModal } from "../context/AddToCartModalContext";
+import { useWishlistModal } from "../context/AddToWishlistModalContext";
 function ProductSingle({ id, img1, img2, title, price }) {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
+  const { addToCart, addToWishlist } = useCartWishlist();
   const { openAddToCartModal } = useCartModal();
+  const { openAddToWishlistModal } = useWishlistModal();
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    addToCart({ _id: id, title, price, image1: img1, image2: img2 });
     openAddToCartModal(id);
   };
+
+  const handleAddToWishlist = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToWishlist({ _id: id, title, price, image1: img1, image2: img2 });
+    openAddToWishlistModal(id);
+  };
+
   return (
     <div className="productSingle">
-      <p className="wishlist">♡</p>
+      <p className="wishlist" onClick={handleAddToWishlist}>
+        ♡
+      </p>
 
       <div className="imgContainer">
         <img alt="IMAGE" src={img1} className="productImg" id="image1" />

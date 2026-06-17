@@ -22,7 +22,7 @@
 }
 .productTable {
   width: calc(1190px * var(--app-scale, 1));
-  margin: calc(150px * var(--app-scale, 1)) auto; // ← add top/bottom margin here
+  margin: calc(150px * var(--app-scale, 1)) auto;
   padding: 0 calc(16px * var(--app-scale, 1));
 
   .tableWrapper {
@@ -38,6 +38,24 @@
       calc(80px * var(--app-scale, 1));
     align-items: center;
     min-width: calc(1170px * var(--app-scale, 1));
+
+    .addToCartCell {
+      .AddToCartBtn {
+        width: calc(149px * var(--app-scale));
+        height: calc(44px * var(--app-scale));
+        border-radius: calc(5px * var(--app-scale));
+        color: white;
+        background-color: #0438a1;
+        border: calc(1px * var(--app-scale)) solid #0438a1;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: #0279d1;
+          border: calc(1px * var(--app-scale)) solid transparent;
+        }
+      }
+    }
   }
 
   .tableHeader {

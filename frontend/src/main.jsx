@@ -9,16 +9,24 @@ import { BrowserRouter } from "react-router-dom";
 import AddToCartModal from "./modals/AddToCart.jsx";
 import { NotificationProvider } from "./context/NotificationContext.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
+import { CartWishlistProvider } from "./context/CartWishlistContext.jsx";
+import { WishlistModalProvider } from "./context/AddToWishlistModalContext.jsx";
+import AddToWishlist from "./modals/AddToWishlistModal.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <UserProvider>
         <LoaderProvider>
           <NotificationProvider>
-            <CartModalProvider>
-              <App />
-              <AddToCartModal />
-            </CartModalProvider>
+            <CartWishlistProvider>
+              <WishlistModalProvider>
+                <CartModalProvider>
+                  <App />
+                  <AddToCartModal />
+                  <AddToWishlist />
+                </CartModalProvider>
+              </WishlistModalProvider>
+            </CartWishlistProvider>
           </NotificationProvider>
         </LoaderProvider>
       </UserProvider>

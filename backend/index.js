@@ -34,6 +34,7 @@ const limiter = rateLimit({
 
 app.use("/api", CardsRouter);
 app.use("/api/users", UsersRouter);
+
 app.listen(PORT, () => {
   console.log("Server is running on PORT :", PORT);
   connectDB(process.env.CONNECTION_STRING);

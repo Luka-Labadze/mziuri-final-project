@@ -1,9 +1,14 @@
-import 'react'
+import "react";
+import ProductTable from "../components/ProductTable";
 
 function Wishlist() {
   return (
-    <div>Wishlist</div>
-  )
+    <div className="wishlist">
+      <div className="productTableSection">
+        <ProductTable mode="wishlist" />
+      </div>
+    </div>
+  );
 }
 
-export default Wishlist
+export default Wishlist;

@@ -44,8 +44,6 @@ function App() {
         login(response.data);
       }
     } catch (err) {
-      // don't call logout() here — user is simply not logged in
-      // logout() should only be called when user explicitly clicks logout
       console.log("No active session");
     }
   };
@@ -71,8 +69,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<ProtectedRoute loggedIn={loggedIn} element={<Cart/>} />} />
+          <Route path="/wishlist" element={<ProtectedRoute loggedIn={loggedIn} element={<Wishlist/>} />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Main>

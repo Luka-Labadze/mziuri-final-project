@@ -30,18 +30,18 @@
 @use "./components/aboutUsMission";
 @use "./components/ourTeam";
 @use "./components/brands";
-@use './components/productTable';
+@use "./components/productTable";
 
 @use "./routes/products";
 @use "./routes/register";
 @use "./routes/login";
 @use "./routes/contact";
 @use "./routes/forgotPassword";
-@use './routes/resetPassword';
-@use './routes/cart';
-
+@use "./routes/resetPassword";
+@use "./routes/cart";
+@use "./routes/checkout";
 
 @use "./modals/newsletterModal";
 @use "./modals/addToCart";
 @use "./modals/cartModal";
-@use './modals/addToWishlist'
+@use "./modals/addToWishlist";

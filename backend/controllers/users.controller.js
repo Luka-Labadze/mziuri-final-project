@@ -3,6 +3,8 @@ import "../models/cards.models.js";
 import { sendContactMail, sendResetPasswordMail } from "../utils/mailSender.js";
 import { hashPassword, comparePassword } from "../utils/bcrypt.js";
 import jwt from "jsonwebtoken";
+
+
 export const contact = async (req, res) => {
   try {
     const { email, subject, message } = req.body;
@@ -72,7 +74,6 @@ export const loginUser = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
-    // populate cart and wishlist so frontend gets full product objects
     const populatedUser = await Users.findById(user._id)
       .select("-password")
       .populate("cart")
@@ -114,7 +115,6 @@ export const getUser = async (req, res) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-    // populate cart and wishlist so frontend gets full product objects on refresh
     const user = await Users.findById(decoded.id)
       .select("-password")
       .populate("cart")
@@ -170,7 +170,6 @@ export const resetPasswordUser = async (req, res) => {
   }
 };
 
-// ─── Cart ──────────────────────────────────────────────────────────────────
 
 export const addToCart = async (req, res) => {
   try {
@@ -180,14 +179,11 @@ export const addToCart = async (req, res) => {
 
     const user = await Users.findById(decoded.id);
 
-    // only add if not already in cart
     const already = user.cart.find((id) => id.toString() === productId);
     if (!already) {
       user.cart.push(productId);
       await user.save();
     }
-
-    // return populated cart so frontend has full product data
     const updatedUser = await Users.findById(decoded.id).populate("cart");
     return res.status(200).json({ data: updatedUser.cart });
   } catch (err) {
@@ -212,7 +208,6 @@ export const removeFromCart = async (req, res) => {
   }
 };
 
-// ─── Wishlist ──────────────────────────────────────────────────────────────
 
 export const addToWishlist = async (req, res) => {
   try {

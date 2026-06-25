@@ -5,10 +5,12 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 0 calc(180px * var(--app-scale));
+
   .ponnoLogo {
     width: calc(150px * var(--app-scale));
     height: calc(30px * var(--app-scale));
   }
+
   .searchWrap {
     position: relative;
     width: calc(570px * var(--app-scale));
@@ -36,6 +38,7 @@
       cursor: pointer;
     }
   }
+
   .cart {
     width: calc(125px * var(--app-scale));
     height: calc(54px * var(--app-scale));
@@ -47,14 +50,77 @@
     cursor: pointer;
     color: white;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
     .cartLogo {
       width: calc(35px * var(--app-scale));
       height: calc(30px * var(--app-scale));
     }
+
     .cartFlexbox {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
     }
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .topNavbar {
+    padding: 0 40px;
+    justify-content: space-between;
+  }
+
+  .topNavbar .searchWrap {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .topNavbar {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .topNavbar .searchWrap {
+    width: 100%;
+  }
+
+  .topNavbar .cart {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topNavbar {
+    padding: 15px;
+  }
+
+  .topNavbar .ponnoLogo {
+    width: 120px;
+    height: auto;
+  }
+
+  .topNavbar .searchWrap {
+    height: 45px;
+  }
+
+  .topNavbar .searchBar {
+    font-size: 13px;
+    padding: 0 40px 0 20px;
+  }
+
+  .topNavbar .cart {
+    font-size: 13px;
+    height: 45px;
+  }
+
+  .topNavbar .cartLogo {
+    width: 28px;
+    height: 24px;
   }
 }

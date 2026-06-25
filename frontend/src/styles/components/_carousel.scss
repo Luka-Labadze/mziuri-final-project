@@ -24,7 +24,10 @@
   }
 
   .singleCarouselContainer {
-    transform: translate(calc(20px * var(--app-scale)), calc(50px * var(--app-scale)));
+    transform: translate(
+      calc(20px * var(--app-scale)),
+      calc(50px * var(--app-scale))
+    );
 
     flex: 1;
     display: flex;
@@ -76,6 +79,60 @@
     .carouselNextClick {
       opacity: 1;
       transition: 1s;
+    }
+  }
+
+  @media (max-width: 900px) {
+    height: 420px;
+
+    .singleCarouselContainer {
+      transform: translate(0, 20px);
+    }
+
+    .carouselPrevClick,
+    .carouselNextClick {
+      width: 42px;
+      height: 42px;
+      padding: 25px;
+      opacity: 1; /* always visible on mobile */
+    }
+
+    .carouselBtns {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    height: 350px;
+
+    .singleCarouselContainer {
+      transform: translate(0, 10px);
+    }
+
+    .carouselPrevClick,
+    .carouselNextClick {
+      width: 38px;
+      height: 38px;
+      padding: 20px;
+    }
+
+    .carouselBtns {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    height: 300px;
+
+    .carouselPrevClick,
+    .carouselNextClick {
+      width: 34px;
+      height: 34px;
+      padding: 18px;
+    }
+
+    .carouselBtns {
+      font-size: 18px;
     }
   }
 }

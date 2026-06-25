@@ -5,6 +5,7 @@
   width: 100%;
   gap: calc(30px * var(--app-scale));
   padding: calc(80px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
+
   .hDLeftSide {
     width: calc(870px * var(--app-scale));
     height: calc(460px * var(--app-scale));
@@ -34,18 +35,19 @@
       .textContainer {
         flex: 1;
         max-width: 50%;
-        
+
         .hotDealExpireDate {
           float: left;
           margin: calc(35px * var(--app-scale)) 0 0 0;
+
           .expiration {
             display: flex;
             justify-content: center;
             gap: calc(30px * var(--app-scale));
             font-size: calc(20px * var(--app-scale));
             font-weight: 600;
-            
           }
+
           .timespan {
             display: flex;
             justify-content: center;
@@ -53,9 +55,9 @@
             font-size: calc(16px * var(--app-scale));
             font-weight: 400;
             line-height: calc(14px * var(--app-scale));
-            
           }
         }
+
         .hot-deal {
           font-size: calc(18px * var(--app-scale));
           font-weight: 700;
@@ -93,6 +95,86 @@
       justify-content: space-between;
       align-items: center;
       height: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .hDLeftSide {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      padding: 20px;
+    }
+
+    .hDContent {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+
+      .textContainer {
+        max-width: 100%;
+      }
+
+      .imgContainer {
+        justify-content: center;
+
+        .hotDealHeadset {
+          width: 250px;
+        }
+      }
+    }
+
+    .hdCarousel {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hDContent {
+      padding: 20px;
+
+      .hdLeftSideTitle {
+        font-size: 24px;
+      }
+
+      .hot-deal {
+        font-size: 16px;
+      }
+
+      .textContainer {
+        .hotDealExpireDate {
+          .expiration {
+            font-size: 16px;
+            gap: 15px;
+          }
+
+          .timespan {
+            font-size: 14px;
+            gap: 10px;
+          }
+        }
+      }
+    }
+
+    .hotDealHeadset {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hDContent {
+      .hdLeftSideTitle {
+        font-size: 20px;
+      }
+
+      .hotDealHeadset {
+        width: 170px;
+      }
     }
   }
 }

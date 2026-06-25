@@ -6,38 +6,48 @@
   margin-top: 3.5%;
   border: calc(1px * var(--app-scale)) dashed rgb(226, 224, 224);
   padding: calc(25px * var(--app-scale));
+
   ol {
     display: flex;
     gap: calc(15px * var(--app-scale));
   }
+
   h2 {
     font-size: calc(20px * var(--app-scale));
   }
+
   label {
     font-size: calc(16px * var(--app-scale));
     font-weight: 400;
     cursor: pointer;
   }
+
   .selected {
     display: inline-block;
     border: calc(1px * var(--app-scale)) dashed rgb(196, 196, 196);
     padding: calc(2px * var(--app-scale)) calc(10px * var(--app-scale));
     margin: 0 0 calc(25px * var(--app-scale)) 0;
   }
+
   .availability {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .availabilityTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
   }
+
   .price {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .priceTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
+
     .bottomPrice {
       display: flex;
       justify-content: space-between;
+
       .rightSide,
       .leftSide {
         display: flex;
@@ -45,47 +55,129 @@
         gap: calc(10px * var(--app-scale));
         margin: 0 0 calc(30px * var(--app-scale)) 0;
       }
+
       .priceUnits {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
       }
+
       .priceInput {
         width: calc(70px * var(--app-scale));
         height: calc(42px * var(--app-scale));
       }
     }
   }
+
   .productType {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .productTypeTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
   }
+
   .brand {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .brandTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
+
     .brandList {
       margin: 0 0 calc(15px * var(--app-scale)) 0;
     }
   }
+
   .color {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .colorTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
   }
+
   .material {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .materialTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
     }
   }
+
   .size {
     margin: 0 0 calc(30px * var(--app-scale)) 0;
+
     .sizeTitle {
       margin: 0 0 calc(25px * var(--app-scale)) 0;
+    }
+  }
+
+
+
+  @media (max-width: 900px) {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    label {
+      font-size: 15px;
+    }
+
+    .priceInput {
+      width: 60px;
+      height: 38px;
+    }
+
+    .bottomPrice {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    ol {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+
+    h2 {
+      font-size: 16px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .selected {
+      font-size: 13px;
+    }
+
+    .priceInput {
+      width: 55px;
+      height: 36px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    padding: 12px;
+
+    h2 {
+      font-size: 15px;
+    }
+
+    label {
+      font-size: 13px;
+    }
+
+    .priceInput {
+      width: 50px;
+      height: 34px;
     }
   }
 }

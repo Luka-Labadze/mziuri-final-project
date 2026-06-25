@@ -5,18 +5,21 @@
   margin: calc(100px * var(--app-scale)) auto calc(100px * var(--app-scale))
     auto;
   background-color: #f3f3f3;
+
   form {
-    padding: calc(37px * var(--app-scale)) calc(40px * var(--app-scale))
-      calc(37px * var(--app-scale)) calc(40px * var(--app-scale));
+    padding: calc(37px * var(--app-scale)) calc(40px * var(--app-scale));
+
     .textContainer {
       text-align: center;
       margin-bottom: calc(30px * var(--app-scale));
+
       .loginTitle {
         color: rgb(51, 51, 51);
         margin-bottom: calc(5px * var(--app-scale));
         font-size: calc(30px * var(--app-scale));
         font-weight: 550;
       }
+
       .loginSubtitle {
         color: rgb(102, 102, 102);
         font-size: calc(16px * var(--app-scale));
@@ -32,34 +35,37 @@
       background-color: #ffffff;
       box-shadow: rgba(0, 0, 0, 0.1) calc(2px * var(--app-scale))
         calc(2px * var(--app-scale)) calc(11px * var(--app-scale)) 0px;
+
       .loginError {
         color: red;
         height: calc(20px * var(--app-scale));
       }
+
       .loginInputs {
         background-color: transparent;
-        padding: calc(8px * var(--app-scale)) calc(10px * var(--app-scale))
-          calc(8px * var(--app-scale)) calc(10px * var(--app-scale));
+        padding: calc(8px * var(--app-scale)) calc(10px * var(--app-scale));
         width: 100%;
+
         &#error {
           border: calc(2px * var(--app-scale)) solid red;
         }
       }
+
       .upperBtns {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: calc(10px * var(--app-scale));
+
         .loginBtn {
           color: white;
           font-size: calc(14px * var(--app-scale));
           font-weight: 400;
-
-          padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale))
-            calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
+          padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
           background-color: rgb(4, 56, 161);
           cursor: pointer;
         }
+
         .forgotPassword {
           cursor: pointer;
           color: rgb(102, 102, 102);
@@ -70,18 +76,88 @@
           }
         }
       }
+
       .toRegisterContainer {
         text-decoration: none;
         color: rgb(102, 102, 102);
+
         .toRegister {
           margin-top: calc(10px * var(--app-scale));
           padding-bottom: calc(10px * var(--app-scale));
+
           &:hover {
             color: black;
             transition: 0.8s;
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    margin: 60px auto;
+
+    form {
+      padding: 30px 20px;
+    }
+
+    .loginForm {
+      width: 100%;
+      height: auto;
+    }
+
+    .loginTitle {
+      font-size: 26px;
+    }
+
+    .loginSubtitle {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    form {
+      padding: 25px 15px;
+    }
+
+    .loginTitle {
+      font-size: 22px;
+    }
+
+    .loginSubtitle {
+      font-size: 14px;
+    }
+
+    .upperBtns {
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .loginBtn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .loginTitle {
+      font-size: 20px;
+    }
+
+    .loginSubtitle {
+      font-size: 13px;
+    }
+
+    .loginInputs {
+      font-size: 13px;
+    }
+
+    .loginBtn {
+      font-size: 13px;
+      padding: 10px;
     }
   }
 }

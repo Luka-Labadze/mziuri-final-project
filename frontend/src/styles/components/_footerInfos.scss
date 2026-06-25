@@ -3,31 +3,44 @@
   background-color: #0b0c0e;
   color: rgb(241, 241, 241);
   padding-top: calc(60px * var(--app-scale));
+  overflow-x: hidden;
+
   .footerInfosWrapper {
-    width: calc(1500px * var(--app-scale));
+    width: 100%;
+    max-width: calc(1500px * var(--app-scale));
     margin: auto;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 calc(20px * var(--app-scale));
     list-style-type: none;
+
     .recentPostsContainer {
       line-height: calc(20px * var(--app-scale));
-      width: calc(370px * var(--app-scale));
+      width: 100%;
+      max-width: calc(370px * var(--app-scale));
+
       .recentPostsTitle {
         margin-bottom: calc(40px * var(--app-scale));
       }
+
       .recentPostsWrapper {
         display: flex;
         flex-wrap: wrap;
         row-gap: calc(25px * var(--app-scale));
+
         .rpFirst {
           display: flex;
           gap: calc(20px * var(--app-scale));
+
           .rpFirstTextWrapper {
             .rpFirstTitle {
               font-weight: 400;
               font-size: calc(18px * var(--app-scale));
               line-height: calc(30px * var(--app-scale));
             }
+
             .rpFirstDate {
               line-height: calc(40px * var(--app-scale));
               font-size: calc(14px * var(--app-scale));
@@ -39,12 +52,14 @@
         .rpSecond {
           display: flex;
           gap: calc(20px * var(--app-scale));
+
           .rpSecondTextWrapper {
             .rpSecondTitle {
               font-weight: 400;
               font-size: calc(25px * var(--app-scale));
               line-height: calc(30px * var(--app-scale));
             }
+
             .rpSecondDate {
               line-height: calc(40px * var(--app-scale));
               font-size: calc(14px * var(--app-scale));
@@ -60,9 +75,11 @@
         margin-bottom: calc(40px * var(--app-scale));
         font-size: calc(19px * var(--app-scale));
       }
+
       .quickLinksCont {
         list-style-type: none;
         line-height: calc(20px * var(--app-scale));
+
         li {
           line-height: calc(40px * var(--app-scale));
         }
@@ -74,49 +91,29 @@
         margin-bottom: calc(40px * var(--app-scale));
         font-size: calc(19px * var(--app-scale));
       }
+
       .contactInfoWrapper {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         row-gap: calc(25px * var(--app-scale));
-        .location {
-          display: flex;
-          gap: calc(10px * var(--app-scale));
-          .locationImg {
-            width: auto;
-            height: calc(28px * var(--app-scale));
-            margin-top: calc(5px * var(--app-scale));
-          }
-          .locationParagraph {
-            font-size: calc(17px * var(--app-scale));
-            font-weight: 400;
-            line-height: calc(28px * var(--app-scale));
-          }
-        }
 
-        .mail {
-          display: flex;
-          gap: calc(20px * var(--app-scale));
-          .mailImg {
-            width: auto;
-            height: calc(20px * var(--app-scale));
-            margin-top: calc(5px * var(--app-scale));
-          }
-          .mailParagraph {
-            font-size: calc(17px * var(--app-scale));
-            font-weight: 400;
-            line-height: calc(28px * var(--app-scale));
-          }
-        }
-
+        .location,
+        .mail,
         .phone {
           display: flex;
-          gap: calc(20px * var(--app-scale));
+          gap: calc(10px * var(--app-scale));
+
+          .locationImg,
+          .mailImg,
           .phoneImg {
             width: auto;
             height: calc(20px * var(--app-scale));
             margin-top: calc(5px * var(--app-scale));
           }
+
+          .locationParagraph,
+          .mailParagraph,
           .phoneParagraph {
             font-size: calc(17px * var(--app-scale));
             font-weight: 400;
@@ -143,15 +140,82 @@
           font-weight: 400;
           line-height: calc(40px * var(--app-scale));
         }
+
         .newsLetterInpCont {
           margin-bottom: calc(30px * var(--app-scale));
+
           .newsLetterInp {
-            width: calc(270px * var(--app-scale));
+            width: 100%;
+            max-width: calc(270px * var(--app-scale));
             height: calc(45px * var(--app-scale));
             border-radius: calc(5px * var(--app-scale));
+            box-sizing: border-box;
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .footerInfosWrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .recentPostsContainer,
+    .quickLinks,
+    .contactInfo,
+    .newsLetter {
+      max-width: 100%;
+    }
+
+    .newsLetterInp {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .recentPostsTitle,
+    .quickLinkTitle,
+    .contactInfoTitle,
+    .newsLetterTitle {
+      font-size: 16px;
+    }
+
+    .rpFirstTitle {
+      font-size: 16px;
+    }
+
+    .rpSecondTitle {
+      font-size: 18px;
+    }
+
+    .newsLetterParagraph {
+      font-size: 15px;
+    }
+
+    .locationParagraph,
+    .mailParagraph,
+    .phoneParagraph {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .newsLetterParagraph {
+      font-size: 14px;
+    }
+
+    .locationParagraph,
+    .mailParagraph,
+    .phoneParagraph {
+      font-size: 14px;
+    }
+
+    .quickLinksCont li {
+      line-height: 30px;
     }
   }
 }

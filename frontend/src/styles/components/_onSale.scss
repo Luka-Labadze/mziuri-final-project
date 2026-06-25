@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 30px;
   margin-bottom: 80px;
+
   .onSaleBannerSection {
     .onSaleBannerWrapper {
       display: flex;
@@ -30,5 +31,28 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .onSale {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+
+  .onSaleBannerWrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .OSbannerItems {
+    width: 100%;
+  }
+
+  .onSaleBanners {
+    width: 100%;
+    height: auto;
   }
 }

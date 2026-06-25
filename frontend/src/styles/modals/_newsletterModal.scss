@@ -31,6 +31,7 @@
       opacity: 0.8;
     }
   }
+
   .newsletterBg {
     position: absolute;
     top: 0;
@@ -110,10 +111,69 @@
     align-items: center;
     justify-content: center;
     gap: calc(8px * var(--app-scale));
+  }
 
-    #newsletterCheckbox {
-      width: calc(16px * var(--app-scale));
-      height: calc(16px * var(--app-scale));
+  @media (max-width: 900px) {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+
+    .subscribeArea {
+      padding: 30px 20px;
+    }
+
+    .TAPTitle {
+      font-size: 26px;
+    }
+
+    .TAPParagraph {
+      font-size: 14px;
+    }
+
+    .newsletterEmailInput {
+      width: 100%;
+    }
+
+    .subscribe {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .TAPTitle {
+      font-size: 22px;
+    }
+
+    .TAPParagraph {
+      font-size: 13px;
+    }
+
+    .subscribeArea {
+      padding: 25px 15px;
+    }
+
+    .newsletterInput {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .TAPTitle {
+      font-size: 20px;
+    }
+
+    .TAPParagraph {
+      font-size: 12px;
+    }
+
+    .subscribe {
+      height: 40px;
+      font-size: 12px;
+    }
+
+    .newsletterEmailInput {
+      height: 40px;
+      font-size: 13px;
     }
   }
 }

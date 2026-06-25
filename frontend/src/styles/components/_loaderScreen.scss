@@ -5,12 +5,16 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.9);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 9999;
   opacity: 1;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 
   &.fade-in {
     opacity: 1;
@@ -21,7 +25,7 @@
     opacity: 0;
     visibility: hidden;
   }
-    
+
   .loader {
     width: calc(48px * var(--app-scale));
     height: calc(48px * var(--app-scale));
@@ -47,15 +51,46 @@
   }
 }
 
+@media (max-width: 768px) {
+  .loaderScreen {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .loader {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ========================= */
+/*        ANIMATIONS        */
+/* ========================= */
+
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes prixClipFix {
-  0% { clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0); }
-  25% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0); }
-  50% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%); }
-  75% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%); }
-  100% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0); }
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 }

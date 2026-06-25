@@ -1,5 +1,5 @@
 .singleProductPhotoCarousel {
-  width: calc(160px * var(--app-scale)); 
+  width: calc(160px * var(--app-scale));
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -24,5 +24,50 @@
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
+  }
+}
+
+@media (max-width: 1024px) {
+  .singleProductPhotoCarousel {
+    width: 140px;
+
+    .thumbnailBox {
+      width: 130px;
+      height: 130px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .singleProductPhotoCarousel {
+    width: 120px;
+
+    .thumbnailBox {
+      width: 110px;
+      height: 110px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .photoCarouselImg {
+      max-width: 85%;
+      max-height: 85%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .singleProductPhotoCarousel {
+    width: 100%;
+    justify-content: center;
+
+    .thumbnailBox {
+      width: 90px;
+      height: 90px;
+    }
+
+    .photoCarouselImg {
+      max-width: 80%;
+      max-height: 80%;
+    }
   }
 }

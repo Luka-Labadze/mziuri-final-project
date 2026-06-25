@@ -7,19 +7,23 @@
   margin-left: 14%;
   justify-content: center;
   min-height: calc(400px * var(--app-scale));
+
   .SC {
     font-size: calc(32px * var(--app-scale));
     font-weight: 600;
   }
+
   .CartIsEmpty {
     font-size: calc(28px * var(--app-scale));
     font-weight: 600;
   }
+
   .CBH {
     font-size: calc(16px * var(--app-scale));
     font-weight: 400;
   }
 }
+
 .productTable {
   width: calc(1190px * var(--app-scale, 1));
   margin: calc(150px * var(--app-scale, 1)) auto;
@@ -200,6 +204,7 @@
       background-color: #e79a9a;
     }
   }
+
   .cartFooter {
     display: flex;
     justify-content: space-between;
@@ -221,6 +226,7 @@
       letter-spacing: 0.05em;
       cursor: pointer;
       text-transform: uppercase;
+
       &:hover {
         background: #374151;
       }
@@ -271,8 +277,98 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       cursor: pointer;
+
       &:hover {
         background: #374151;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .EmptyCart {
+    margin-left: 0;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    min-height: 300px;
+
+    .SC {
+      font-size: 24px;
+    }
+
+    .CartIsEmpty {
+      font-size: 22px;
+    }
+
+    .CBH {
+      font-size: 14px;
+    }
+  }
+
+  .productTable {
+    width: 100%;
+    margin: 60px auto;
+    padding: 0 10px;
+    overflow-x: auto;
+
+    .tableWrapper {
+      width: 100%;
+    }
+
+    .tableHeader,
+    .productRow {
+      grid-template-columns: 100px 1fr 120px 140px 120px 60px;
+      min-width: 700px;
+    }
+
+    .tableHeader {
+      .headerCell {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+
+    .productImage {
+      width: 60px;
+      height: 60px;
+    }
+
+    .productName {
+      font-size: 14px;
+    }
+
+    .productVariant {
+      font-size: 12px;
+    }
+
+    .priceCell,
+    .totalCell {
+      font-size: 14px;
+    }
+
+    .qtyControl {
+      transform: scale(0.9);
+    }
+
+    .removeBtn {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+
+    .cartFooter {
+      flex-direction: column;
+      gap: 20px;
+
+      .cartActions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .cartTotals {
+        width: 100%;
+        min-width: auto;
       }
     }
   }

@@ -24,6 +24,7 @@
       rgba(0, 0, 0, 0.12);
 
   z-index: 9999;
+
   opacity: 0;
   transition:
     opacity 500ms ease-in-out,
@@ -39,5 +40,20 @@
     opacity: 0;
     visibility: hidden;
     transform: translateX(-50%) translateY(calc(-12px * var(--app-scale)));
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    width: calc(90vw);
+    max-width: 320px;
+
+    text-align: center;
+
+    padding: 10px 14px;
+
+    font-size: 12px;
+
+    top: calc(15px + env(safe-area-inset-top));
   }
 }

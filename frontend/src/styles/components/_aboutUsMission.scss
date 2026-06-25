@@ -1,8 +1,8 @@
 .aboutUsMission {
   width: 100%;
-  // margin: 40px 0 40px 0;
   padding: 80px;
   height: 40vh;
+
   .AUMWrapper {
     display: flex;
     justify-content: center;
@@ -11,18 +11,22 @@
     .AUMTextSection {
       .AUMTextSectionWrapper {
         list-style-type: none;
+
         .AUMTextSectionItems {
           margin-bottom: 10px;
         }
+
         .AUMTitle {
           font-size: 28px;
           font-weight: 600;
         }
+
         .AUMFirstParagraph,
         .AUMSecondParagraph {
           font-size: 16px;
           font-weight: 400;
         }
+
         .AUMBtn {
           width: 105px;
           height: 40px;
@@ -32,6 +36,7 @@
           font-weight: bold;
           margin-top: 35px;
           cursor: pointer;
+
           &:hover {
             background-color: rgb(4, 56, 161);
             transition: 0.5s ease-in;
@@ -39,14 +44,18 @@
         }
       }
     }
+
     .skillContainer {
       margin-bottom: 2rem;
       font-family: sans-serif;
+
       .skillContainerWrapper {
         list-style-type: none;
+
         .skillItems {
           margin-bottom: 15px;
         }
+
         .skillLabel {
           display: block;
           margin-bottom: 1.25rem;
@@ -73,6 +82,7 @@
               font-size: 15px;
               color: #333;
             }
+
             .percentage {
               position: absolute;
               right: -8px;
@@ -83,6 +93,76 @@
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 40px 20px;
+    height: auto;
+
+    .AUMWrapper {
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .AUMTitle {
+      font-size: 24px;
+    }
+
+    .AUMFirstParagraph,
+    .AUMSecondParagraph {
+      font-size: 15px;
+    }
+
+    .skillContainer {
+      width: 100%;
+    }
+
+    .progressBar {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 30px 15px;
+
+    .AUMTitle {
+      font-size: 22px;
+    }
+
+    .AUMFirstParagraph,
+    .AUMSecondParagraph {
+      font-size: 14px;
+    }
+
+    .AUMBtn {
+      width: 100%;
+    }
+
+    .progressBar {
+      height: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .AUMTitle {
+      font-size: 20px;
+    }
+
+    .AUMFirstParagraph,
+    .AUMSecondParagraph {
+      font-size: 13px;
+    }
+
+    .AUMBtn {
+      height: 38px;
+      font-size: 10px;
+    }
+
+    .progressBar {
+      height: 8px;
     }
   }
 }

@@ -8,7 +8,6 @@ export const LoaderProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const loadingDelay = 700;
 
-  // hook: useDataLoader (for routes that fetch data)
   const useDataLoader = async (fetchReq) => {
     setLoading(true);
 
@@ -22,7 +21,6 @@ export const LoaderProvider = ({ children }) => {
     return data.json();
   };
 
-  // hook: useFakeLoader (for routes that simulate loading without fetch)
   const useFakeLoader = () => {
     setLoading(true);
 

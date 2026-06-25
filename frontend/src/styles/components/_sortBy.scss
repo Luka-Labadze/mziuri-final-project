@@ -5,32 +5,90 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  
+
   user-select: none;
   border-radius: calc(5px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid lightgrey;
   padding: calc(10px * var(--app-scale));
   margin-top: calc(45px * var(--app-scale));
+
   .gridView {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: calc(20px * var(--app-scale));
     cursor: pointer;
+
     .gridImg {
       width: calc(25px * var(--app-scale));
     }
+
     .gridImg2 {
       font-weight: 580;
     }
   }
+
   .sorting {
     display: flex;
     align-items: center;
     gap: calc(20px * var(--app-scale));
+
     #sorting {
       width: calc(288px * var(--app-scale));
       height: calc(38px * var(--app-scale));
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sortBy {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sortBy {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+    padding: 15px;
+  }
+
+  .sortBy .gridView {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .sortBy .sorting {
+    width: 100%;
+    justify-content: flex-start;
+
+    #sorting {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sortBy {
+    padding: 10px;
+  }
+
+  .sortBy .gridView {
+    gap: 10px;
+  }
+
+  .sortBy .sorting {
+    flex-direction: column;
+    align-items: flex-start;
+
+    #sorting {
+      width: 100%;
     }
   }
 }

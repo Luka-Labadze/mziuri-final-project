@@ -1,7 +1,6 @@
 .checkout {
   width: 100%;
   height: auto;
-  //! USER SELECT
   user-select: none;
 
   .checkoutErrorMsg {
@@ -18,11 +17,10 @@
     gap: 40px;
     margin-top: calc(90px * var(--app-scale));
     margin-bottom: calc(40px * var(--app-scale));
-    // align-items: center;
+
     .orderSummarySection {
       flex: 1 1 380px;
       max-width: 420px;
-      // border-left: 1px solid #e3e3e3;
       padding-left: 40px;
       padding-top: 4px;
 
@@ -127,29 +125,25 @@
           }
         }
       }
-
-      @media (max-width: 900px) {
-        flex-direction: column-reverse;
-        border-left: none;
-        border-bottom: 1px solid #e3e3e3;
-        padding-left: 0;
-        padding-bottom: 24px;
-        max-width: 100%;
-      }
     }
+
     .checkoutForm {
       width: calc(460px * var(--app-scale));
+
       .contactSection {
         margin-bottom: 20px;
+
         .contactLabelSection {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 10px;
+
           .contactTitle {
             font-weight: 600;
           }
         }
+
         .checkoutContactInputSection {
           .checkoutContactInput {
             width: 100%;
@@ -158,23 +152,28 @@
             border-radius: 8px;
             font-size: 14px;
           }
+
           .checkoutCheckbox {
             scale: 1.3;
             cursor: pointer;
             margin: 20px 10px 0 0;
           }
+
           #checkoutCheckboxLabel {
             -webkit-text-stroke: 0.25px currentColor;
           }
         }
       }
     }
+
     .DeliverySection {
       margin-bottom: 10px;
       width: 465px;
+
       .deliveryTitle {
         margin-bottom: 10px;
       }
+
       .dropdownContainer {
         position: relative;
         border: 1px solid #ccc;
@@ -185,11 +184,6 @@
         box-sizing: border-box;
         transition: border-color 0.2s ease;
 
-        .dropdownContainer:focus-within {
-          border: 2px solid #0056b3;
-          padding: 7px 11px;
-        }
-
         .inputLabel {
           position: absolute;
           top: 4px;
@@ -197,7 +191,6 @@
           font-size: 13px;
           pointer-events: none;
           color: #515050;
-          -webkit-text-stroke: 0.25px currentColor;
         }
 
         .inputField {
@@ -216,14 +209,15 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 14px 0 14px 0;
+        margin: 14px 0;
         gap: 14px;
+
         .DSfirstName,
         .DSlastName {
           width: 100%;
           height: 35px;
           border-radius: 8px;
-          padding: 20px 10px 20px 10px;
+          padding: 20px 10px;
         }
       }
 
@@ -231,7 +225,7 @@
         width: 100%;
         height: 35px;
         border-radius: 8px;
-        padding: 20px 10px 20px 10px;
+        padding: 20px 10px;
       }
 
       .postalWrapper {
@@ -239,33 +233,22 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 14px 0 14px 0;
+        margin: 14px 0;
         gap: 14px;
+
         .postalInputs {
           width: 100%;
           height: 35px;
           border-radius: 8px;
-          padding: 20px 10px 20px 10px;
-        }
-      }
-      .infoSaveWrapper {
-        width: 100%;
-        .InfoSaveCheckbox {
-          scale: 1.3;
-          cursor: pointer;
-          //   margin: 20px 10px 0 0;
-        }
-        #ISCheckboxFocus {
-          -webkit-text-stroke: 0.25px currentColor;
+          padding: 20px 10px;
         }
       }
     }
+
     .shippingMethodSection {
-      margin: 20px 0 20px 0;
+      margin: 20px 0;
       width: 100%;
-      .shippingTitle {
-        font-weight: 600;
-      }
+
       .shippingWrapper {
         margin-top: 10px;
         width: 100%;
@@ -276,24 +259,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        list-style-type: none;
-        .shippingLabels {
-          margin: 0 15px 0 15px;
-          font-weight: bold;
-          font-size: 15px;
-        }
       }
     }
 
     .paymentSection {
-      margin: 20px 0 20px 0;
+      margin: 20px 0;
 
-      .paymentTitle {
-        font-weight: 600;
-      }
-      .securedPayment {
-        margin: 5px 0 10px 0;
-      }
       .paymentWrapper {
         margin-top: 10px;
         width: 100%;
@@ -301,97 +272,103 @@
         border: 1px solid #0056b3;
         border-radius: 8px;
         background-color: #f5f6ff;
-        list-style-type: none;
-        .paymentLabels {
-          padding: 13px;
-          font-weight: bolder;
-          font-size: 17px;
-        }
       }
     }
+
     .billingAddressSection {
       width: 100%;
-      margin: 20px 0 20px 0;
-      .BATitle {
-        font-weight: 600;
-      }
+      margin: 20px 0;
+
       .billingAddressWrapper {
         display: flex;
         flex-direction: column;
-        .sameAddressShipping {
-          margin-top: 10px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 20px;
-          border: 1px solid #0056b3;
-          padding: 20px 20px 20px 20px;
 
-          width: 100%;
-          height: calc(50px * var(--app-scale));
-          border: 1px solid #0056b3;
-          border-radius: 8px;
-          background-color: #f5f6ff;
-        }
+        .sameAddressShipping,
         .differentAddressShipping {
           margin-top: 10px;
           display: flex;
           justify-content: flex-start;
           align-items: center;
           gap: 20px;
-          padding: 20px 20px 20px 20px;
-
           width: 100%;
           height: calc(50px * var(--app-scale));
-          border: 1px solid rgb(190, 189, 189);
           border-radius: 8px;
-          background-color: #f5f6ff;
-        }
-        .differentAddressRadio,
-        .sameAddressRadio {
-          appearance: none;
-          width: 18px;
-          height: 18px;
-          flex-shrink: 0;
-          margin: 0;
-          border-radius: 50%;
-          border: 2px solid #ccc;
-          background-color: #fff;
-          cursor: pointer;
-          position: relative;
-          transition: border-color 0.2s ease;
-
-          &:checked {
-            border-color: #0056b3;
-
-            &::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background-color: #0056b3;
-              transform: translate(-50%, -50%);
-            }
-          }
-
-          &:focus-visible {
-            outline: 2px solid #0056b3;
-            outline-offset: 2px;
-          }
         }
       }
     }
+
     .CompleteOrderBtn {
       width: 100%;
       height: 50px;
-      border: 1px solid transparent;
       border-radius: 12px;
       background-color: rgb(4, 56, 161);
       color: white;
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .checkoutWrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .orderSummarySection {
+      max-width: 100%;
+      padding-left: 0;
+    }
+
+    .checkoutForm {
+      width: 100%;
+    }
+
+    .DeliverySection {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .checkoutWrapper {
+      padding: 0 12px;
+    }
+
+    .orderSummaryItem {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .orderSummaryImageWrapper {
+      width: 52px;
+      height: 52px;
+    }
+
+    .orderSummaryTitle {
+      font-size: 13px;
+    }
+
+    .orderSummaryPrice {
+      font-size: 13px;
+    }
+
+    .checkoutContactInput {
+      font-size: 13px;
+    }
+
+    .nameWrapper,
+    .postalWrapper {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .orderSummarySection {
+      padding-bottom: 20px;
+    }
+
+    .CompleteOrderBtn {
+      font-size: 14px;
+      height: 44px;
     }
   }
 }

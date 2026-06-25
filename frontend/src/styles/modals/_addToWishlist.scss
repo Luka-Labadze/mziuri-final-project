@@ -5,8 +5,8 @@
   background-color: white;
   position: relative;
   transform: translateX(-145%);
-
   z-index: 1001;
+
   .atcCloseBtn {
     position: absolute;
     top: calc(10px * var(--app-scale));
@@ -28,11 +28,13 @@
       opacity: 0.7;
     }
   }
+
   .ATWWrapper {
     display: flex;
     justify-content: space-evenly;
     padding: 15px;
     margin-top: 10px;
+
     .ATWLeftSide {
       .ATWImg {
         margin-left: calc(20px * var(--app-scale));
@@ -40,14 +42,17 @@
         width: calc(135px * var(--app-scale));
       }
     }
+
     .ATWRightSide {
       .ATWRigthWrapper {
         list-style-type: none;
+
         .ATWTitle {
           font-size: calc(16px * var(--app-scale));
           font-weight: 600;
           margin-bottom: 15px;
         }
+
         .ASTWSWrapper {
           position: relative;
           display: flex;
@@ -55,22 +60,26 @@
           align-items: center;
           gap: 20px;
           margin-bottom: calc(30px * var(--app-scale));
+
           .ASTWSuccess {
             width: calc(24px * var(--app-scale));
             height: calc(24px * var(--app-scale));
             background: url("../../assets/icons/checkmark.png") center/contain
               no-repeat;
           }
+
           .successMsg {
             font-size: 16px;
             font-weight: 400;
           }
         }
+
         .ATWBtnWrapper {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 20px;
+
           button {
             width: calc(115px * var(--app-scale));
             height: calc(37px * var(--app-scale));
@@ -79,6 +88,7 @@
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
+
             &:hover {
               background-color: rgb(4, 56, 161);
               transition: 0.2s ease-in;
@@ -86,6 +96,85 @@
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 900px) {
+    width: 90%;
+    height: auto;
+    transform: translateX(0);
+
+    .ATWWrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .ATWLeftSide {
+      .ATWImg {
+        margin-left: 0;
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    .ATWTitle {
+      font-size: 15px;
+    }
+
+    .successMsg {
+      font-size: 14px;
+    }
+
+    .ATWBtnWrapper {
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px;
+
+    .ATWWrapper {
+      padding: 10px;
+    }
+
+    .ATWTitle {
+      font-size: 14px;
+    }
+
+    .successMsg {
+      font-size: 13px;
+    }
+
+    .ATWBtnWrapper button {
+      height: 34px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .ATWImg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .ATWTitle {
+      font-size: 13px;
+    }
+
+    .successMsg {
+      font-size: 12px;
+    }
+
+    .ATWBtnWrapper button {
+      height: 32px;
+      font-size: 12px;
     }
   }
 }

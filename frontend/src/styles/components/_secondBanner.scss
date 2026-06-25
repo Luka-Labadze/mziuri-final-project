@@ -4,6 +4,7 @@
   width: calc(1170px * var(--app-scale));
   height: calc(220px * var(--app-scale));
   margin-bottom: 80px;
+
   .secondBannerImg {
     width: 100%;
     height: 100%;
@@ -14,5 +15,18 @@
     &:hover {
       transform: scale(1.04);
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .secondBanner {
+    width: 100%;
+    height: auto;
+    padding: 0 15px;
+  }
+
+  .secondBannerImg {
+    width: 100%;
+    height: auto;
   }
 }

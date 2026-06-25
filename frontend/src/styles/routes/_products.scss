@@ -11,3 +11,33 @@
   display: flex;
   flex-direction: column;
 }
+
+/* =========================
+   MOBILE RESPONSIVE ADDITIONS
+   ========================= */
+
+@media (max-width: 900px) {
+  .productsWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .productsWrapper {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .productsWrapper {
+    padding: 10px;
+  }
+}

@@ -87,3 +87,32 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .singleCarousel {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .singleCarousel .imgContainer .carouselImg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .singleCarousel .textContainer .carouselTitle {
+    font-size: 24px;
+  }
+
+  .singleCarousel .textContainer p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .singleCarousel .textContainer .carouselShopBtn {
+    width: 100%;
+    max-width: 220px;
+  }
+}

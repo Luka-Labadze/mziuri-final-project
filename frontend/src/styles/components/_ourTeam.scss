@@ -2,21 +2,25 @@
   width: 100%;
   height: 60vh;
   background-color: #f7f8f9;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   .ourTeamTitle {
     font-size: 28px;
     font-weight: 600;
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
+
   .ourTeamMembersContainer {
     .teamMembersWrapper {
       list-style: none;
       display: flex;
       gap: 20px;
       padding: 0;
+
       .teamItems {
         background-color: white;
         width: calc(270px * var(--app-scale));
@@ -76,10 +80,12 @@
         .teamMembersInfo {
           padding-top: 15px;
           text-align: center;
+
           .teamMembersName {
             margin: 0;
             font-size: 1.2rem;
           }
+
           .teamMembersRole {
             margin: 5px 0 0 0;
             color: #666;
@@ -87,5 +93,28 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .ourTeam {
+    height: auto;
+    padding: 40px 15px;
+  }
+
+  .ourTeamMembersContainer .teamMembersWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .teamItems {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ImageAndIconsContainer {
+    width: 100%;
+    height: auto;
   }
 }

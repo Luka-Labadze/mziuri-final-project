@@ -6,7 +6,9 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+
   animation: modalBackdropFade 0.3s ease forwards;
+
   &.centered {
     display: flex;
     justify-content: center;
@@ -28,5 +30,25 @@
     h2 {
       text-transform: uppercase;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 15px;
+  }
+
+  .modal__content {
+    width: 100%;
+    max-width: 90vw;
+    top: auto;
+    right: auto;
+
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal.centered {
+    padding: 0;
   }
 }

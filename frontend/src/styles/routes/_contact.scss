@@ -5,11 +5,13 @@
   padding: 80px 0 80px 0;
   position: relative;
   justify-content: center;
+
   .contactTitle {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 40px;
   }
+
   .contactInputSection {
     display: flex;
     justify-content: center;
@@ -18,10 +20,12 @@
 
     .contactInputWrapper {
       list-style-type: none;
+
       .contactValidationError {
         color: red;
         height: calc(20px * var(--app-scale));
       }
+
       &#error {
         border: calc(2px * var(--app-scale)) solid red;
       }
@@ -36,23 +40,25 @@
           margin-bottom: 10px;
           width: calc(563px * var(--app-scale));
           height: calc(24px * var(--app-scale));
-          padding: 15px 15px 15px 15px;
+          padding: 15px;
           color: rgb(206, 212, 218);
           border: 1px solid rgb(206, 212, 218);
         }
       }
+
       .contactInpSubject {
         width: calc(1145px * var(--app-scale));
         height: calc(24px * var(--app-scale));
-        padding: 15px 15px 15px 15px;
+        padding: 15px;
         margin-bottom: 10px;
         border: 1px solid rgb(206, 212, 218);
         color: rgb(206, 212, 218);
       }
+
       .contactInpMessage {
         width: calc(1145px * var(--app-scale));
         height: calc(100px * var(--app-scale));
-        padding: 15px 15px 15px 15px;
+        padding: 15px;
         margin-bottom: 10px;
         resize: none;
         color: rgb(206, 212, 218);
@@ -60,10 +66,11 @@
       }
     }
   }
+
   .contactSubmit {
     width: calc(110px * var(--app-scale));
     height: calc(40px * var(--app-scale));
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
     color: white;
     font-weight: 500;
     background-color: #0438a1;
@@ -71,5 +78,64 @@
     border: transparent;
     border-radius: 6px;
     float: right;
+  }
+
+  @media (max-width: 900px) {
+    padding: 60px 0;
+
+    .contactTitle {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .contactInputSection {
+      padding: 0 10px;
+    }
+
+    .nameAndEmailWrapper {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nameAndEmail {
+      width: 100%;
+    }
+
+    .contactInpSubject {
+      width: 100%;
+    }
+
+    .contactInpMessage {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 40px 0;
+
+    .contactTitle {
+      font-size: 20px;
+    }
+
+    .contactSubmit {
+      width: 100%;
+      float: none;
+      display: block;
+    }
+
+    .contactInputSection {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .contactTitle {
+      font-size: 18px;
+    }
+
+    .contactSubmit {
+      height: 38px;
+      font-size: 14px;
+    }
   }
 }

@@ -3,102 +3,157 @@
   height: auto;
   background-color: #0b0c0e;
   color: rgb(241, 241, 241);
-  padding-top: calc(60px *var(--app-scale));
+  padding-top: calc(60px * var(--app-scale));
+
   .logoSection {
     text-align: center;
+
     .ffLogo {
       margin: auto;
     }
+
     .ffLogoParagraph {
-      margin: calc(35px *var(--app-scale)) calc(351px * var(--app-scale)) 0 calc(351px *var(--app-scale));
+      margin: calc(35px * var(--app-scale)) calc(351px * var(--app-scale)) 0
+        calc(351px * var(--app-scale));
       font-size: calc(17px * var(--app-scale));
       font-weight: 400;
     }
   }
 
   .supportArea {
-    padding: calc(60px *var(--app-scale)) 0 calc(60px * var(--app-scale)) 0;
+    padding: calc(60px * var(--app-scale)) 0 calc(60px * var(--app-scale)) 0;
     display: flex;
     align-items: center;
     width: calc(1300px * var(--app-scale));
     margin: auto;
     justify-content: space-between;
     border-bottom: 1px solid #444445;
+
     .borderBottom {
       display: block;
       width: calc(50px * var(--app-scale));
-      height: calc(1px *var(--app-scale));
+      height: calc(1px * var(--app-scale));
       background-color: #0438a1;
       margin-top: calc(6px * var(--app-scale));
-      margin-bottom: calc(8px *var(--app-scale));
-    }
-    .shippingSection {
-      width: calc(230px *var(--app-scale));
-      height: calc(81px * var(--app-scale));
-      display: flex;
-      align-items: center;
-      gap: calc(20px *var(--app-scale));
-      .shippingLogo {
-        width: calc(57px *var(--app-scale));
-        height: auto;
-      }
-      .shippingDesc {
-        .shippingTitle {
-          font-size: calc(15px * var(--app-scale));
-          font-weight: 550;
-          padding-bottom: calc(5px * var(--app-scale));
-        }
-        .shippingParagraph {
-          font-size: calc(16px * var(--app-scale));
-          font-weight: 400;
-        }
-      }
+      margin-bottom: calc(8px * var(--app-scale));
     }
 
-    .supportSection {
-     width: calc(230px *var(--app-scale));
-      height: calc(81px * var(--app-scale));
-      display: flex;
-      align-items: center;
-      gap: calc(20px *var(--app-scale));
-      padding-bottom: calc(6px * var(--app-scale));
-      .supportLogo {
-        width: calc(57px *var(--app-scale));
-        height: auto;
-      }
-      .supportDesc {
-        .supportTitle {
-           font-size: calc(15px * var(--app-scale));
-          font-weight: 550;
-          padding-bottom: calc(5px * var(--app-scale));
-        }
-        .supportParagraph {
-          font-size: calc(16px * var(--app-scale));
-          font-weight: 400;
-        }
-      }
-    }
-
+    .shippingSection,
+    .supportSection,
     .securitySection {
-      width: calc(230px *var(--app-scale));
+      width: calc(230px * var(--app-scale));
       height: calc(81px * var(--app-scale));
       display: flex;
       align-items: center;
-      gap: calc(20px *var(--app-scale));
+      gap: calc(20px * var(--app-scale));
+
+      .shippingLogo,
+      .supportLogo,
       .securityLogo {
-        width: calc(57px *var(--app-scale));
+        width: calc(57px * var(--app-scale));
         height: auto;
       }
+
+      .shippingDesc,
+      .supportDesc,
       .securityDesc {
+        .shippingTitle,
+        .supportTitle,
         .securityTitle {
           font-size: calc(15px * var(--app-scale));
           font-weight: 550;
           padding-bottom: calc(5px * var(--app-scale));
         }
+
+        .shippingParagraph,
+        .supportParagraph,
         .securityParagraph {
           font-size: calc(16px * var(--app-scale));
           font-weight: 400;
         }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .logoSection {
+      .ffLogoParagraph {
+        margin: 20px 15px 0 15px;
+        font-size: 15px;
+      }
+    }
+
+    .supportArea {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .shippingSection,
+    .supportSection,
+    .securitySection {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .logoSection {
+      .ffLogoParagraph {
+        font-size: 14px;
+      }
+    }
+
+    .supportArea {
+      padding: 30px 15px;
+    }
+
+    .shippingSection,
+    .supportSection,
+    .securitySection {
+      gap: 15px;
+    }
+
+    .shippingDesc,
+    .supportDesc,
+    .securityDesc {
+      .shippingTitle,
+      .supportTitle,
+      .securityTitle {
+        font-size: 14px;
+      }
+
+      .shippingParagraph,
+      .supportParagraph,
+      .securityParagraph {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .logoSection {
+      .ffLogoParagraph {
+        font-size: 13px;
+        margin: 15px 10px 0 10px;
+      }
+    }
+
+    .shippingDesc,
+    .supportDesc,
+    .securityDesc {
+      .shippingTitle,
+      .supportTitle,
+      .securityTitle {
+        font-size: 13px;
+      }
+
+      .shippingParagraph,
+      .supportParagraph,
+      .securityParagraph {
+        font-size: 12px;
       }
     }
   }

@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable no-unused-vars 
 import "./styles/App.scss";
 import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
@@ -15,19 +15,20 @@ import {
 } from "./routes/index.js";
 import LoaderScreen from "./components/LoaderScreen.jsx";
 import Notification from "./components/Notification.jsx";
-import useScrollTop from "./hooks/useScrollTop.jsx";
-import useAppScale from "./hooks/useAppScale.jsx";
+import useScrollTop from "./hooks/useScrollTop.js";
+import useAppScale from "./hooks/useAppScale.js";
 import { useUserData } from "./context/UserContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { useEffect } from "react";
-import { getUser } from "./api/api.js";
-import useDocumentTitle from "./hooks/useDocumentTitle.jsx";
+import { getUser, getToken } from "./api/api.js";
+import useDocumentTitle from "./hooks/useDocumentTitle.js";
 import ForgotPassword from "./routes/ForgotPassword.jsx";
 import ResetPassword from "./routes/ResetPassword.jsx";
-import useLanguage from "./hooks/useLanguage.jsx";
+import useLanguage from "./hooks/useLanguage.js";
 import Cart from "./routes/Cart.jsx";
 import Wishlist from "./routes/Wishlist.jsx";
 import Checkout from "./routes/Checkout.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   useAppScale();
@@ -39,17 +40,19 @@ function App() {
  useEffect(() => {
   const checkAuth = async () => {
     try {
+      await getToken();
       const response = await getUser();
-      if (response.data) {
+      if (response?.data) {
         login(response.data);
       }
-    } catch (err) {
-      console.log("No active session");
+    } catch {
+      logout();
     }
   };
 
   checkAuth();
 }, []);
+
   return (
     <>
       <Header />
@@ -63,18 +66,27 @@ function App() {
             element={
               <ProtectedRoute loggedIn={loggedIn} element={<Products />} />
             }
-          />
+            />
           <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path="/cart" element={<ProtectedRoute loggedIn={loggedIn} element={<Cart/>} />} />
-          <Route path="/wishlist" element={<ProtectedRoute loggedIn={loggedIn} element={<Wishlist/>} />} />
+          <Route
+            path="/cart"
+            element={<ProtectedRoute loggedIn={loggedIn} element={<Cart />} />}
+            />
+          <Route
+            path="/wishlist"
+            element={
+              <ProtectedRoute loggedIn={loggedIn} element={<Wishlist />} />
+            }
+            />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Main>
       <Footer />
+            <ScrollToTop/>
       <LoaderScreen />
       <Notification />
     </>

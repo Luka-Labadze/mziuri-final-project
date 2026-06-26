@@ -26,11 +26,11 @@ app.use(compression());
 app.use(express.json());
 
 const limiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5 minutes
+  windowMs: 5 * 60 * 1000, 
   max: 100,
   message: "Too many requests from this IP, please try again later",
 });
-// app.use(limiter)
+app.use(limiter)
 
 app.use("/api", CardsRouter);
 app.use("/api/users", UsersRouter);

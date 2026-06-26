@@ -47,7 +47,6 @@ export const registerUser = async (data) => {
   }
 };
 
-
 export const loginUser = async (data) => {
   try {
     const response = await axios.post(`${baseURL}/api/users/login`, data, {
@@ -130,7 +129,7 @@ export const addToCartAPI = async (productId) => {
     const response = await axios.post(
       `${baseURL}/api/users/cart`,
       { productId },
-      { withCredentials: true }
+      { withCredentials: true },
     );
     return response.data;
   } catch (error) {
@@ -142,7 +141,7 @@ export const removeFromCartAPI = async (productId) => {
   try {
     const response = await axios.delete(
       `${baseURL}/api/users/cart/${productId}`,
-      { withCredentials: true }
+      { withCredentials: true },
     );
     return response.data;
   } catch (error) {
@@ -155,7 +154,7 @@ export const addToWishlistAPI = async (productId) => {
     const response = await axios.post(
       `${baseURL}/api/users/wishlist`,
       { productId },
-      { withCredentials: true }
+      { withCredentials: true },
     );
     return response.data;
   } catch (error) {
@@ -167,10 +166,12 @@ export const removeFromWishlistAPI = async (productId) => {
   try {
     const response = await axios.delete(
       `${baseURL}/api/users/wishlist/${productId}`,
-      { withCredentials: true }
+      { withCredentials: true },
     );
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.err || "Failed to remove from wishlist");
+    throw new Error(
+      error.response?.data?.err || "Failed to remove from wishlist",
+    );
   }
 };

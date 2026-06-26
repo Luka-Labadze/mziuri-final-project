@@ -4,7 +4,6 @@ import { sendContactMail, sendResetPasswordMail } from "../utils/mailSender.js";
 import { hashPassword, comparePassword } from "../utils/bcrypt.js";
 import jwt from "jsonwebtoken";
 
-
 export const contact = async (req, res) => {
   try {
     const { email, subject, message } = req.body;
@@ -38,8 +37,8 @@ export const registerUser = async (req, res) => {
     });
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
+      secure: false,
+      sameSite: "lax",
       maxAge: 24 * 60 * 60 * 1000,
     });
 
@@ -69,8 +68,8 @@ export const loginUser = async (req, res) => {
     });
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
+      secure: false,
+      sameSite: "lax",
       maxAge: 24 * 60 * 60 * 1000,
     });
 
@@ -87,7 +86,11 @@ export const loginUser = async (req, res) => {
 
 export const logoutUser = (req, res) => {
   try {
-    res.clearCookie("token");
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+    });
     return res.status(200).json({ data: "User has logged out" });
   } catch (err) {
     return res.status(500).json({ err: "Something went wrong" });
@@ -170,7 +173,6 @@ export const resetPasswordUser = async (req, res) => {
   }
 };
 
-
 export const addToCart = async (req, res) => {
   try {
     const { productId } = req.body;
@@ -207,7 +209,6 @@ export const removeFromCart = async (req, res) => {
     return res.status(500).json({ err: "Failed to remove from cart" });
   }
 };
-
 
 export const addToWishlist = async (req, res) => {
   try {

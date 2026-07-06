@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .contact {
   width: 100%;
   height: auto;
@@ -73,14 +76,14 @@
     margin: 20px 0;
     color: white;
     font-weight: 500;
-    background-color: #0438a1;
+    background-color: $color-primary;
     cursor: pointer;
     border: transparent;
     border-radius: 6px;
     float: right;
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     padding: 60px 0;
 
     .contactTitle {
@@ -110,7 +113,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     padding: 40px 0;
 
     .contactTitle {
@@ -128,7 +131,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .contactTitle {
       font-size: 18px;
     }

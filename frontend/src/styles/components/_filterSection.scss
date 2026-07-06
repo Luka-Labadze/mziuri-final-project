@@ -1,10 +1,13 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .filter {
   width: calc(300px * var(--app-scale));
   user-select: none;
   line-height: calc(20px * var(--app-scale));
   margin-left: 5%;
   margin-top: 3.5%;
-  border: calc(1px * var(--app-scale)) dashed rgb(226, 224, 224);
+  border: calc(1px * var(--app-scale)) dashed $color-border-muted;
   padding: calc(25px * var(--app-scale));
 
   ol {
@@ -112,9 +115,7 @@
     }
   }
 
-
-
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     width: 100%;
     margin: 20px auto;
     padding: 20px;
@@ -143,7 +144,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     padding: 15px;
 
     h2 {
@@ -164,7 +165,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     padding: 12px;
 
     h2 {

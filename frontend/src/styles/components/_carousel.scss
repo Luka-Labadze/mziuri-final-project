@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .carousel {
   width: 100%;
   height: calc(580px * var(--app-scale));
@@ -12,15 +15,8 @@
   }
 
   .carouselWrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include overlay-fill;
+    @include flex-center;
   }
 
   .singleCarouselContainer {
@@ -36,32 +32,13 @@
 
   .carouselPrevClick,
   .carouselNextClick {
-    opacity: 0;
-    position: absolute;
-    z-index: 10;
+    @include carousel-nav-btn;
     scale: 0.8;
-    color: #0638a1;
-    background: white;
-    width: calc(50px * var(--app-scale));
-    height: calc(50px * var(--app-scale));
-    border-radius: 50%;
-    border: calc(1px * var(--app-scale)) solid transparent;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    padding: calc(35px * var(--app-scale));
 
     .carouselBtns {
       font-size: calc(30px * var(--app-scale));
       font-weight: bold;
       line-height: 1;
-    }
-
-    &:hover {
-      background-color: #0638a1;
-      color: white;
     }
   }
 
@@ -78,11 +55,11 @@
     .carouselPrevClick,
     .carouselNextClick {
       opacity: 1;
-      transition: 1s;
+      transition: $transition-slow;
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     height: 420px;
 
     .singleCarouselContainer {
@@ -94,7 +71,7 @@
       width: 42px;
       height: 42px;
       padding: 25px;
-      opacity: 1; /* always visible on mobile */
+      opacity: 1;
     }
 
     .carouselBtns {
@@ -102,7 +79,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     height: 350px;
 
     .singleCarouselContainer {
@@ -121,7 +98,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     height: 300px;
 
     .carouselPrevClick,

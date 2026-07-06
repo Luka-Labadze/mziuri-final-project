@@ -1,11 +1,12 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .brands {
   width: 100%;
   padding: 50px;
 
   .brandsWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     gap: 60px;
     list-style-type: none;
 
@@ -14,7 +15,7 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     padding: 30px 20px;
 
     .brandsWrapper {
@@ -28,7 +29,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     padding: 25px 15px;
 
     .brandsWrapper {
@@ -40,7 +41,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     padding: 20px 10px;
 
     .brandsWrapper {

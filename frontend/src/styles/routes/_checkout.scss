@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .checkout {
   width: 100%;
   height: auto;
@@ -42,7 +45,7 @@
         flex-shrink: 0;
         width: 64px;
         height: 64px;
-        border-radius: 8px;
+        border-radius: $border-radius-md;
         border: 1px solid #e3e3e3;
         background-color: #f5f6f7;
 
@@ -50,7 +53,7 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 8px;
+          border-radius: $border-radius-md;
         }
 
         .orderSummaryQtyBadge {
@@ -63,7 +66,7 @@
           font-weight: 600;
           width: 20px;
           height: 20px;
-          border-radius: 50%;
+          border-radius: $border-radius-circle;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -149,7 +152,7 @@
             width: 100%;
             height: calc(35px * var(--app-scale));
             padding: 20px 10px 20px 10px;
-            border-radius: 8px;
+            border-radius: $border-radius-md;
             font-size: 14px;
           }
 
@@ -177,7 +180,7 @@
       .dropdownContainer {
         position: relative;
         border: 1px solid #ccc;
-        border-radius: 8px;
+        border-radius: $border-radius-md;
         padding: 8px 12px;
         width: 100%;
         background-color: #fff;
@@ -216,7 +219,7 @@
         .DSlastName {
           width: 100%;
           height: 35px;
-          border-radius: 8px;
+          border-radius: $border-radius-md;
           padding: 20px 10px;
         }
       }
@@ -224,7 +227,7 @@
       .DSAddress {
         width: 100%;
         height: 35px;
-        border-radius: 8px;
+        border-radius: $border-radius-md;
         padding: 20px 10px;
       }
 
@@ -239,7 +242,7 @@
         .postalInputs {
           width: 100%;
           height: 35px;
-          border-radius: 8px;
+          border-radius: $border-radius-md;
           padding: 20px 10px;
         }
       }
@@ -254,7 +257,7 @@
         width: 100%;
         height: calc(50px * var(--app-scale));
         border: 1px solid #0056b3;
-        border-radius: 8px;
+        border-radius: $border-radius-md;
         background-color: #f5f6ff;
         display: flex;
         justify-content: space-between;
@@ -270,7 +273,7 @@
         width: 100%;
         height: calc(50px * var(--app-scale));
         border: 1px solid #0056b3;
-        border-radius: 8px;
+        border-radius: $border-radius-md;
         background-color: #f5f6ff;
       }
     }
@@ -292,7 +295,7 @@
           gap: 20px;
           width: 100%;
           height: calc(50px * var(--app-scale));
-          border-radius: 8px;
+          border-radius: $border-radius-md;
         }
       }
     }
@@ -301,13 +304,13 @@
       width: 100%;
       height: 50px;
       border-radius: 12px;
-      background-color: rgb(4, 56, 161);
+      background-color: $color-primary;
       color: white;
       cursor: pointer;
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     .checkoutWrapper {
       flex-direction: column;
       align-items: center;
@@ -328,7 +331,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     .checkoutWrapper {
       padding: 0 12px;
     }
@@ -361,7 +364,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .orderSummarySection {
       padding-bottom: 20px;
     }

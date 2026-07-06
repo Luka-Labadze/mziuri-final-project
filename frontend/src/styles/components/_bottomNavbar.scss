@@ -1,13 +1,14 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .bottomNavbar {
   position: relative;
-  z-index: 1000;
+  z-index: $z-index-navbar;
   width: 100%;
   height: calc(70px * var(--app-scale));
-  background-color: rgb(4, 56, 161);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  transition: all 1s ease-in-out;
+  background-color: $color-primary;
+  @include flex-evenly;
+  transition: all $transition-slow ease-in-out;
   top: 0;
 
   &.active {
@@ -23,13 +24,11 @@
   }
 
   .navWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex-evenly;
     gap: calc(55px * var(--app-scale));
 
     .links {
-      color: rgb(244, 246, 255);
+      color: $color-nav-link;
       padding: calc(20px * var(--app-scale)) 0;
       text-decoration: none;
       font-weight: 600;
@@ -39,29 +38,27 @@
   }
 
   .authWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex-evenly;
     gap: calc(30px * var(--app-scale));
 
     .changeLanguage {
       width: 140px;
       height: 40px;
-      background-color: #0438a1;
-      border: 1px solid #0438a1;
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
       color: white;
       border-radius: 3px;
       font-weight: bold;
 
       &:hover {
-        background-color: #052668;
-        transition: 0.8s;
+        background-color: $color-primary-dark;
+        transition: $transition-medium;
         cursor: pointer;
       }
     }
 
     .auth {
-      color: rgb(244, 246, 255);
+      color: $color-nav-link;
       padding: calc(20px * var(--app-scale)) 0;
       text-decoration: none;
       font-weight: 600;
@@ -70,23 +67,14 @@
     }
 
     .logoutBtn {
+      @include primary-btn;
       width: calc(149px * var(--app-scale));
       height: calc(44px * var(--app-scale));
-      border-radius: calc(5px * var(--app-scale));
-      color: white;
-      background-color: #0438a1;
-      border: calc(1px * var(--app-scale)) solid #0438a1;
-      cursor: pointer;
-      transition: 0.3s;
-
-      &:hover {
-        background-color: #0279d1;
-        border: calc(1px * var(--app-scale)) solid transparent;
-      }
+      border-radius: calc(#{$border-radius-sm} * var(--app-scale));
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     height: auto;
     flex-direction: column;
     padding: 10px 0;
@@ -120,7 +108,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     .navWrapper {
       gap: 12px;
     }
@@ -145,7 +133,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .navWrapper {
       flex-direction: column;
       gap: 8px;

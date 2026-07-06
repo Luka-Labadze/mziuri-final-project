@@ -1,5 +1,7 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .description {
-  margin: 0 calc(32px * var(--app-scale)) 0 calc(32px * var(--app-scale));
   padding: calc(105px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
   width: calc(1167px * var(--app-scale));
   margin: auto;
@@ -17,8 +19,8 @@
       font-weight: 600;
 
       #descriptionTitle {
-        color: #0438a1;
-        border-bottom: calc(2px * var(--app-scale)) solid #0438a1;
+        color: $color-primary;
+        border-bottom: calc(2px * var(--app-scale)) solid $color-primary;
       }
     }
   }
@@ -32,7 +34,7 @@
     border-top: 0;
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     width: 100%;
     padding: 60px 15px 20px 15px;
 
@@ -48,7 +50,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     padding: 40px 10px 20px 10px;
 
     .upperSideList {
@@ -64,7 +66,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .upperSideList {
       font-size: 13px;
       gap: 10px;

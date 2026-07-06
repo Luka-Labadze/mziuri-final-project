@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -71,24 +74,12 @@
     }
 
     .carouselShopBtn {
-      width: calc(149px * var(--app-scale));
-      height: calc(44px * var(--app-scale));
-      border-radius: calc(5px * var(--app-scale));
-      color: white;
-      background-color: #0438a1;
-      border: calc(1px * var(--app-scale)) solid #0438a1;
-      cursor: pointer;
-      transition: 0.3s;
-
-      &:hover {
-        background-color: #0279d1;
-        border: calc(1px * var(--app-scale)) solid transparent;
-      }
+      @include primary-btn;
     }
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .singleCarousel {
     flex-direction: column;
     gap: 20px;

@@ -1,18 +1,15 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  @include fixed-overlay;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: $z-index-navbar;
 
   animation: modalBackdropFade 0.3s ease forwards;
 
   &.centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     .modal__content {
       position: static;
@@ -33,7 +30,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .modal {
     padding: 15px;
   }
@@ -43,7 +40,6 @@
     max-width: 90vw;
     top: auto;
     right: auto;
-
     left: 50%;
     transform: translateX(-50%);
   }

@@ -1,10 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .lacGrid {
   width: calc(370px * var(--app-scale));
   height: calc(168px * var(--app-scale));
-
   border: 1px solid #dddddd;
-  background-color: #f7f8f9;
-
+  background-color: $color-card-bg-alt;
   display: flex;
   gap: 20px;
 
@@ -41,15 +42,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .lacGrid {
     width: 100%;
     height: auto;
-
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     gap: 12px;
     padding: 12px;
   }

@@ -1,8 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .register {
   width: calc(510px * var(--app-scale));
   height: calc(491px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
-  background-color: #f3f3f3;
+  background-color: $color-form-bg;
   margin: calc(100px * var(--app-scale)) auto calc(100px * var(--app-scale))
     auto;
 
@@ -20,7 +23,7 @@
       }
 
       .registerSubtitle {
-        color: rgb(102, 102, 102);
+        color: $color-text-muted;
         font-size: calc(15px * var(--app-scale));
         font-weight: 400;
         text-align: center;
@@ -56,7 +59,7 @@
         padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
         width: calc(88px * var(--app-scale));
         height: calc(40px * var(--app-scale));
-        background-color: #0438a1;
+        background-color: $color-primary;
         color: white;
         cursor: pointer;
       }
@@ -71,7 +74,7 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     width: 100%;
     height: auto;
     margin: 60px auto;
@@ -93,7 +96,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     form {
       padding: 25px 15px;
     }
@@ -116,7 +119,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .registerTitle {
       font-size: 20px;
     }

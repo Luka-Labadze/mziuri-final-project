@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .singleProductPage {
   display: flex;
   justify-content: center;
@@ -42,23 +45,21 @@
 
         .thumbnailBox {
           width: 100%;
-          border: calc(1px * var(--app-scale)) solid #e0e0e0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          border: calc(1px * var(--app-scale)) solid $color-border-light;
+          @include flex-center;
           background-color: #f9f9f9;
           cursor: pointer;
-          transition: border-color 0.3s ease;
+          transition: border-color $transition-fast ease;
 
           &:hover {
-            border: calc(2px * var(--app-scale)) solid #0638a1;
+            border: calc(2px * var(--app-scale)) solid $color-primary-alt;
           }
         }
       }
 
       .photoCarouselBtn {
         position: absolute;
-        z-index: 10;
+        z-index: $z-index-dropdown;
         top: 50%;
         transform: translateY(-50%);
         background: white;
@@ -72,8 +73,8 @@
           border: transparent;
 
           &:hover {
-            transition: 1s;
-            background-color: #0638a1;
+            transition: $transition-slow;
+            background-color: $color-primary-alt;
             border: transparent;
             color: white;
           }
@@ -85,8 +86,8 @@
           border: transparent;
 
           &:hover {
-            transition: 1s;
-            background-color: #0638a1;
+            transition: $transition-slow;
+            background-color: $color-primary-alt;
             border: transparent;
             color: white;
           }
@@ -95,12 +96,12 @@
 
       &:hover .prev {
         opacity: 1;
-        transition: 1s;
+        transition: $transition-slow;
       }
 
       &:hover .next {
         opacity: 1;
-        transition: 1s;
+        transition: $transition-slow;
       }
     }
   }
@@ -110,7 +111,7 @@
       text-align: left;
       font-size: calc(16px * var(--app-scale));
       font-weight: 400;
-      color: rgb(34, 34, 34);
+      color: $color-text-dark;
     }
 
     .productTitle {
@@ -145,8 +146,8 @@
         width: calc(91px * var(--app-scale));
         margin-left: calc(10px * var(--app-scale));
         border-radius: calc(20px * var(--app-scale));
-        border: calc(1px * var(--app-scale)) solid rgb(4, 56, 161);
-        background-color: rgb(4, 56, 161);
+        border: calc(1px * var(--app-scale)) solid $color-primary;
+        background-color: $color-primary;
         color: white;
         height: auto;
         font-weight: 400;
@@ -169,7 +170,7 @@
       font-size: calc(16px * var(--app-scale));
       font-weight: 400;
       line-height: calc(20px * var(--app-scale));
-      color: rgb(34, 34, 34);
+      color: $color-text-dark;
     }
 
     .size {
@@ -183,7 +184,7 @@
       .sizeTitle {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
-        color: rgb(34, 34, 34);
+        color: $color-text-dark;
         margin-right: calc(20px * var(--app-scale));
         padding-bottom: calc(5px * var(--app-scale));
         line-height: calc(13px * var(--app-scale));
@@ -211,7 +212,7 @@
       .colorTitle {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
-        color: rgb(34, 34, 34);
+        color: $color-text-dark;
         margin-right: calc(20px * var(--app-scale));
         padding-bottom: calc(5px * var(--app-scale));
         line-height: calc(13px * var(--app-scale));
@@ -295,7 +296,7 @@
       .materialTitle {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
-        color: rgb(34, 34, 34);
+        color: $color-text-dark;
         margin-right: calc(20px * var(--app-scale));
         padding-bottom: calc(5px * var(--app-scale));
         line-height: calc(13px * var(--app-scale));
@@ -331,7 +332,7 @@
         .quantityTitle {
           font-size: calc(16px * var(--app-scale));
           font-weight: 400;
-          color: rgb(34, 34, 34);
+          color: $color-text-dark;
           margin-right: calc(20px * var(--app-scale));
           padding-bottom: calc(5px * var(--app-scale));
           line-height: calc(13px * var(--app-scale));
@@ -349,7 +350,7 @@
           width: calc(140px * var(--app-scale));
           height: calc(40px * var(--app-scale));
           border-radius: calc(25px * var(--app-scale));
-          background-color: #343434;
+          background-color: $color-dark;
           color: white;
           font-size: calc(13px * var(--app-scale));
           font-weight: 600;
@@ -357,8 +358,8 @@
           margin-left: calc(25px * var(--app-scale));
 
           &:hover {
-            background-color: #0438a1;
-            transition: 0.8s;
+            background-color: $color-primary;
+            transition: $transition-medium;
           }
         }
 
@@ -372,7 +373,7 @@
           cursor: pointer;
 
           &:hover {
-            color: #0438a1;
+            color: $color-primary;
             transform: 0.3s ease-in;
           }
         }
@@ -385,18 +386,17 @@
       .buyNowBtn {
         width: calc(321px * var(--app-scale));
         padding: calc(14px * var(--app-scale)) calc(20px * var(--app-scale)) calc(14px * var(--app-scale)) calc(20px * var(--app-scale));
-        margin-right: calc(10px * var(--app-scale));
         margin: 0 calc(10px * var(--app-scale)) calc(20px * var(--app-scale)) 0;
         border-radius: calc(25px * var(--app-scale));
-        background-color: #343434;
+        background-color: $color-dark;
         color: white;
         font-size: calc(13px * var(--app-scale));
         font-weight: 600;
         cursor: pointer;
 
         &:hover {
-          background-color: #0438a1;
-          transition: 0.8s;
+          background-color: $color-primary;
+          transition: $transition-medium;
         }
       }
     }
@@ -412,7 +412,7 @@
       .tagTitle {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
-        color: rgb(34, 34, 34);
+        color: $color-text-dark;
         margin-right: calc(20px * var(--app-scale));
         padding-bottom: calc(5px * var(--app-scale));
         line-height: calc(13px * var(--app-scale));
@@ -440,7 +440,7 @@
       .shareTitle {
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
-        color: rgb(34, 34, 34);
+        color: $color-text-dark;
         margin-right: calc(20px * var(--app-scale));
         padding-bottom: calc(5px * var(--app-scale));
         line-height: calc(13px * var(--app-scale));
@@ -472,72 +472,32 @@
         cursor: pointer;
         font-size: calc(18px * var(--app-scale));
         padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
-        z-index: 10;
+        z-index: $z-index-dropdown;
         scale: 0.8;
 
         &.next {
           font-size: calc(28px * var(--app-scale));
           right: calc(8px * var(--app-scale));
-          opacity: 0;
-          position: absolute;
-          z-index: 10;
+          @include carousel-nav-btn;
           transform: translateY(-90%) scale(0.7);
-          color: #0638a1;
-          background: white;
-          width: calc(50px * var(--app-scale));
-          height: calc(50px * var(--app-scale));
-          border-radius: 50%;
-          border: calc(1px * var(--app-scale)) solid transparent;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          transition: 0.3s;
-          padding: calc(35px * var(--app-scale));
-
-          &:hover {
-            transition: 1s;
-            background-color: #0638a1;
-            color: white;
-          }
         }
 
         &.prev {
           font-size: calc(28px * var(--app-scale));
           left: calc(8px * var(--app-scale));
-          opacity: 0;
-          position: absolute;
-          z-index: 10;
+          @include carousel-nav-btn;
           transform: translateY(-90%) scale(0.7);
-          color: #0638a1;
-          background: white;
-          width: calc(50px * var(--app-scale));
-          height: calc(50px * var(--app-scale));
-          border-radius: 50%;
-          border: calc(1px * var(--app-scale)) solid transparent;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          transition: 0.3s;
-          padding: calc(35px * var(--app-scale));
-
-          &:hover {
-            transition: 1s;
-            background-color: #0638a1;
-            color: white;
-          }
         }
       }
 
       &:hover .prev {
         opacity: 1;
-        transition: 1s;
+        transition: $transition-slow;
       }
 
       &:hover .next {
         opacity: 1;
-        transition: 1s;
+        transition: $transition-slow;
       }
 
       .carouselContainer {
@@ -548,11 +508,11 @@
   }
 }
 
-.singleProductCarousel {
+.singleCarousel2 {
   width: calc(280px * var(--app-scale));
   height: calc(458px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
-  background-color: #f7f8fa;
+  background-color: $color-card-bg;
   position: relative;
 
   .wishlist {
@@ -564,32 +524,17 @@
     cursor: pointer;
 
     &:hover {
-      color: #0438a1;
+      color: $color-primary;
       transform: 0.3s ease-in;
     }
   }
 
   .titleAndPriceContainer {
-    text-align: center;
-    line-height: calc(25px * var(--app-scale));
-
-    h3 {
-      font-size: calc(18px * var(--app-scale));
-      font-weight: 530;
-    }
-
-    p {
-      font-weight: 600;
-      font-size: calc(15px * var(--app-scale));
-    }
+    @include title-and-price-container;
   }
 
   .imgContainer {
-    position: relative;
-    width: calc(270px * var(--app-scale));
-    height: calc(270px * var(--app-scale));
-    margin: auto;
-    user-select: none;
+    @include product-img-container;
 
     .hdCarouselImg {
       width: calc(270px * var(--app-scale));
@@ -597,24 +542,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: 0.8s ease-in-out;
+      transition: $transition-medium ease-in-out;
     }
   }
 
   .shopNow {
-    display: block;
-    top: calc(35px * var(--app-scale));
-    margin: auto;
-    text-align: center;
-    position: relative;
-    width: calc(130px * var(--app-scale));
-    height: calc(35px * var(--app-scale));
-    cursor: pointer;
-    user-select: none;
-    font-weight: 600;
-    color: rgb(69, 69, 69);
-    background-color: rgba(0, 0, 0, 0);
-    opacity: 0;
+    @include shop-now-btn;
   }
 
   &:hover .shopNow {
@@ -642,8 +575,75 @@
   }
 }
 
+.singleProductCarousel {
+  width: calc(280px * var(--app-scale));
+  height: calc(458px * var(--app-scale));
+  border: calc(1px * var(--app-scale)) solid transparent;
+  background-color: $color-card-bg;
+  position: relative;
 
-@media (max-width: 768px) {
+  .wishlist {
+    padding: calc(10px * var(--app-scale));
+    width: calc(14px * var(--app-scale));
+    height: auto;
+    font-size: calc(34px * var(--app-scale));
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+      transform: 0.3s ease-in;
+    }
+  }
+
+  .titleAndPriceContainer {
+    @include title-and-price-container;
+  }
+
+  .imgContainer {
+    @include product-img-container;
+
+    .hdCarouselImg {
+      width: calc(270px * var(--app-scale));
+      height: calc(270px * var(--app-scale));
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: $transition-medium ease-in-out;
+    }
+  }
+
+  .shopNow {
+    @include shop-now-btn;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &:hover .shopNow {
+    opacity: 1;
+    transform: translateY(calc(-30px * var(--app-scale)));
+    transition: 0.9s;
+  }
+
+  #image1 {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #image2 {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  &:hover #image1 {
+    opacity: 0;
+  }
+
+  &:hover #image2 {
+    opacity: 1;
+  }
+}
+
+@include media-max(768px) {
   .singleProductPage {
     flex-direction: column;
     margin-top: 20px;

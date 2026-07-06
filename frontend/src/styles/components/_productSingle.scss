@@ -1,40 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .productSingle {
   width: calc(308px * var(--app-scale));
   height: calc(458px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
-  background-color: #f7f8fa;
+  background-color: $color-card-bg;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease;
+  transition: border-color $transition-fast ease;
   color: black;
 
   &:hover {
-    border-color: #e0e0e0;
+    border-color: $color-border-light;
   }
 
   .wishlist {
     position: absolute;
     top: calc(15px * var(--app-scale));
     left: calc(15px * var(--app-scale));
-    z-index: 10;
+    z-index: $z-index-dropdown;
     font-size: calc(24px * var(--app-scale));
     cursor: pointer;
     transition:
-      color 0.3s ease,
-      transform 0.3s ease;
+      color $transition-fast ease,
+      transform $transition-fast ease;
 
     &:hover {
-      color: #0438a1;
+      color: $color-primary;
       transform: scale(1.1);
     }
   }
 
   .imgContainer {
-    position: relative;
-    width: calc(270px * var(--app-scale));
-    height: calc(270px * var(--app-scale));
+    @include product-img-container;
     margin: calc(40px * var(--app-scale)) auto calc(20px * var(--app-scale));
-    user-select: none;
 
     .productImg {
       width: 100%;
@@ -95,7 +95,7 @@
     font-weight: 700;
     color: black;
     font-size: calc(10px * var(--app-scale));
-    background-color: #f7f8f9;
+    background-color: $color-card-bg-alt;
     border: calc(1px * var(--app-scale)) solid black;
     opacity: 0;
     transform: translateY(calc(20px * var(--app-scale)));
@@ -108,7 +108,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .productSingle {
     width: 100%;
     max-width: 320px;

@@ -1,26 +1,24 @@
+@use '../abstracts/mixins' as *;
+
 .cart {
   display: flex;
   flex-direction: column;
 }
 
-/* =========================
-   MOBILE RESPONSIVE ADDITIONS
-   ========================= */
-
-@media (max-width: 900px) {
+@include media-max(900px) {
   .cart {
     width: 100%;
     padding: 0 15px;
   }
 }
 
-@media (max-width: 600px) {
+@include media-max(600px) {
   .cart {
     padding: 0 10px;
   }
 }
 
-@media (max-width: 400px) {
+@include media-max(400px) {
   .cart {
     padding: 0 8px;
   }

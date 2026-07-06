@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .recentlyViewed {
   width: calc(1200px * var(--app-scale));
   height: calc(502px * var(--app-scale));
@@ -24,12 +27,12 @@
       width: calc(300px * var(--app-scale));
       height: calc(414px * var(--app-scale));
       border: calc(1px * var(--app-scale)) solid transparent;
-      background-color: #f7f8fa;
+      background-color: $color-card-bg;
       position: relative;
-      transition: 0.3s ease;
+      transition: $transition-fast ease;
 
       &:hover {
-        border-color: #e0e0e0;
+        border-color: $color-border-light;
       }
 
       .titleAndPriceContainer {
@@ -61,11 +64,7 @@
       }
 
       .imgContainer {
-        position: relative;
-        width: calc(270px * var(--app-scale));
-        height: calc(270px * var(--app-scale));
-        margin: auto;
-        user-select: none;
+        @include product-img-container;
 
         .rvCardsImg {
           width: calc(270px * var(--app-scale));
@@ -73,24 +72,13 @@
           position: absolute;
           top: 0;
           left: 0;
-          transition: 0.8s ease-in-out;
+          transition: $transition-medium ease-in-out;
         }
       }
 
       .shopNow {
-        display: block;
-        top: calc(35px * var(--app-scale));
-        margin: auto;
-        text-align: center;
-        position: relative;
-        width: calc(130px * var(--app-scale));
-        height: calc(35px * var(--app-scale));
-        cursor: pointer;
-        user-select: none;
-        font-weight: 600;
-        color: rgb(69, 69, 69);
+        @include shop-now-btn;
         background-color: rgba(0, 0, 0, 0);
-        opacity: 0;
         transition: 0.4s ease;
       }
 
@@ -102,7 +90,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .recentlyViewed {
     width: 100%;
     height: auto;

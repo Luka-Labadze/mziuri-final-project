@@ -1,11 +1,12 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .laptAndComp {
   margin-bottom: 80px;
   height: auto;
 
   .titleSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     gap: 62vh;
     margin-bottom: 40px;
 
@@ -16,9 +17,7 @@
 
     .titleSectionRightWrap {
       list-style-type: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       gap: 20px;
 
       .titleSectionRight {
@@ -27,7 +26,7 @@
       }
 
       #TSRActive {
-        color: #0438a1;
+        color: $color-primary;
       }
     }
   }
@@ -41,7 +40,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .laptAndComp {
     margin-bottom: 40px;
   }

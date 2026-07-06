@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .productList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,7 +9,7 @@
   margin-top: calc(25px * var(--app-scale));
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .productList {
     grid-template-columns: 1fr;
     gap: 15px;

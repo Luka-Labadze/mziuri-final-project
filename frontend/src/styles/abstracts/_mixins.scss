@@ -1,0 +1,134 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin overlay-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin fixed-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin carousel-nav-btn {
+  opacity: 0;
+  position: absolute;
+  z-index: $z-index-dropdown;
+  color: $color-primary-alt;
+  background: white;
+  width: calc(50px * var(--app-scale));
+  height: calc(50px * var(--app-scale));
+  border-radius: $border-radius-circle;
+  border: calc(1px * var(--app-scale)) solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-fast;
+  padding: calc(35px * var(--app-scale));
+
+  &:hover {
+    transition: $transition-slow;
+    background-color: $color-primary-alt;
+    color: white;
+  }
+}
+
+@mixin primary-btn {
+  width: $btn-primary-width;
+  height: $btn-primary-height;
+  border-radius: calc(#{$border-radius-sm} * var(--app-scale));
+  color: white;
+  background-color: $color-primary;
+  border: calc(1px * var(--app-scale)) solid $color-primary;
+  cursor: pointer;
+  transition: $transition-fast;
+
+  &:hover {
+    background-color: $color-primary-hover;
+    border: calc(1px * var(--app-scale)) solid transparent;
+  }
+}
+
+@mixin product-img-container {
+  position: relative;
+  width: calc(270px * var(--app-scale));
+  height: calc(270px * var(--app-scale));
+  margin: auto;
+  user-select: none;
+}
+
+@mixin shop-now-btn {
+  display: block;
+  top: calc(35px * var(--app-scale));
+  margin: auto;
+  text-align: center;
+  position: relative;
+  width: calc(130px * var(--app-scale));
+  height: calc(35px * var(--app-scale));
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: rgb(69, 69, 69);
+  background-color: transparent;
+  opacity: 0;
+}
+
+@mixin title-and-price-container {
+  text-align: center;
+  line-height: calc(25px * var(--app-scale));
+
+  h3 {
+    font-size: calc(18px * var(--app-scale));
+    font-weight: 530;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: calc(15px * var(--app-scale));
+  }
+}
+
+@mixin section-title-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+@mixin media-max($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

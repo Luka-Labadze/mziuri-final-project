@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .singleProductPhotoCarousel {
   width: calc(160px * var(--app-scale));
   flex-shrink: 0;
@@ -7,13 +10,11 @@
   .thumbnailBox {
     width: calc(150px * var(--app-scale));
     height: calc(150px * var(--app-scale));
-    border: calc(1px * var(--app-scale)) solid #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: calc(1px * var(--app-scale)) solid $color-border-light;
+    @include flex-center;
     background-color: #f9f9f9;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: border-color $transition-fast ease;
 
     &:hover {
       border: calc(2px * var(--app-scale)) solid #3355b1;
@@ -27,7 +28,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@include media-max(1024px) {
   .singleProductPhotoCarousel {
     width: 140px;
 
@@ -38,14 +39,14 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .singleProductPhotoCarousel {
     width: 120px;
 
     .thumbnailBox {
       width: 110px;
       height: 110px;
-      border: 1px solid #e0e0e0;
+      border: 1px solid $color-border-light;
     }
 
     .photoCarouselImg {
@@ -55,7 +56,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@include media-max(480px) {
   .singleProductPhotoCarousel {
     width: 100%;
     justify-content: center;

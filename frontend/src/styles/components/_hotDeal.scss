@@ -1,7 +1,8 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .hotDeal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 100%;
   gap: calc(30px * var(--app-scale));
   padding: calc(80px * var(--app-scale)) 0 calc(30px * var(--app-scale)) 0;
@@ -11,7 +12,7 @@
     height: calc(460px * var(--app-scale));
     position: relative;
     overflow: hidden;
-    border-radius: calc(8px * var(--app-scale));
+    border-radius: calc(#{$border-radius-md} * var(--app-scale));
     margin-left: calc(75px * var(--app-scale));
 
     .hdBgImg {
@@ -26,9 +27,7 @@
     .hDContent {
       position: relative;
       z-index: 5;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex-between;
       height: 100%;
       padding: 0 calc(60px * var(--app-scale));
 
@@ -91,14 +90,12 @@
     height: calc(438px * var(--app-scale));
 
     .hdCarouselWrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex-between;
       height: 100%;
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -134,7 +131,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     .hDContent {
       padding: 20px;
 
@@ -166,7 +163,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .hDContent {
       .hdLeftSideTitle {
         font-size: 20px;

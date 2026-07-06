@@ -1,9 +1,10 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .topNavbar {
   width: 100%;
   height: calc(155px * var(--app-scale));
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @include flex-evenly;
   padding: 0 calc(180px * var(--app-scale));
 
   .ponnoLogo {
@@ -21,7 +22,7 @@
       height: 100%;
       border-radius: calc(15px * var(--app-scale));
       padding: 0 calc(50px * var(--app-scale)) 0 calc(30px * var(--app-scale));
-      border: calc(1px * var(--app-scale)) solid rgb(4, 56, 161);
+      border: calc(1px * var(--app-scale)) solid $color-primary;
       font-size: calc(14px * var(--app-scale));
       color: #999;
       outline: none;
@@ -42,8 +43,8 @@
   .cart {
     width: calc(125px * var(--app-scale));
     height: calc(54px * var(--app-scale));
-    background-color: rgb(4, 56, 161);
-    border-radius: calc(5px * var(--app-scale));
+    background-color: $color-primary;
+    border-radius: calc(#{$border-radius-sm} * var(--app-scale));
     font-weight: 400;
     font-size: calc(14px * var(--app-scale));
     padding: calc(5px * var(--app-scale));
@@ -57,16 +58,12 @@
     }
 
     .cartFlexbox {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+      @include flex-evenly;
     }
   }
 }
 
-
-
-@media (max-width: 1024px) {
+@include media-max(1024px) {
   .topNavbar {
     padding: 0 40px;
     justify-content: space-between;
@@ -77,7 +74,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .topNavbar {
     flex-direction: column;
     height: auto;
@@ -95,7 +92,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@include media-max(480px) {
   .topNavbar {
     padding: 15px;
   }

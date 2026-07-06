@@ -1,15 +1,14 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .onSale {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: 30px;
   margin-bottom: 80px;
 
   .onSaleBannerSection {
     .onSaleBannerWrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
       gap: 30px;
       list-style-type: none;
       padding: 0;
@@ -34,7 +33,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .onSale {
     flex-direction: column;
     gap: 20px;

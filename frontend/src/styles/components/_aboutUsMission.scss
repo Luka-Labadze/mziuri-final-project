@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .aboutUsMission {
   width: 100%;
   padding: 80px;
@@ -38,7 +41,7 @@
           cursor: pointer;
 
           &:hover {
-            background-color: rgb(4, 56, 161);
+            background-color: $color-primary;
             transition: 0.5s ease-in;
           }
         }
@@ -64,7 +67,7 @@
         }
 
         .progressBar {
-          background-color: #e0e0e0;
+          background-color: $color-border-light;
           height: 12px;
           width: 500px;
           position: relative;
@@ -96,7 +99,7 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     padding: 40px 20px;
     height: auto;
 
@@ -125,7 +128,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     padding: 30px 15px;
 
     .AUMTitle {
@@ -146,7 +149,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .AUMTitle {
       font-size: 20px;
     }

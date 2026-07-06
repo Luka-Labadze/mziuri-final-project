@@ -1,7 +1,10 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .hotDealCarousel {
   height: calc(458px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
-  background-color: #f7f8fa;
+  background-color: $color-card-bg;
   position: relative;
 
   .carouselBtn {
@@ -13,60 +16,20 @@
     cursor: pointer;
     font-size: calc(18px * var(--app-scale));
     padding: calc(8px * var(--app-scale)) calc(12px * var(--app-scale));
-    z-index: 10;
+    z-index: $z-index-dropdown;
 
     &.next {
       font-size: calc(28px * var(--app-scale));
       right: calc(8px * var(--app-scale));
-      opacity: 0;
-      position: absolute;
-      z-index: 10;
+      @include carousel-nav-btn;
       scale: 0.7;
-      color: #0638a1;
-      background: white;
-      width: calc(50px * var(--app-scale));
-      height: calc(50px * var(--app-scale));
-      border-radius: 50%;
-      border: calc(1px * var(--app-scale)) solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      padding: calc(35px * var(--app-scale));
-
-      &:hover {
-        transition: 1s;
-        background-color: #0638a1;
-        color: white;
-      }
     }
 
     &.prev {
       font-size: calc(28px * var(--app-scale));
       left: calc(8px * var(--app-scale));
-      opacity: 0;
-      position: absolute;
-      z-index: 10;
+      @include carousel-nav-btn;
       scale: 0.7;
-      color: #0638a1;
-      background: white;
-      width: calc(50px * var(--app-scale));
-      height: calc(50px * var(--app-scale));
-      border-radius: 50%;
-      border: calc(1px * var(--app-scale)) solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      padding: calc(35px * var(--app-scale));
-
-      &:hover {
-        transition: 1s;
-        background-color: #0638a1;
-        color: white;
-      }
     }
   }
 
@@ -79,32 +42,18 @@
     cursor: pointer;
 
     &:hover {
-      color: #0438a1;
+      color: $color-primary;
       transform: 0.3s ease-in;
     }
   }
 
   .titleAndPriceContainer {
-    text-align: center;
+    @include title-and-price-container;
     line-height: calc(25px * var(--app-scale));
-
-    h3 {
-      font-size: calc(18px * var(--app-scale));
-      font-weight: 530;
-    }
-
-    p {
-      font-weight: 600;
-      font-size: calc(15px * var(--app-scale));
-    }
   }
 
   .imgContainer {
-    position: relative;
-    width: calc(270px * var(--app-scale));
-    height: calc(270px * var(--app-scale));
-    margin: auto;
-    user-select: none;
+    @include product-img-container;
 
     .hdCarouselImg {
       width: calc(270px * var(--app-scale));
@@ -112,34 +61,22 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: 0.8s ease-in-out;
+      transition: $transition-medium ease-in-out;
     }
   }
 
   .shopNow {
-    display: block;
-    top: calc(35px * var(--app-scale));
-    margin: auto;
-    text-align: center;
-    position: relative;
-    width: calc(130px * var(--app-scale));
-    height: calc(35px * var(--app-scale));
-    cursor: pointer;
-    user-select: none;
-    font-weight: 600;
-    color: rgb(69, 69, 69);
-    background-color: transparent;
-    opacity: 0;
+    @include shop-now-btn;
   }
 
   &:hover .prev {
     opacity: 1;
-    transition: 1s;
+    transition: $transition-slow;
   }
 
   &:hover .next {
     opacity: 1;
-    transition: 1s;
+    transition: $transition-slow;
   }
 
   #image1 {
@@ -166,7 +103,7 @@
     transition: 0.9s;
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     height: auto;
     padding: 20px 0;
 
@@ -191,7 +128,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     .imgContainer {
       width: 180px;
       height: 180px;
@@ -217,7 +154,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .imgContainer {
       width: 150px;
       height: 150px;

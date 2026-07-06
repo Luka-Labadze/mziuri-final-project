@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .singleProductPageCarousel {
   position: relative;
 
@@ -12,7 +15,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .singleProductPageCarousel {
     width: 100%;
     padding: 0 15px;

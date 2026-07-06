@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .scrollToTop {
   position: fixed;
   bottom: calc(40px * var(--app-scale));
@@ -6,7 +9,7 @@
   visibility: hidden;
   transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
   cursor: pointer;
-  z-index: 1001;
+  z-index: $z-index-modal;
 
   &.show {
     opacity: 1;
@@ -16,11 +19,9 @@
   .STTBtn {
     width: calc(45px * var(--app-scale));
     height: calc(45px * var(--app-scale));
-    background-color: rgb(4, 56, 161);
+    background-color: $color-primary;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     font-size: calc(18px * var(--app-scale));
     margin: 0;
     border-radius: 4px;
@@ -31,7 +32,7 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     bottom: 30px;
     right: 20px;
 
@@ -42,7 +43,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     bottom: 20px;
     right: 15px;
 

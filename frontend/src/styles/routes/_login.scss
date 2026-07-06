@@ -1,10 +1,13 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .login {
   width: calc(570px * var(--app-scale));
   height: calc(395px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid transparent;
   margin: calc(100px * var(--app-scale)) auto calc(100px * var(--app-scale))
     auto;
-  background-color: #f3f3f3;
+  background-color: $color-form-bg;
 
   form {
     padding: calc(37px * var(--app-scale)) calc(40px * var(--app-scale));
@@ -21,7 +24,7 @@
       }
 
       .loginSubtitle {
-        color: rgb(102, 102, 102);
+        color: $color-text-muted;
         font-size: calc(16px * var(--app-scale));
         font-weight: 400;
       }
@@ -62,24 +65,24 @@
           font-size: calc(14px * var(--app-scale));
           font-weight: 400;
           padding: calc(8px * var(--app-scale)) calc(25px * var(--app-scale));
-          background-color: rgb(4, 56, 161);
+          background-color: $color-primary;
           cursor: pointer;
         }
 
         .forgotPassword {
           cursor: pointer;
-          color: rgb(102, 102, 102);
+          color: $color-text-muted;
 
           &:hover {
             color: black;
-            transition: 0.8s;
+            transition: $transition-medium;
           }
         }
       }
 
       .toRegisterContainer {
         text-decoration: none;
-        color: rgb(102, 102, 102);
+        color: $color-text-muted;
 
         .toRegister {
           margin-top: calc(10px * var(--app-scale));
@@ -87,14 +90,14 @@
 
           &:hover {
             color: black;
-            transition: 0.8s;
+            transition: $transition-medium;
           }
         }
       }
     }
   }
 
-  @media (max-width: 900px) {
+  @include media-max(900px) {
     width: 100%;
     height: auto;
     margin: 60px auto;
@@ -117,7 +120,7 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @include media-max(600px) {
     form {
       padding: 25px 15px;
     }
@@ -142,7 +145,7 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @include media-max(400px) {
     .loginTitle {
       font-size: 20px;
     }

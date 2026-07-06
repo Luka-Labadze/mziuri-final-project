@@ -1,9 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .onSaleGrid {
   width: calc(370px * var(--app-scale));
   height: calc(168px * var(--app-scale));
   border: 1px solid #dddddd;
-  background-color: #f7f8f9;
-
+  background-color: $color-card-bg-alt;
   display: flex;
   align-items: center;
   gap: calc(12px * var(--app-scale));
@@ -28,15 +30,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@include media-max(768px) {
   .onSaleGrid {
     width: 100%;
     height: auto;
-
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     padding: 12px;
     gap: 10px;
   }

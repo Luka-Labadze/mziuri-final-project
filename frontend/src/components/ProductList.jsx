@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 import { getProducts } from "../api/api";
 import { Link } from "react-router-dom";
 
-function ProductList() {
+function ProductList({ sortOption, priceRange }) {
   const [products, setProducts] = useState();
   const [count, setCount] = useState(0);
 
@@ -17,21 +17,45 @@ function ProductList() {
       const data = await getProducts();
       const allProducts = Array.isArray(data) ? data : data.products;
 
-      const productsPerPage = 12;
-      setTotalPages(Math.ceil(allProducts.length / productsPerPage));
+      const filtered = allProducts.filter(
+        (item) => item.price >= priceRange.min && item.price <= priceRange.max,
+      );
 
-      const productsToShow = allProducts.slice(
+      const sorted = [...filtered].sort((a, b) => {
+        switch (sortOption) {
+          case "alphabetically":
+            return a.title.localeCompare(b.title);
+          case "alphabeticallyReverse":
+            return b.title.localeCompare(a.title);
+          case "priceLowToHigh":
+            return a.price - b.price;
+          case "priceHighToLow":
+            return b.price - a.price;
+          case "featured":
+          default:
+            return 0;
+        }
+      });
+
+      const productsPerPage = 12;
+      setTotalPages(Math.ceil(sorted.length / productsPerPage));
+
+      const productsToShow = sorted.slice(
         (activePage - 1) * productsPerPage,
         activePage * productsPerPage,
       );
       setProducts(productsToShow);
     };
     fetchData().catch((err) => console.error("Error loading products:", err));
-  }, [activePage]);
+  }, [activePage, sortOption, priceRange]);
 
   useEffect(() => {
     if (products) setCount(products.length);
   }, [products]);
+
+  useEffect(() => {
+    setActivePage(1);
+  }, [sortOption, priceRange]);
 
   return (
     <div className="productListWrapper">
@@ -70,4 +94,4 @@ function ProductList() {
   );
 }
 
-export default ProductList
+export default ProductList;

@@ -2,7 +2,7 @@ import "react";
 import Grid from "../assets/icons/grid.png";
 import { useTranslation } from "react-i18next";
 
-function SortBy() {
+function SortBy({ sortOption, setSortOption }) {
   const { t } = useTranslation();
 
   return (
@@ -21,7 +21,12 @@ function SortBy() {
       <div className="sorting">
         <p>{t("Sort-by")}</p>
 
-        <select name="sorting" id="sorting">
+        <select
+          name="sorting"
+          id="sorting"
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+        >
           <option value="alphabeticallyReverse">
             {t("Alphabetically-Z-A")}
           </option>

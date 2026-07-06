@@ -1,8 +1,16 @@
 import "react";
 import { useTranslation } from "react-i18next";
 
-function FilterSection() {
+function FilterSection({ priceRange, setPriceRange }) {
   const { t } = useTranslation();
+
+  const handleMinChange = (e) => {
+    setPriceRange({ ...priceRange, min: Number(e.target.value) || 0 });
+  };
+
+  const handleMaxChange = (e) => {
+    setPriceRange({ ...priceRange, max: Number(e.target.value) || 0 });
+  };
 
   return (
     <div className="filter">
@@ -26,13 +34,25 @@ function FilterSection() {
         <div className="bottomPrice">
           <div className="leftSide">
             <label className="priceUnits">$</label>
-            <input type="number" placeholder="0.00" className="priceInput" />
+            <input
+              type="number"
+              placeholder="0.00"
+              className="priceInput"
+              value={priceRange.min}
+              onChange={handleMinChange}
+            />
             <label className="priceUnits">{t("From")}</label>
           </div>
 
           <div className="rightSide">
             <label className="priceUnits">$</label>
-            <input type="number" placeholder="150.00" className="priceInput" />
+            <input
+              type="number"
+              placeholder="150.00"
+              className="priceInput"
+              value={priceRange.max}
+              onChange={handleMaxChange}
+            />
             <label className="priceUnits">{t("To")}</label>
           </div>
         </div>

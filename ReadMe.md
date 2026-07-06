@@ -54,29 +54,6 @@ Dev Tools:
 
 ---
 
-## 📁 Project Structure
-
-root/
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── config/
-│   └── index.js
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── i18n/
-│   │   └── App.jsx
-│   └── vite.config.js
-│
-└── README.md
-
----
 
 ## ⚙️ Installation & Setup
 
@@ -92,11 +69,17 @@ npm install
 Create .env file:
 
 CONNECTION_STRING=mongodb+srv://Lithh:JujaJuja@cluster0.ihlz8xi.mongodb.net/FinalProjectDB?appName=Cluster0
+
 PORT = 3000
+
 MAIL_SENDER_EMAIL=ponno.provider@gmail.com
+
 MAIL_SENDER_PASS=dgtn hwor cffw wrzv
+
 JWT_SECRET_KEY=secret123
+
 JWT_RESET_PASS_SECRET_KEY=secret12345
+
 BCRYPT_PEPPER=secret1234
 
 Run backend:

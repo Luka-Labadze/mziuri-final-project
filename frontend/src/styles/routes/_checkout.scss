@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .checkout {
   width: 100%;
@@ -9,7 +9,8 @@
   .checkoutErrorMsg {
     color: red;
     display: block;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 15px;
     margin-top: 4px;
     width: 100%;
   }

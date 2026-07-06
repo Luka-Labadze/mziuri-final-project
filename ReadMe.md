@@ -3,6 +3,8 @@
 A modern full-stack eCommerce web application built with React (Vite) on the frontend and Node.js + Express + MongoDB on the backend.
 It includes authentication, secure API handling, internationalization, and performance optimizations.
 
+Website link on Render = https://mziuri-final-project.onrender.com/
+
 ---
 
 ## 🚀 Features

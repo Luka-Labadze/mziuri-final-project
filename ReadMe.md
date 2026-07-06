@@ -92,6 +92,7 @@ npm install
 Create .env file:
 
 CONNECTION_STRING=mongodb+srv://Lithh:JujaJuja@cluster0.ihlz8xi.mongodb.net/FinalProjectDB?appName=Cluster0
+
 PORT = 3000
 MAIL_SENDER_EMAIL=ponno.provider@gmail.com
 MAIL_SENDER_PASS=dgtn hwor cffw wrzv

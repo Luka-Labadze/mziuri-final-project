@@ -5,6 +5,8 @@ It includes authentication, secure API handling, internationalization, and perfo
 
 Website link on Render = https://mziuri-final-project.onrender.com/
 
+Images and data may take a few seconds to load when the website is opened for the first time. Please wait a moment for everything to appear.
+
 ---
 
 ## 🚀 Features
